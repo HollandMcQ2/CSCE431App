@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  slider_image_1: MyString
+  slider_image_2: MyString
+  slider_image_3: MyString
+  slider_image_4: MyString
+  slider_image_5: MyString
+  heading: MyText
+  summary: MyText
+
+two:
+  slider_image_1: MyString
+  slider_image_2: MyString
+  slider_image_3: MyString
+  slider_image_4: MyString
+  slider_image_5: MyString
+  heading: MyText
+  summary: MyText

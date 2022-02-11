@@ -1,0 +1,2 @@
+class AboutU < ApplicationRecord
+end
