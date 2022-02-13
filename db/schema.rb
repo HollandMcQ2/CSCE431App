@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_11_022732) do
+ActiveRecord::Schema.define(version: 2022_02_13_021447) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,16 @@ ActiveRecord::Schema.define(version: 2022_02_11_022732) do
     t.string "club_image_2"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "admins", force: :cascade do |t|
+    t.string "email", null: false
+    t.string "full_name"
+    t.string "uid"
+    t.string "avatar_url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "index_admins_on_email", unique: true
   end
 
   create_table "calendars", force: :cascade do |t|
