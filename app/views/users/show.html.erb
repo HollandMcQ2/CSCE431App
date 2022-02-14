@@ -1,15 +1,17 @@
-<%= content_tag(:div, class: "container align-items-center mt-5") do %>
-    <%= content_tag(:div, class: "row align-items-center justify-content-center") do %>
-        <%= content_tag(:div, class: "col-10 col-sm-8 col-md-6") do %>
-            <h1>Attendance</h1>
-            <form>
-                <div class="mb-3">
-                    <label for="attendance_password" class="form-label attendance_password_label">Password</label>
-                    <input type="password" class="form-control attendance_password" id="attendance_password">
-                    <div id="passwordHelp" class="form-text">Enter the password the officers have shared with you.</div>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-        <% end %>
-    <% end %>
-<% end %>
+<div class="container mt-5">
+    <div class="row">
+        <h1 class="mb-5">You're logged in! Welcome to the User Dashboard!</h1>
+        <div class="col-4 text-center">
+            <%= link_to "Events", events_path %>
+        </div>
+        <div class="col-4 text-center">
+            <%= link_to "Attendance", edit_user_path(@user) %>
+        </div>
+        <div class="col-4 text-center">
+            <%= link_to "Members", user_root_path(@user) %>
+        </div>
+        <div class="col-4 text-center">
+            <%= link_to "Sign Out", destroy_user_session_path %>
+        </div>
+    </div>
+</div>

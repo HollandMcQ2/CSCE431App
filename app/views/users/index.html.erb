@@ -1,14 +1,50 @@
-<div class="container mt-5">
-    <div class="row">
-        <h1 class="mb-5">You're logged in! Welcome to the User Dashboard!</h1>
-        <div class="col-4 text-center">
-            <%= link_to "Events", events_path %>
-        </div>
-        <div class="col-4 text-center">
-            <%= link_to "Sign Out", destroy_admin_session_path %>
-        </div>
-        <div class="col-4 text-center">
-            <%= link_to "Attendance", events_path %>
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <title>View Members</title>
+
+</head>
+
+<body>
+    <div class="container mt-5 mb-5">
+        <h1>View Members</h1>
+        <div class="mt-5">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Role</th>
+                        <th scope="col">Attendance Count</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @users.each do |user| %>
+                        <tr>
+                            <th><%= user.id %></td>
+                            <td><%= user.full_name %></td>
+                            <td><%= user.email %></td>
+                            <td><%= user.role %></td>
+                            <td><%= user.attendance_count %></td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+
+
+            <%= link_to 'Back', user_path(1), {class: "mt-5"} %>
         </div>
     </div>
-</div>
+
+</body>
+</html>
+
+
+
+
