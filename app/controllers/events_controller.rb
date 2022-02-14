@@ -1,4 +1,11 @@
 class EventsController < ApplicationController
+    def readable_time(time)
+      begin
+        time.strftime("%b %d, %I:%M%P")
+      rescue
+        nil
+      end
+    end
     def index
       @events = Event.order("time")
     end
@@ -31,11 +38,13 @@ class EventsController < ApplicationController
           format.html { redirect_to events_url, notice: "event was successfully updated." }
           format.json { render :show, status: :ok, location: @event }
         else
+          puts @event.errors.full_messages format.html { render :new }
           format.html { render :edit, status: :unprocessable_entity }
           format.json { render json: @event.errors, status: :unprocessable_entity }
         end
       end
     end
+
     def delete
       @event = Event.find(params[:id])
     end
@@ -54,4 +63,7 @@ class EventsController < ApplicationController
         params.require(:event).permit(:name,:time,:location, :is_mandatory, :description, :password)
       end
   end
+
+
+
   

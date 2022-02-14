@@ -22,7 +22,7 @@
                     <% @events.each do |event| %>
                         <tr>
                             <td class="align-middle"><%= event.name %></td>
-                            <td class="align-middle" colspan="2"><%= event.time.strftime("%m/%d/%Y %I:%M") %></td>
+                            <%= l(event.time, format: :readable) rescue "default" %>
                             <td class="align-middle"><%= event.location %></td>
                             <!-- <td class="align-middle"><%= event.is_mandatory %></td> -->
                             <td class="align-middle" colspan="2"><%= link_to 'Description', event_path(event), {class: "btn btn-primary w-100"} %></td>
@@ -32,7 +32,6 @@
                             <td class="align-middle" colspan="2">
                             <%= link_to 'Delete', delete_event_path(event), {class: "btn btn-primary w-100"} %>
                             </td>
-                            
                         </tr>
                     <% end %>
                 </tbody>

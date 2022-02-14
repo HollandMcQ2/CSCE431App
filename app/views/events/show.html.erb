@@ -5,7 +5,7 @@
                 <h1>Name: <%= @event.name %></h1>
             </div>
             <div class="mb-3">
-                <p>Time: <%= @event.time.strftime("%m/%d/%Y %I:%M") %></p>
+                <p>Time: <%= @event.try(time).strftime("%c") %></p>
             </div>
             <div class = "mb-3">
                 <p>Location: <%= @event.location %> </p>
