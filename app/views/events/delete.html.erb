@@ -1,0 +1,24 @@
+
+<%= content_tag(:div, class: "container align-items-center mt-5") do %>
+    <%= content_tag(:div, class: "row align-items-center justify-content-center") do %>
+        <%= content_tag(:div, class: "col-10 col-sm-8 col-md-6") do %>
+            <div class = "mb-3">
+                <h1><%= @event.name %></h1>
+            </div>
+            <div class="mb-3">
+                <p>Time: <%= @event.time.strftime("%m/%d/%Y %I:%M") %></p>
+            </div>
+            <div class = "mb-3">
+                <p>Location: <%= @event.location %> </p>
+            </div>
+            <div class = "mb-3">
+                <p>Description: <%= @event.description %> </p>
+            </div>
+            <%= link_to 'Delete', event_path(params[:id]), method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= link_to 'Back', events_path, {class: "mt-5"} %>
+        <% end %>
+    <% end %>
+<% end %>
+
+
+
