@@ -7,8 +7,8 @@ class Admin < ApplicationRecord
     # return nil unless copy =~ /@gmail.com || @tamu.edu\z/
     # instead of find or create by just find
     # create_with(from_google_params).find_or_create_by!(from_google_params)
-    p from_google_params[:email]
     create_with(from_google_params).find_by! email: from_google_params[:email]
+
   end
 
   private
