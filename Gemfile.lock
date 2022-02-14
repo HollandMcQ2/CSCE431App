@@ -268,14 +268,14 @@ DEPENDENCIES
   actiontext (>= 6.1.4.4)
   bootsnap (>= 1.4.4)
   byebug
-  capybara (>= 3.26)
+  capybara (>= 3.26.0)
   devise
   jbuilder (~> 2.7)
   listen (~> 3.3)
-  omniauth (~> 1.9.1)
-  omniauth-google-oauth2
   loofah (>= 2.13.0)
   nokogiri (>= 1.13.1)
+  omniauth (~> 1.9.1)
+  omniauth-google-oauth2
   pg (~> 1.1)
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
