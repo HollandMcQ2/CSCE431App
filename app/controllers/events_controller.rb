@@ -3,6 +3,7 @@ class EventsController < ApplicationController
       @events = Event.order("time")
     end
     def show
+      @event = Event.find(params[:id])
     end
     def new
       @event = Event.new
@@ -33,6 +34,18 @@ class EventsController < ApplicationController
           format.html { render :edit, status: :unprocessable_entity }
           format.json { render json: @event.errors, status: :unprocessable_entity }
         end
+      end
+    end
+    def delete
+      @event = Event.find(params[:id])
+    end
+    def destroy
+      @event = Event.find(params[:id])
+      @event.destroy
+  
+      respond_to do |format|
+        format.html { redirect_to events_url, notice: "event was successfully destroyed." }
+        format.json { head :no_content }
       end
     end
 
