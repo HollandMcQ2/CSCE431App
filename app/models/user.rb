@@ -1,14 +1,12 @@
-class Admin < ApplicationRecord
+class User < ApplicationRecord
   devise :omniauthable, omniauth_providers: [:google_oauth2]
 
-
-  def self.from_google(from_google_params)
-    # copy = from_google_params[email]
-    # return nil unless copy =~ /@gmail.com || @tamu.edu\z/
-    # instead of find or create by just find
-    # create_with(from_google_params).find_or_create_by!(from_google_params)
+  def self.from_google_admin(from_google_params)
     create_with(from_google_params).find_by! email: from_google_params[:email]
+  end
 
+  def self.from_google_member(from_google_params)
+    create_with(from_google_params).find_or_create_by!(from_google_params)
   end
 
   private
@@ -20,5 +18,4 @@ class Admin < ApplicationRecord
       avatar_url: auth.info.image
     }
   end
-  
 end
