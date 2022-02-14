@@ -1,6 +1,6 @@
 <%= content_tag(:div, class: "container align-items-center mt-5") do %>
     <%= content_tag(:div, class: "row align-items-center justify-content-center") do %>
-        <%= content_tag(:div, class: "col-10 col-sm-8 col-md-6") do %>
+        <%= content_tag(:div, class: "col-10") do %>
             <h1>Events</h1>
             <table class="table">
                 <thead>
@@ -10,20 +10,27 @@
                     <th scope="col">Location</th>
                     <th scope="col">Mandatory?</th>
                     <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
                 <!-- for loop this table row and dynamically fill in the content -->
-                    <tr>
-                    <td class="align-middle">Meeting 1</td>
-                    <td class="align-middle">5/22/22 5:00 PM</td>
-                    <td class="align-middle">MSC</td>
-                    <td class="align-middle">Yes</td>
-                    <td><button type="button" class="btn btn-primary">Description</button></td>
-                    <!-- need to add button action to see description or link to events/id -->
-                    </tr>
+                    <% @events.each do |event| %>
+                        <tr>
+                            <td class="align-middle">event.name</td>
+                            <td class="align-middle">event.time</td>
+                            <td class="align-middle">event.location</td>
+                            <td class="align-middle">event.is_mandatory</td>
+                            <td colspan="2"><button type="button" class="btn btn-primary">Description</button></td>
+                            <td colspan="2"><button type="button" class="btn btn-primary w-100">Edit</button></td>
+                            <!-- need to add button action to see description or link to events/id -->
+                        </tr>
+                    <% end %>
                 </tbody>
                 </table>
+                <%= link_to "Add Event", new_event_path %>
         <% end %>
     <% end %>
 <% end %>

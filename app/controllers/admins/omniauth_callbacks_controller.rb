@@ -1,15 +1,20 @@
 class Admins::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     def google_oauth2
-      admin = Admin.from_google(from_google_params)
-  
-      if admin.present?
-        sign_out_all_scopes
-        flash[:success] = t 'devise.omniauth_callbacks.success', kind: 'Google'
-        sign_in_and_redirect admin, event: :authentication
-      else
-        flash[:alert] = t 'devise.omniauth_callbacks.failure', kind: 'Google', reason: "#{auth.info.email} is not authorized."
-        redirect_to new_admin_session_path
-      end
+      begin
+        admin = Admin.from_google(from_google_params)
+    
+        if admin.present?
+          sign_out_all_scopes
+          flash[:success] = t 'devise.omniauth_callbacks.success', kind: 'Google'
+          sign_in_and_redirect admin, event: :authentication
+        else
+          flash[:alert] = t 'devise.omniauth_callbacks.failure', kind: 'Google', reason: "#{auth.info.email} is not authorized."
+          redirect_to new_admin_session_path
+        end
+        rescue StandardError => e
+          flash[:error] = "Invalid Login"
+          redirect_to new_admin_session_path
+        end
     end
   
     protected

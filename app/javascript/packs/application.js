@@ -10,6 +10,11 @@ import "channels"
 import "bootstrap"
 import "../stylesheets/application"
 
+// window.jQuery = $;
+// window.$ = $;
+
+//
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
