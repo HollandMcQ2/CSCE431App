@@ -13,6 +13,9 @@
             <div class = "mb-3">
                 <p>Description: <%= @event.description %> </p>
             </div>
+            <div class = "mb-3">
+                <p>Number of people attended: <%= @event.attendance_count %> </p>
+            </div>
             <%= link_to 'Back', events_path, {class: "mt-5"} %>
         <% end %>
     <% end %>

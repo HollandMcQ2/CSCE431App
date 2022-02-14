@@ -1,5 +1,7 @@
 <div class="container">
 <%= form_with(model: user) do |form| %>
+  <%= puts "user below" %>
+  <%= puts user.role %>
     <% if user.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -13,8 +15,8 @@
     <% end %>
     
     <div class="mb-3">
-        <label for="attendance_password" class="form-label attendance_password_label">Password</label>
-        <input type="password" class="form-control attendance_password" id="attendance_password">
+        <%= form.label :password, {class: "form-label location-label"}%>
+        <%= form.password_field :password, {class: "form-control"}%>
         <div id="passwordHelp" class="form-text">Enter the password the officers have shared with you.</div>
     </div>
    
