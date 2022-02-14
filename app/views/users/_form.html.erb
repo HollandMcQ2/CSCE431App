@@ -1,3 +1,4 @@
+<div class="container">
 <%= form_with(model: user) do |form| %>
     <% if user.errors.any? %>
       <div id="error_explanation">
@@ -10,22 +11,27 @@
         </ul>
       </div>
     <% end %>
-  
-    <div class="field">
-      <%= form.label :name %>
-      <%= form.text_field :name %>
+    <!--
+    <form>
+        <div class="mb-3">
+            <label for="attendance_password" class="form-label attendance_password_label">Password</label>
+            <input type="password" class="form-control attendance_password" id="attendance_password">
+            <div id="passwordHelp" class="form-text">Enter the password the officers have shared with you.</div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    -->
+    <div class = "field mb-3">
+        <%= form.label :name, {class: "form-label name-label"}%>
+        <%= form.text_field :name, {class: "form-control"}%>
     </div>
-    <div class="field">
-      <%= form.label :email %>
-      <%= form.text_field :email %>
-    </div>
-    <div class="field">
-      <%= form.label :password %>
-      <%= form.text_field :password %>
+    <div class="field mb-3">
+      <%= form.label :email, {class: "form-label email-label"} %>
+      <%= form.email_field :email, {class: "form-control"} %>
     </div>
    
     <div class="actions">
-      <%= form.submit %>
+      <%= form.submit "Submit", {class: "btn btn-primary"} %>
     </div>
   <% end %>
-  
+</div>
