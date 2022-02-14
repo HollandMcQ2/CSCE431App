@@ -10,7 +10,7 @@ class EventsController < ApplicationController
     end
     def create
       @event = Event.new(event_params)
-
+      puts @event.password
       respond_to do |format|
         if @event.save
           format.html { redirect_to events_url, notice: "Event was successfully created." }
@@ -51,7 +51,7 @@ class EventsController < ApplicationController
 
     private
       def event_params
-        params.require(:event).permit(:name,:time,:location, :is_mandatory, :description)
+        params.require(:event).permit(:name,:time,:location, :is_mandatory, :description, :password)
       end
   end
   

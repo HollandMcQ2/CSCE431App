@@ -9,6 +9,32 @@ class UsersController < ApplicationController
   end
   def edit
     @user = User.find(params[:id])
+    puts "edit test"
+    puts @user.role
+  end
+  def update
+    @user = User.find(params[:id])
+    respond_to do |format|
+      puts params[:user]
+      puts params[:user]['password']
+      @event = Event.find_by(password: params[:user]['password'])
+      puts "event"
+      puts @event.password
+      if @event
+        @user.increment!(:attendance_count)
+        @event.increment!(:attendance_count)
+        if @user.save && @event.save
+          format.html { redirect_to user_path(@user), notice: "Attendance was successfully updated." }
+          format.json { render :show, status: :ok, location: @user }
+        else
+          format.html { render :edit, status: :unprocessable_entity }
+          format.json { render json: @user.errors, status: :unprocessable_entity }
+        end
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
   end
   #  make edit the attendance route
   # def create

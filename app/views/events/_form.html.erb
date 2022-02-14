@@ -28,6 +28,10 @@
         <%= form.label :description, {class: "form-label description-label"}%>
         <%= form.text_area :description, {class: "form-control"}%>
     </div>
+    <div class = "field mb-3">
+        <%= form.label :password, {class: "form-label password-label"}%>
+        <%= form.text_field :password, {class: "form-control"}%>
+    </div>
     <div class="actions">
       <%= form.submit "Submit", {class: "btn btn-primary"} %>
     </div>
