@@ -1,0 +1,14 @@
+<div class="container mt-5">
+    <div class="row">
+        <h1 class="mb-5">You're logged in! Welcome to the User Dashboard!</h1>
+        <div class="col-4 text-center">
+            <%= link_to "Events", events_path %>
+        </div>
+        <div class="col-4 text-center">
+            <%= link_to "Sign Out", destroy_admin_session_path %>
+        </div>
+        <div class="col-4 text-center">
+            <%= link_to "Attendance", events_path %>
+        </div>
+    </div>
+</div>
