@@ -7,10 +7,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         # exception if the user is not found, which means the user is a member
         begin
             # try to find user by email and get their role, will throw error if user is not found
-            puts "kangaroo #{from_google_params}"
             role = User.find_by(email: from_google_params[:email]).role
-
-            puts "role: #{role}"
             if role == "admin"
                 @user = User.from_google_admin(from_google_params)
                 
@@ -25,7 +22,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         sign_out_all_scopes
         flash[:success] = t 'devise.omniauth_callbacks.success', kind: 'Google', reason: "Successfully signed in as a #{role}"
         # "users/index" sign_in_and_redirect user, event: :authentication
-        puts "elaine #{user_path(@user)}"
         sign_in_and_redirect @user, event: :authentication
 
         # if role == "admin"
@@ -46,13 +42,9 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     protected
 
     def stored_location_for(resource)
-        puts "before if else #{resource}"
-        puts "role #{resource.role}"
         if resource.is_a?(User) && resource.role == 'admin'
-            puts "admin"
             return user_path(resource)
         elsif resource.is_a?(User) && resource.role == 'member'
-            puts "member69"
             return user_path(resource)
         end
         super(resource) 
@@ -75,12 +67,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     # end
   
     def after_omniauth_failure_path_for(_scope)
-        p "kangaroo3"
         new_user_session_path
     end
   
     def after_sign_in_path_for(resource_or_scope)
-        puts "after_sign_in_path_for #{resource_or_scope}"
         stored_location_for(resource_or_scope) || root_path
     end
   
