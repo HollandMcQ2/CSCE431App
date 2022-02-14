@@ -3,8 +3,8 @@ class Admin < ApplicationRecord
 
 
   def self.from_google(from_google_params)
-    copy = from_google_params[email]
-    return nil unless copy =~ /@gmail.com || @tamu.edu\z/
+    # copy = from_google_params[email]
+    # return nil unless copy =~ /@gmail.com || @tamu.edu\z/
     create_with(from_google_params).find_or_create_by!(from_google_params)
   end
 
