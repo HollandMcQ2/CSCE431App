@@ -1,0 +1,27 @@
+<div class="container">
+<%= form_with(model: user) do |form| %>
+  <%= puts "user below" %>
+  <%= puts user.role %>
+    <% if user.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+  
+        <ul>
+          <% user.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    
+    <div class="mb-3">
+        <%= form.label :password, {class: "form-label location-label"}%>
+        <%= form.password_field :password, {class: "form-control"}%>
+        <div id="passwordHelp" class="form-text">Enter the password the officers have shared with you.</div>
+    </div>
+   
+    <div class="actions">
+      <%= form.submit "Submit", {class: "btn btn-primary"} %>
+    </div>
+  <% end %>
+</div>
