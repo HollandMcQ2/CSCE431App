@@ -60,6 +60,7 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers', '>= 5.0.0'
+  gem 'simplecov', :require => false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -69,3 +70,4 @@ gem 'omniauth', '~>1.9.1'
 gem 'devise'
 gem 'omniauth-google-oauth2'
 gem 'jquery-rails'
+gem 'database_cleaner'
