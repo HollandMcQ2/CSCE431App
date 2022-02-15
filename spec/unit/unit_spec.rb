@@ -1,38 +1,38 @@
 require 'rails_helper'
+require 'spec_helper'
 
 RSpec.describe Event, type: :model do
-  before(:all) do
-    @event = Event.create(name: "First Meeting")
-  end    
-  #subject do
-    #described_class.new(name: 'First Meeting')
-    #subject.update(name: 'Next Meeting')
-  #end
-  
-  it 'is valid with valid attributes' do
-    puts subject
-    expect(subject).to be_valid
-  end
-
-  it 'is not valid without a name' do
-    subject.name = nil
-    expect(subject).not_to be_valid
-  end
-  
+    before(:all) do
+        @event= Event.create(name:"First Meeting")
+      end
+          
+      it 'is valid with valid attributes' do
+        expect(@event).to be_valid
+      end
+      it 'edit is valid with valid attributes' do
+        @event.update(name:"Second Meeting")
+        expect(@event.name).to eq("Second Meeting")
+      end
+      it 'delete is valid' do
+        @event.destroy
+        expect(Event.count).to eq(0)
+      end
 end
 
 RSpec.describe User, type: :model do
-  subject do
-    described_class.new(email: 'newuser@gmail.com', full_name: 'New User')
+  before(:all) do
+    @user = User.create(email:"elainemo0024@gmail.com", full_name:"Elaine Mo")
   end
-  
+      
   it 'is valid with valid attributes' do
-    expect(subject).to be_valid
+    expect(@user).to be_valid
   end
-  
-  it 'is not valid without full name and email' do
-    subject.email = nil
-    subject.full_name = nil
-    expect(subject).not_to be_valid
+  it 'edit is valid with valid attributes' do
+    @user.update(email:"elainemo24@tamu.edu")
+    expect(@user.email).to eq("elainemo24@tamu.edu")
+  end
+  it 'delete is valid' do
+    @user.destroy
+    expect(User.count).to eq(0)
   end
 end
