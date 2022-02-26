@@ -37,6 +37,13 @@ class UsersController < ApplicationController
       end
     end
   end
+  def payment
+        
+  end
+  def checkout
+      nonce_from_the_client = params[:payment_method_nonce]
+      p nonce_from_the_client
+  end
   #  make edit the attendance route
   # def create
   #   @user = User.new(user_params)

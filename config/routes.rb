@@ -9,7 +9,12 @@ Rails.application.routes.draw do
   get 'users/index'
   get 'home/index'
   resources :home
-  resources :users
+  resources :users do
+    member do
+      get :payment
+      post :checkout
+    end
+  end
   resources :events do
     member do
       get :delete

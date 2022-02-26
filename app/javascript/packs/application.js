@@ -7,13 +7,15 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
-import "bootstrap"
+//import "bootstrap"
+// need to reference payments.js
 //import "../stylesheets/application.scss"
-
+import "../../assets/javascripts/payments.js.erb"
 // window.jQuery = $;
 // window.$ = $;
 
 //
+
 
 Rails.start()
 Turbolinks.start()
