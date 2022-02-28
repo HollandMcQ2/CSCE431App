@@ -1,4 +1,13 @@
 class UsersController < ApplicationController
+  protect_from_forgery
+  require "rubygems"
+  require "braintree"
+
+  Braintree::Configuration.environment = :sandbox
+  Braintree::Configuration.merchant_id = ENV["MERCHANT_ID"]
+  Braintree::Configuration.public_key = ENV["PUBLIC_KEY"]
+  Braintree::Configuration.private_key = ENV["PRIVATE_KEY"]
+
   def index
     @users = User.all
   end
@@ -37,13 +46,24 @@ class UsersController < ApplicationController
       end
     end
   end
+
   def payment
-        
+    @user = User.find(params[:id])
+    @client_token = Braintree::ClientToken.generate
   end
+
   def checkout
-      nonce_from_the_client = params[:payment_method_nonce]
-      p nonce_from_the_client
+    @user = User.find(params[:id])
+    nonce = params[:payment_method_nonce]
+    result = Braintree::Transaction.sale(
+      :amount => "100.00",
+      :payment_method_nonce => nonce,
+      :options => {
+        :submit_for_settlement => true
+      }
+    )
   end
+  
   #  make edit the attendance route
   # def create
   #   @user = User.new(user_params)

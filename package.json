@@ -6,6 +6,7 @@
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "5.4.3",
+    "braintree-web-drop-in": "^1.33.0",
     "rails-erb-loader": "^5.5.2",
     "turbolinks": "^5.2.0",
     "webpack": "^4.46.0",

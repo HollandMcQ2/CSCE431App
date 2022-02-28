@@ -1,4 +1,3 @@
-
 if (document.getElementById("dropin-container")){
     let button = document.getElementById("submit-button");
     braintree.dropin.create({
@@ -6,14 +5,14 @@ if (document.getElementById("dropin-container")){
         container: '#dropin-container',
         paypal:{
             flow: 'checkout',
-            amount: '10.00',
+            amount: '100.00',
             currency: "USD"
         },
         venmo: {
             //allowNewBrowserTab: false
         }
 
-    }, function (createErr, instance){
+    }, function (createErr, instance){ // callback function
         button.addEventListener('click', function () {
             console.log('button clicked')
             instance.requestPaymentMethod(function (requestPaymentMethodErr, payload){

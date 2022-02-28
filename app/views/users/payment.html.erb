@@ -1,4 +1,27 @@
-<div class="container mt-5" id="dropin-container">
+<%= javascript_include_tag "payments" %>
+<%# <div class="container mt-5" id="dropin-container">
 
 </div>
-<button id="submit-button">Request payment method</button>
+<button id="submit-button">Request payment method</button> %>
+
+<form id="checkout" method="post" action="checkout">
+    <div id="payment-form"></div>
+    <input type="submit" value="Submit $10 Payment">
+</form>
+
+<%# paypal script %>
+<script src="https://js.braintreegateway.com/js/braintree-2.32.1.min.js"></script>
+
+<%# venmo scripts %>
+<script src="https://js.braintreegateway.com/web/3.85.2/js/client.min.js"></script>
+<script src="https://js.braintreegateway.com/web/3.85.2/js/venmo.min.js"></script>
+<script src="https://js.braintreegateway.com/web/3.85.2/js/data-collector.min.js"></script>
+
+<script>
+    var clientToken = "<%= @client_token %>";
+
+    braintree.setup(clientToken, "dropin", {
+        container: "payment-form"
+    });
+
+</script>
