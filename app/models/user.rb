@@ -4,6 +4,7 @@ class User < ApplicationRecord
   validates :full_name, presence: true
 
   has_many :event_user #creates relationship with event-user join table
+  has_many :semester_user #creates relationship with semester-user join table
 
   def self.from_google_admin(from_google_params)
     create_with(from_google_params).find_by! email: from_google_params[:email]

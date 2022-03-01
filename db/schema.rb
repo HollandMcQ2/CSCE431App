@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_28_211629) do
+ActiveRecord::Schema.define(version: 2022_03_01_050119) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,16 @@ ActiveRecord::Schema.define(version: 2022_02_28_211629) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "password"
     t.bigint "attendance_count", default: 0, null: false
+  end
+
+  create_table "semester_users", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "semester_id", null: false
+    t.boolean "paid_dues"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["semester_id"], name: "index_semester_users_on_semester_id"
+    t.index ["user_id"], name: "index_semester_users_on_user_id"
   end
 
   create_table "semesters", force: :cascade do |t|
