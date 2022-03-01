@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_01_141333) do
+ActiveRecord::Schema.define(version: 2022_03_01_201630) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "about_us", force: :cascade do |t|
+  create_table "about_us_pages", force: :cascade do |t|
     t.string "heading_image"
     t.string "heading"
     t.string "about_text"
@@ -24,6 +24,11 @@ ActiveRecord::Schema.define(version: 2022_03_01_141333) do
     t.string "club_image_2"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "about_us_pages_officer_bios", id: false, force: :cascade do |t|
+    t.bigint "about_us_page_id", null: false
+    t.bigint "officer_bio_id", null: false
   end
 
   create_table "event_users", force: :cascade do |t|
