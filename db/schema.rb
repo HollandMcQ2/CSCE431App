@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_01_051613) do
+ActiveRecord::Schema.define(version: 2022_03_01_140859) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,18 @@ ActiveRecord::Schema.define(version: 2022_03_01_051613) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "password"
     t.bigint "attendance_count", default: 0, null: false
+  end
+
+  create_table "home_pages", force: :cascade do |t|
+    t.string "slider_image_1"
+    t.string "slider_image_2"
+    t.string "slider_image_3"
+    t.string "slider_image_4"
+    t.string "slider_image_5"
+    t.string "heading"
+    t.string "summary"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "officer_bios", force: :cascade do |t|
