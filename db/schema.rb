@@ -16,9 +16,13 @@ ActiveRecord::Schema.define(version: 2022_02_28_211629) do
   enable_extension "plpgsql"
 
   create_table "event_users", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "event_id", null: false
     t.boolean "attended"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["event_id"], name: "index_event_users_on_event_id"
+    t.index ["user_id"], name: "index_event_users_on_user_id"
   end
 
   create_table "events", force: :cascade do |t|
