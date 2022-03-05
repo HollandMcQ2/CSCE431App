@@ -64,9 +64,11 @@ class UsersController < ApplicationController
     )
     if result.success?
       # See result.transaction for details
+      # TODO: change hasPaid on a per semester basis
       p result.transaction
+      @user.update_column("has_paid_dues", true);
     else
-      # Handle errors
+      # TODO: Handle error, ideally they stay on the payment page if the payment is unsuccessful, but we can also take them back to the payment page. right now the submit button for the drop in does 2 things at the same time: confirms payment submission and payment method, need to separate (change drop in container button positioning, add second submit button to the whole form and post request)
       p result.message
     end
   end
