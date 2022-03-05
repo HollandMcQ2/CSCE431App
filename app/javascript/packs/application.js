@@ -31,8 +31,6 @@ document.addEventListener("turbolinks:load", () => {
         return new Popover(popoverTriggerEl)
     })
 })
-import "../../assets/javascripts/payments.js.erb"
-
 
 Rails.start()
 Turbolinks.start()

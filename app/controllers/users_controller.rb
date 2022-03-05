@@ -62,6 +62,13 @@ class UsersController < ApplicationController
         :submit_for_settlement => true
       }
     )
+    if result.success?
+      # See result.transaction for details
+      p result.transaction
+    else
+      # Handle errors
+      p result.message
+    end
   end
   
   #  make edit the attendance route
