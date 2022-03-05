@@ -10,4 +10,8 @@ environment.plugins.append("Provide", new webpack.ProvidePlugin({
 }))
 // End new addition
 
+
+
+const erb = require('./loaders/erb');
+environment.loaders.prepend('erb', erb)
 module.exports = environment

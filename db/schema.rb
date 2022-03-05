@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2022_03_01_201630) do
+=======
+ActiveRecord::Schema.define(version: 2022_02_25_072336) do
+>>>>>>> 6809516cae5c928e0854884b02db9f0a2492eb4f
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +59,7 @@ ActiveRecord::Schema.define(version: 2022_03_01_201630) do
     t.bigint "attendance_count", default: 0, null: false
   end
 
+<<<<<<< HEAD
   create_table "home_pages", force: :cascade do |t|
     t.string "slider_image_1"
     t.string "slider_image_2"
@@ -92,6 +97,11 @@ ActiveRecord::Schema.define(version: 2022_03_01_201630) do
     t.datetime "start"
     t.datetime "end"
     t.float "duescost"
+=======
+  create_table "paymentAccount", force: :cascade do |t|
+    t.string "internalName"
+    t.string "paymentAddress"
+>>>>>>> 6809516cae5c928e0854884b02db9f0a2492eb4f
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
