@@ -40,6 +40,11 @@
                     },
                     success: function(res){
                         // if res status code 200 do nothing, server redirect,
+                        console.log(res);
+                        if (res.status == 'error'){
+                            document.querySelector('.alert-danger').style.display = 'block';
+                            document.querySelector('.alert-danger').textContent = 'Your payment method was declined. Please try another payment method.';
+                        }
                     },
                     error: function(XMLHttpRequest, textStatus, errorThrown){
                         // show generic payment declined try another method alert

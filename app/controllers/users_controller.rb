@@ -49,6 +49,7 @@ class UsersController < ApplicationController
 
   def payment
     @user = User.find(params[:id])
+    # if user has paid == true, redirect to thank you page
     @client_token = Braintree::ClientToken.generate
   end
 
@@ -71,6 +72,8 @@ class UsersController < ApplicationController
       p result.transaction
       @user.update_column("has_paid_dues", true);
       # update semester and join
+      # need to determine current semester with time comparisons
+      # then need to create new entity in semester_user
 
       # redirect to thank you
       redirect_to(user_path(current_user.id))
