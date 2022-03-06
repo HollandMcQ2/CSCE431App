@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_01_201630) do
+ActiveRecord::Schema.define(version: 2022_03_01_212350) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,16 @@ ActiveRecord::Schema.define(version: 2022_03_01_201630) do
   create_table "about_us_pages_officer_bios", id: false, force: :cascade do |t|
     t.bigint "about_us_page_id", null: false
     t.bigint "officer_bio_id", null: false
+  end
+
+  create_table "contact_forms", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "company"
+    t.string "message"
+    t.datetime "date_submitted"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "event_users", force: :cascade do |t|
@@ -75,6 +85,13 @@ ActiveRecord::Schema.define(version: 2022_03_01_201630) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_officer_bios_on_user_id"
+  end
+
+  create_table "payment_accounts", force: :cascade do |t|
+    t.string "internal_name"
+    t.string "payment_address"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "semester_users", force: :cascade do |t|

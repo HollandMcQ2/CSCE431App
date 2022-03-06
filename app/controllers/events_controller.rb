@@ -4,6 +4,8 @@ class EventsController < ApplicationController
     end
     def show
       @event = Event.find(params[:id])
+      @attendees = EventUser.where(event_id: @event.id)
+      @users = User.all
     end
     def new
       @event = Event.new
@@ -44,7 +46,7 @@ class EventsController < ApplicationController
       @event.destroy
   
       respond_to do |format|
-        format.html { redirect_to events_url, notice: "event was successfully destroyed." }
+        format.html { redirect_to events_url, notice: "Event was successfully destroyed." }
         format.json { head :no_content }
       end
     end

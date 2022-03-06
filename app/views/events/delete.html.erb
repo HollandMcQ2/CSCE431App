@@ -14,7 +14,8 @@
             <div class = "mb-3">
                 <p>Description: <%= @event.description %> </p>
             </div>
-            <%= link_to 'Delete', event_path(params[:id]), method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= button_to 'Delete', event_path(), method: 'delete', data: { confirm: 'Are you sure?' } %>
+            <br>
             <%= link_to 'Back', events_path, {class: "mt-5"} %>
         <% end %>
     <% end %>
