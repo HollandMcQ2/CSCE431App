@@ -1,3 +1,4 @@
+
 <div class="container">
 <%= form_with(model: event) do |form| %>
     <% if event.errors.any? %>
@@ -31,10 +32,6 @@
     <div class = "field mb-3">
         <%= form.label :password, {class: "form-label password-label"}%>
         <%= form.text_field :password, {class: "form-control"}%>
-    </div>
-    <div class = "field mb-3">
-        <%= form.label :is_mandatory, {class: "form-label is_mandatory-label"}%>
-        <%= form.check_box  :is_mandatory, {class: "form-control", checked: true}%>
     </div>
     <div class="actions">
       <%= form.submit "Submit", {class: "btn btn-primary"} %>
