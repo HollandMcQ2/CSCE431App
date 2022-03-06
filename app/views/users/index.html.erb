@@ -15,6 +15,7 @@
         <h1>View Members</h1>
         <div class="mt-5">
             <table class="table">
+                <% memberCount = 0 %>
                 <thead>
                     <tr>
                         <th scope="col">#</th>
@@ -22,16 +23,21 @@
                         <th scope="col">Email</th>
                         <th scope="col">Role</th>
                         <th scope="col">Attendance Count</th>
+                        <th scope="col">View Meetings</th>
                     </tr>
                 </thead>
                 <tbody>
                     <% @users.each do |user| %>
+                        <% memberCount = memberCount+1 %>
                         <tr>
-                            <th><%= user.id %></td>
+                            <th><%= memberCount %></td>
                             <td><%= user.full_name %></td>
                             <td><%= user.email %></td>
                             <td><%= user.role %></td>
                             <td><%= user.attendance_count %></td>
+                            <td class="align-middle" colspan="2">
+                                <%= link_to 'Meetings', user_path(current_user.id), {class: "btn btn-primary w-100"} %>
+                            </td>
                         </tr>
                     <% end %>
                 </tbody>
