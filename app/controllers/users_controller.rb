@@ -49,6 +49,9 @@ class UsersController < ApplicationController
 
   def payment
     @user = User.find(params[:id])
+    if @user[:has_paid_dues] == true
+      redirect_to(thank_you_user_path(current_user.id))
+    end
     # if user has paid == true, redirect to thank you page
     @client_token = Braintree::ClientToken.generate
   end
@@ -74,16 +77,28 @@ class UsersController < ApplicationController
       # update semester and join
       # need to determine current semester with time comparisons
       # then need to create new entity in semester_user
-
+      @user.update_column("transaction_amount", result.transaction.amount)
+      @user.update_column("transaction_last_4", result.transaction.credit_card_details.last_4.to_f);
+      @user.update_column("transaction_date", result.transaction.created_at);
       # redirect to thank you
-      redirect_to(user_path(current_user.id))
+      redirect_to(thank_you_user_path(current_user.id))
     else
       # TODO: Handle error
       p result.message
       render json: {status: "error", code: 400, message: result.message}
     end
   end
-  
+  def thank_you
+    @user = User.find(params[:id])
+    if @user[:has_paid_dues] == false
+      redirect_to(payment_user_path(current_user.id))
+    end
+    # this may not work with paypal
+    
+    p "transaction info:"
+    p @user[:transaction_amount]
+    p @user[:transaction_last_4]
+  end
   #  make edit the attendance route
   # def create
   #   @user = User.new(user_params)

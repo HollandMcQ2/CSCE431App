@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :users do
     member do
       get :payment
+      get :thank_you, to: 'users/:id/thank_you'
       post :checkout
     end
   end
