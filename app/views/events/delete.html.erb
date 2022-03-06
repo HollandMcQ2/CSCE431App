@@ -1,4 +1,5 @@
 
+
 <%= content_tag(:div, class: "container align-items-center mt-5") do %>
     <%= content_tag(:div, class: "row align-items-center justify-content-center") do %>
         <%= content_tag(:div, class: "col-10 col-sm-8 col-md-6") do %>
@@ -14,12 +15,8 @@
             <div class = "mb-3">
                 <p>Description: <%= @event.description %> </p>
             </div>
-            <%= button_to 'Delete', event_path(), method: 'delete', data: { confirm: 'Are you sure?' } %>
-            <br>
+            <%= link_to 'Delete', event_path(params[:id]), method: :delete, data: { confirm: 'Are you sure?' } %>
             <%= link_to 'Back', events_path, {class: "mt-5"} %>
         <% end %>
     <% end %>
 <% end %>
-
-
-
