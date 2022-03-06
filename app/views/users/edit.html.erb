@@ -1,4 +1,18 @@
 <div class="container mt-5 mb-5">
+    <%= puts @user.full_name %>
+    <%= puts @user.role %>
+    <% if @role == "admin" %>
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Admin Panel</h1>
+            </div>
+        </div>
+    <% end %>
+
+
+
+
+
     <h1>Attendance</h1>
     <%= render 'form', user: @user %>
     <div class="mt-5">
