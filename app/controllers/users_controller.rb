@@ -56,7 +56,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     nonce = params[:payment_method_nonce]
     result = Braintree::Transaction.sale(
-      :amount => "100.00",
+      :amount => "2000.00",
       :payment_method_nonce => nonce,
       :options => {
         :submit_for_settlement => true

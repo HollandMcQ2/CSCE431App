@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :users do
     member do
       get :payment
-      post :checkout, to: 'users#checkout'
+      post :checkout
     end
   end
   resources :events do

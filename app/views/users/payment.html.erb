@@ -1,9 +1,17 @@
-<form id="payment-form" method="post" action="checkout">
-<script src="https://js.braintreegateway.com/web/dropin/1.33.0/js/dropin.min.js"
-data-braintree-dropin-authorization="<%= @client_token %>"
-data-paypal.flow="checkout"
-data-paypal.amount="10.00"
-data-paypal.currency="USD"
-></script>
-    <button type="submit" class="btn-primary" id="submit-button">Submit Payment</button
-</form>
+<div class="container mt-5 px-5">
+    <h1>Pay Club Dues</h1>
+    <form id="payment-form" method="post" action="checkout">
+        <script src="https://js.braintreegateway.com/web/dropin/1.33.0/js/dropin.min.js"
+        data-braintree-dropin-authorization="<%= @client_token %>"
+        data-paypal.flow="checkout"
+        data-paypal.amount="10.00"
+        data-paypal.currency="USD"
+        ></script>
+        <script>
+            $(document).ready(function() { 
+                console.log($("#submit-form"));
+            }); 
+        </script>
+        <button type="submit" class="btn btn-primary mt-3" id="submit-form">Submit Payment</button
+    </form>
+</div>
