@@ -73,7 +73,7 @@ class UsersController < ApplicationController
       # update semester and join
 
       # redirect to thank you
-      redirect_to(user_path(current_user.id))
+      redirect_to(user_path(thank_you_for_paying))
     else
       # TODO: Handle error
       p result.message
