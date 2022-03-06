@@ -1,10 +1,6 @@
 class UsersController < ApplicationController
   def index
-    # puts "id: #{params[:id]} Holland"
-    # @user = User.find(params[:id])
     @users = User.all
-    # puts "I am user @ViewAll: #{@user.id}"
-
   end
   def show
     @user = User.find(params[:id])
