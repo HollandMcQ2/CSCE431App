@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     end
   end
   resources :home_pages
+  resources :about_us_pages
   resources :events do
     member do
       get :delete
