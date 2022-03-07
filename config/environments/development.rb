@@ -6,6 +6,8 @@ Rails.application.configure do
   # In the development environment your application's code is reloaded any time
   # it changes. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
+  config.serve_static_assets = true
+
   config.cache_classes = false
 
   # Do not eager load code on boot.
@@ -75,4 +77,9 @@ Rails.application.configure do
   # config.action_cable.disable_request_forgery_protection = true
   ENV['GOOGLE_OAUTH_CLIENT_ID'] = '166427199608-3qfvp2tf0bqt1rjkpmvslevaeeduml21.apps.googleusercontent.com'
   ENV['GOOGLE_OAUTH_CLIENT_SECRET'] = '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'
+
+  ENV['PAYMENT_AUTH'] = 'sandbox_s9fzgm2g_5z6r9hv6bc9cmmjx'
+  ENV['MERCHANT_ID'] = '5z6r9hv6bc9cmmjx'
+  ENV['PUBLIC_KEY'] = 'h64bmpjqmn652rj8'
+  ENV['PRIVATE_KEY'] = '285f453f319c9622ea78305100d24436'
 end

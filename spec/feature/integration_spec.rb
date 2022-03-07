@@ -1,4 +1,6 @@
 require 'rails_helper'
+require 'omniauth'
+require 'user'
 
 RSpec.describe 'Initial Page', type: :feature do
   scenario 'shows Home Page' do

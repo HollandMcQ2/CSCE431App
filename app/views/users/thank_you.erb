@@ -1,0 +1,22 @@
+<div>
+    <div class="container text-center">
+        <div class="row justify-content-center">
+            <h1 class="mt-5 mb-5">Thank You for Paying your Dues!</h1>
+        </div>
+        <div class="row justify-content-center flex-column">
+            <p> Reciept: </p>
+            <% if @user[:transaction_last_4] != 0 %>
+                <p> Your card ending in <%= @user[:transaction_last_4] %> was charged for <%= @user[:transaction_amount] %>.00 on <%= @user[:transaction_date].strftime("%m/%d/%Y %I:%M") %> UTC</p>
+            <% else %>
+                <p> Your account was charged for <%= @user[:transaction_amount] %>.00 on <%= @user[:transaction_date].strftime("%m/%d/%Y %I:%M") %></p>
+            <% end %>
+            <p> We are glad to have you as a member!
+        </div>
+        <div class="row justify-content-center mt-3">
+            <img class="d-block w-50" src=<%= image_url("logo.png")%> alt="Logo">
+        </div>
+        <div class="row justify-content-center mt-3 mb-5">
+            <%= link_to 'Back', user_path(current_user.id), {class: "mt-5 btn btn-primary w-25"} %>
+        </div>
+    </div>
+</div>

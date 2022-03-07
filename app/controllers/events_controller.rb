@@ -1,9 +1,12 @@
 class EventsController < ApplicationController
+    before_action :check_admin!, only: [:new, :create, :edit, :update, :delete, :destroy]
     def index
       @events = Event.order("time")
     end
     def show
       @event = Event.find(params[:id])
+      @attendees = EventUser.where(event_id: @event.id)
+      @users = User.all
     end
     def new
       @event = Event.new
@@ -40,13 +43,15 @@ class EventsController < ApplicationController
       @event = Event.find(params[:id])
     end
     def destroy
+      puts "this is running Destroy"
       @event = Event.find(params[:id])
       @event.destroy
   
       respond_to do |format|
-        format.html { redirect_to events_url, notice: "event was successfully destroyed." }
+        format.html { redirect_to events_url, notice: "Event was successfully destroyed." }
         format.json { head :no_content }
       end
+      # redirect_to events_url
     end
 
     private

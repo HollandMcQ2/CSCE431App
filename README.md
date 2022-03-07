@@ -9,7 +9,7 @@ Julia: docker run --rm -it --volume "$(pwd):/csce431" -e DATABASE_USER=test_app 
 ```
 2. Create and migrate the database:
 ```
-cd csce431/ && bundle install && rails db:create && rails db:migrate
+cd csce431/ && bundle install && rails db:create && rails db:migrate && rails db:seed
 ```
 3. run the app
 ```

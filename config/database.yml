@@ -85,6 +85,7 @@ test:
 #
 production:
   <<: *default
-  database: CSCE431app_production
+  adapter: postgresql
+  database: db/production.sqlite3
   username: CSCE431app
   password: <%= ENV['CSCE431APP_DATABASE_PASSWORD'] %>
