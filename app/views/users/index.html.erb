@@ -12,44 +12,139 @@
 
 <body>
     <div class="container mt-5 mb-5">
-        <h1>View Members</h1>
-        <div class="mt-5">
+        <%# display user name, role information %>
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Welcome <%= current_user.full_name %></h1>
+                <h2>You are logged in as <%= current_user.role %></h2>
+                <br>
+                <span><b>Email: </b><%= current_user.email %></span>
+                <br>
+                <span><b>Dues status: </b><%= current_user.has_paid_dues ? "Up to Date" : "Not up to Date" %></span>
+                <br>
+                <span><b>Meeting Attendance count: </b><%= current_user.attendance_count %></span>
+                <br>
+            </div>
+        </div>
+
+
+        <div class = "mb-3">
+            <%# create checkbox to show or hide the second table %>
+            <input type="checkbox" id="showMeetingsTable">
+            <label for="showMeetingsTable">Show/hide meetings</label><br>
+        </div>
+        
+        <div class="mt-5"  id="meetingsTable" style="display: none;">
+            <br>
+            <h2>View Meetings for <%= @user.full_name %></h2>
             <table class="table">
-                <% memberCount = 0 %>
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Role</th>
-                        <th scope="col">Attendance Count</th>
-                        <th scope="col">View Meetings</th>
+                        <th scope="col">Meeting</th>
+                        <th scope="col">Time</th>
+                        <th scope="col">Status</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <% @users.each do |user| %>
-                        <% memberCount = memberCount+1 %>
+                    <% @events.each do |event| %>
+                        <% didUserAttend = @event_users.where(event_id: event.id, user_id: @user.id) %>
+                        <% status = "" %>
+
+                        <% if didUserAttend.empty? %>
+                            <% status = "Did not attend" %>
+                        <% else %>
+                            <% status = "Attended" %>
+                        <% end %>
                         <tr>
-                            <th><%= memberCount %></td>
-                            <td><%= user.full_name %></td>
-                            <td><%= user.email %></td>
-                            <td><%= user.role %></td>
-                            <td><%= user.attendance_count %></td>
-                            <td class="align-middle" colspan="2">
-                                <%= link_to 'Meetings', user_path(current_user.id), {class: "btn btn-primary w-100"} %>
-                            </td>
+                            <td><%= event.name %></td>
+                            <td><%= event.time %></td>
+                            <td><%= status %></td>
                         </tr>
                     <% end %>
                 </tbody>
             </table>
-
-
-            <%= link_to 'Back', user_path(current_user.id), {class: "mt-5"} %>
         </div>
+
+        <%# if user is an admin, show all users and allow them to view all users meetings %>
+        <% if current_user.role == "admin" %>
+            <h1>View All Members</h1>
+            <div class = "mb-3">
+                <%# create checkbox to show or hide the second table %>
+                <input type="checkbox" id="filterByDues">
+                <label for="filterByDues">Filter by Member's Dues status</label><br>
+            </div>
+            <div class="mt-5">
+                <table class="table">
+                    <% memberCount = 0 %>
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Role</th>
+                            <th scope="col">Attendance Count</th>
+                            <th scope="col">Dues Status</th>
+                            <th scope="col">View Meetings</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% @users.each do |user| %>
+                            <% memberCount = memberCount+1 %>
+                            <% if user.has_paid_dues%>
+                                <tr class="upToDate">
+                            <% else %>
+                                <tr>
+                            <% end %>
+                            
+                                <th><%= memberCount %></td>
+                                <td><%= user.full_name %></td>
+                                <td><%= user.email %></td>
+                                <td><%= user.role %></td>
+                                <td><%= user.attendance_count %></td>
+                                <td><%= user.has_paid_dues ? "Up to Date" : "Not up to Date" %></td>
+                                <td class="align-middle" colspan="2">
+                                    <%= link_to 'Meetings', meetings_user_path(user.id), {class: "btn btn-primary w-100"} %>
+                                </td>
+                            </tr>
+                        <% end %>
+                    </tbody>
+                </table>
+            </div>
+        <% end %>
+
+        <%= link_to 'Back', user_path(current_user.id), {class: "mt-5"} %>
     </div>
+
+    <%# add javascript script to show didNotAttendTable if checkbox is checked%>
+    <script>
+        document.getElementById("showMeetingsTable").addEventListener("change", function() {
+            if(this.checked) {
+                document.getElementById("meetingsTable").style.display = "block";
+            } else {
+                document.getElementById("meetingsTable").style.display = "none";
+            }
+        });
+
+        document.getElementById("filterByDues").addEventListener("change", function() {
+            if(this.checked) {
+                var upToDateUsers = document.getElementsByClassName("upToDate");
+                for (let i = 0; i < upToDateUsers.length; i++) {
+                    upToDateUsers[i].style.display = "none";
+                }
+            } else {
+                var upToDateUsers = document.getElementsByClassName("upToDate");
+                for (let i = 0; i < upToDateUsers.length; i++) {
+                    upToDateUsers[i].style.display = "table-row";
+                }
+            }
+        });
+    </script>
 
 </body>
 </html>
+
+
+
 
 
 
