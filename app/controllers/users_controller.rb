@@ -1,4 +1,13 @@
 class UsersController < ApplicationController
+  protect_from_forgery
+  require "rubygems"
+  require "braintree"
+
+  Braintree::Configuration.environment = :sandbox
+  Braintree::Configuration.merchant_id = ENV["MERCHANT_ID"]
+  Braintree::Configuration.public_key = ENV["PUBLIC_KEY"]
+  Braintree::Configuration.private_key = ENV["PRIVATE_KEY"]
+
   def index
     @users = User.all
   end
@@ -46,6 +55,63 @@ class UsersController < ApplicationController
       end
     end
   end
+
+  def payment
+    @user = User.find(params[:id])
+    current_date = Date.today
+    # loop through all semesters and collect the dates to use as start and end in this query
+    # @semester = Semester.where("? BETWEEN start AND end", current_date)
+    # p @semester
+    if @user[:has_paid_dues] == true
+      redirect_to(thank_you_user_path(current_user.id))
+    end
+    # if user has paid == true, redirect to thank you page
+    @client_token = Braintree::ClientToken.generate
+  end
+
+  def checkout
+    @user = User.find(params[:id])
+    nonce = params[:nonce]
+    p "nonce: "
+    p nonce
+    result = Braintree::Transaction.sale(
+      :amount => "200.00",
+      :payment_method_nonce => nonce,
+      :options => {
+        :submit_for_settlement => true
+      }
+    )
+    if result.success?
+      # See result.transaction for details
+      # TODO: change hasPaid on a per semester basis
+      # redirect to thank you page
+      p result.transaction
+      @user.update_column("has_paid_dues", true);
+      # update semester and join
+      # need to determine current semester with time comparisons
+      # then need to create new entity in semester_user
+      @user.update_column("transaction_amount", result.transaction.amount)
+      @user.update_column("transaction_last_4", result.transaction.credit_card_details.last_4.to_f);
+      @user.update_column("transaction_date", result.transaction.created_at);
+      # redirect to thank you
+      redirect_to(thank_you_user_path(current_user.id))
+    else
+      # TODO: Handle error
+      p result.message
+      render json: {status: "error", code: 400, message: result.message}
+    end
+  end
+  def thank_you
+    @user = User.find(params[:id])
+    if @user[:has_paid_dues] == false
+      redirect_to(payment_user_path(current_user.id))
+    end
+    # this may not work with paypal
+    
+    p "transaction info:"
+    p @user[:transaction_amount]
+    p @user[:transaction_last_4]
+  end
   #  make edit the attendance route
   # def create
   #   @user = User.new(user_params)
@@ -65,3 +131,4 @@ class UsersController < ApplicationController
   #     params.require(:user).permit(:name,:email,:password)
   #   end
 end
+

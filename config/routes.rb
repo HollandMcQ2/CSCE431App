@@ -9,7 +9,13 @@ Rails.application.routes.draw do
   get 'users/index'
   get 'home/index'
   resources :home
-  resources :users
+  resources :users do
+    member do
+      get :payment
+      get :thank_you, to: 'users/:id/thank_you'
+      post :checkout
+    end
+  end
   resources :home_pages
   resources :events do
     member do

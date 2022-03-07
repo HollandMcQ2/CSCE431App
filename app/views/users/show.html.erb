@@ -8,6 +8,9 @@
             <%= link_to "Attendance", edit_user_path(current_user.id) %>
         </div>
         <div class="col-4 text-center">
+            <%= link_to "Pay Dues", payment_user_path(current_user.id) %>
+        </div>
+        <div class="col-4 text-center">
             <%= link_to "Members", user_root_path(current_user.id) %>
         </div>
         <div class="col-4 text-center">
