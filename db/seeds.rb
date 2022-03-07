@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create(:full_name => 'Ken Kirkley', :email => "kenkirkley1330@gmail.com", :role => "admin");
-User.create(:full_name => 'Holland McQuaid', :email => "HollandMcQ2@gmail.com", :role => "admin");
+User.create(:full_name => 'Holland McQuaid', :email => "HollandMcQ2@gmail.com", :role => "admin", :attendance_count => 1, :has_paid_dues => true);
 User.create(:full_name => 'Elaine Mo', :email => "kakashiandflute@gmail.com", :role => "admin");
 User.create(:full_name => 'John Knapp', :email => "jmichaelknapp@gmail.com", :role => "admin");
 Semester.create(:name => 'Spring 2022', :start => "1/22/22", :end=> "5/14/22", :duescost => 200.00)
