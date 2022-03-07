@@ -4,14 +4,16 @@ class UsersController < ApplicationController
   require "rubygems"
   require "braintree"
   before_action :authenticate_user!
-  before_action :check_admin!, only: [:index]
   Braintree::Configuration.environment = :sandbox
   Braintree::Configuration.merchant_id = ENV["MERCHANT_ID"]
   Braintree::Configuration.public_key = ENV["PUBLIC_KEY"]
   Braintree::Configuration.private_key = ENV["PRIVATE_KEY"]
 
   def index
-    @users = User.all
+    @users = User.order('full_name')
+    @user = current_user
+    @events = Event.all
+    @event_users = EventUser.all
   end
   def show
     p current_user.id
@@ -120,6 +122,12 @@ class UsersController < ApplicationController
     p @user[:transaction_amount]
     p @user[:transaction_last_4]
   end
+  def meetings
+    @user = User.find(params[:id])
+    @events = Event.all
+    @event_users = EventUser.all
+    puts "I am user @view_meetings: #{@user.id}"
+  end
   #  make edit the attendance route
   # def create
   #   @user = User.new(user_params)
@@ -139,4 +147,3 @@ class UsersController < ApplicationController
   #     params.require(:user).permit(:name,:email,:password)
   #   end
 end
-
