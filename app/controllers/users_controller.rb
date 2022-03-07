@@ -1,17 +1,27 @@
 class UsersController < ApplicationController
   protect_from_forgery
+  
   require "rubygems"
   require "braintree"
-
+  before_action :authenticate_user!
   Braintree::Configuration.environment = :sandbox
   Braintree::Configuration.merchant_id = ENV["MERCHANT_ID"]
   Braintree::Configuration.public_key = ENV["PUBLIC_KEY"]
   Braintree::Configuration.private_key = ENV["PRIVATE_KEY"]
 
   def index
-    @users = User.all
+    @users = User.order('full_name')
+    @user = current_user
+    @events = Event.all
+    @event_users = EventUser.all
   end
   def show
+    p current_user.id
+    p params[:id]
+    if current_user.id.to_f != params[:id].to_f
+      p "redirect"
+      redirect_to user_path(current_user.id)
+    end
     @user = User.find(params[:id])
     puts "I am user @HomePage: #{@user.id}"
   end
@@ -69,9 +79,6 @@ class UsersController < ApplicationController
     @client_token = Braintree::ClientToken.generate
   end
 
-  # METHOD: POST
-  # This method processes the transaction from the /user/:id/payment route. If the transaction is successful, attributes in the user model will be updated to store basic, non invasive information to provide the user with a reciept on the thank you page.
-  # In the future, this method will map hasPaid values to individual semesters so that when a new semeseter starts, users will have to repay dues.
   def checkout
     @user = User.find(params[:id])
     nonce = params[:nonce]
@@ -85,13 +92,21 @@ class UsersController < ApplicationController
       }
     )
     if result.success?
+      # See result.transaction for details
+      # TODO: change hasPaid on a per semester basis
+      # redirect to thank you page
       p result.transaction
       @user.update_column("has_paid_dues", true);
+      # update semester and join
+      # need to determine current semester with time comparisons
+      # then need to create new entity in semester_user
       @user.update_column("transaction_amount", result.transaction.amount)
       @user.update_column("transaction_last_4", result.transaction.credit_card_details.last_4.to_f);
       @user.update_column("transaction_date", result.transaction.created_at);
+      # redirect to thank you
       redirect_to(thank_you_user_path(current_user.id))
     else
+      # TODO: Handle error
       p result.message
       render json: {status: "error", code: 400, message: result.message}
     end
@@ -106,6 +121,12 @@ class UsersController < ApplicationController
     p "transaction info:"
     p @user[:transaction_amount]
     p @user[:transaction_last_4]
+  end
+  def meetings
+    @user = User.find(params[:id])
+    @events = Event.all
+    @event_users = EventUser.all
+    puts "I am user @view_meetings: #{@user.id}"
   end
   #  make edit the attendance route
   # def create
@@ -126,4 +147,3 @@ class UsersController < ApplicationController
   #     params.require(:user).permit(:name,:email,:password)
   #   end
 end
-
