@@ -4,7 +4,6 @@ class UsersController < ApplicationController
   require "rubygems"
   require "braintree"
   before_action :authenticate_user!
-  before_action :check_admin!, only: [:index]
   Braintree::Configuration.environment = :sandbox
   Braintree::Configuration.merchant_id = ENV["MERCHANT_ID"]
   Braintree::Configuration.public_key = ENV["PUBLIC_KEY"]
