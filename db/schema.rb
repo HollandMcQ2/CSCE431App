@@ -94,6 +94,13 @@ ActiveRecord::Schema.define(version: 2022_03_06_231855) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "payment_accounts", force: :cascade do |t|
+    t.string "internal_name"
+    t.string "payment_address"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "semester_users", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "semester_id", null: false

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'home_pages#logged_out'
+  root to: 'home_pages#index'
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   devise_scope :user do
     get 'users/sign_in', to: 'users/sessions#new', as: :new_user_session
