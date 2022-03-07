@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   def index
-    @users = User.all
+    # @users = User.all
+    @users = User.order('full_name')
+    @user = current_user
+    @events = Event.all
+    @event_users = EventUser.all
   end
   def show
     @user = User.find(params[:id])
@@ -46,6 +50,14 @@ class UsersController < ApplicationController
       end
     end
   end
+  def meetings
+    @user = User.find(params[:id])
+    @events = Event.all
+    @event_users = EventUser.all
+    puts "I am user @view_meetings: #{@user.id}"
+  end
+
+
   #  make edit the attendance route
   # def create
   #   @user = User.new(user_params)

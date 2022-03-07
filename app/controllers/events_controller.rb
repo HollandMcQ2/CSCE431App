@@ -42,6 +42,7 @@ class EventsController < ApplicationController
       @event = Event.find(params[:id])
     end
     def destroy
+      puts "this is running Destroy"
       @event = Event.find(params[:id])
       @event.destroy
   
@@ -49,6 +50,7 @@ class EventsController < ApplicationController
         format.html { redirect_to events_url, notice: "Event was successfully destroyed." }
         format.json { head :no_content }
       end
+      # redirect_to events_url
     end
 
     private
