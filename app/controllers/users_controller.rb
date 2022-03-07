@@ -1,8 +1,10 @@
 class UsersController < ApplicationController
   protect_from_forgery
+  
   require "rubygems"
   require "braintree"
-
+  before_action :authenticate_user!
+  before_action :check_admin!, only: [:index]
   Braintree::Configuration.environment = :sandbox
   Braintree::Configuration.merchant_id = ENV["MERCHANT_ID"]
   Braintree::Configuration.public_key = ENV["PUBLIC_KEY"]
@@ -12,6 +14,12 @@ class UsersController < ApplicationController
     @users = User.all
   end
   def show
+    p current_user.id
+    p params[:id]
+    if current_user.id.to_f != params[:id].to_f
+      p "redirect"
+      redirect_to user_path(current_user.id)
+    end
     @user = User.find(params[:id])
     puts "I am user @HomePage: #{@user.id}"
   end
