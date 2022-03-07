@@ -5,42 +5,43 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <title>TSAT Home</title>
 
 </head>
 
 <body>
-    
-    <div id="demo" class="carousel slide" data-ride="carousel">
+   
+    <div class="container-fluid">
+        <div class="carousel slide" data-ride="carousel" id="carousel">
 
-        <!-- Indicators -->
-        <ul class="carousel-indicators">
-            <li data-target="#demo" data-slide-to="0" class="active"></li>
-            <li data-target="#demo" data-slide-to="1"></li>
-            <li data-target="#demo" data-slide-to="2"></li>
-        </ul>
-        
-        <!-- The slideshow -->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel" data-slide to="0" class="active"></li>
+            <li data-target="#carousel" data-slide to="1"></li>
+            <li data-target="#carousel" data-slide to="2"></li>
+        </ol>
+
         <div class="carousel-inner">
-            <div class="carousel-item active">
-            <img src="assets/images/image1.png" alt="Image 1" width="1100" height="500">
+            <div class="item active">
+            <img src="https://f1.media.brightcove.com/8/4495439099001/4495439099001_5325814229001_5305215728001-vs.jpg?pubId=4495439099001&videoId=5305215728001">
             </div>
-            <div class="carousel-item">
-            <img src="assets/images/image2.png" alt="Image 2" width="1100" height="500">
+            <div class="item">
+            <img src="http://www.asianews.it/files/img/INDIA_-_0907_-_Vescovo_di_Vasai_su_MT.jpg">
             </div>
-            <div class="carousel-item">
-            <img src="assets/images/image3.png" alt="Image 3" width="1100" height="500">
+            <div class="item">
+            <img src="https://www.crossroadsinitiative.com/wp-content/uploads/2016/02/Mother-Teresa-of-Calcutta-Mother-Teresas-National-Prayer-Breakfast-Message.jpg">
             </div>
         </div>
-        
-        <!-- Left and right controls -->
-        <a class="carousel-control-prev" href="#demo" data-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
+
+        <a class="carousel-control left" href="#carousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
         </a>
-        <a class="carousel-control-next" href="#demo" data-slide="next">
-            <span class="carousel-control-next-icon"></span>
+        <a class="carousel-control right" href="#carousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
         </a>
+
+        </div> 
     </div>
 </body>
 </html>
