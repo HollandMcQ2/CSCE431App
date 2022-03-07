@@ -69,6 +69,9 @@ class UsersController < ApplicationController
     @client_token = Braintree::ClientToken.generate
   end
 
+  # METHOD: POST
+  # This method processes the transaction from the /user/:id/payment route. If the transaction is successful, attributes in the user model will be updated to store basic, non invasive information to provide the user with a reciept on the thank you page.
+  # In the future, this method will map hasPaid values to individual semesters so that when a new semeseter starts, users will have to repay dues.
   def checkout
     @user = User.find(params[:id])
     nonce = params[:nonce]
@@ -82,21 +85,13 @@ class UsersController < ApplicationController
       }
     )
     if result.success?
-      # See result.transaction for details
-      # TODO: change hasPaid on a per semester basis
-      # redirect to thank you page
       p result.transaction
       @user.update_column("has_paid_dues", true);
-      # update semester and join
-      # need to determine current semester with time comparisons
-      # then need to create new entity in semester_user
       @user.update_column("transaction_amount", result.transaction.amount)
       @user.update_column("transaction_last_4", result.transaction.credit_card_details.last_4.to_f);
       @user.update_column("transaction_date", result.transaction.created_at);
-      # redirect to thank you
       redirect_to(thank_you_user_path(current_user.id))
     else
-      # TODO: Handle error
       p result.message
       render json: {status: "error", code: 400, message: result.message}
     end
