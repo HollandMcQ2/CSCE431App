@@ -1,0 +1,61 @@
+<div class="container mt-5 px-5">
+    <div class='alert alert-danger'></div>
+    <h1>Pay Club Dues</h1>
+    <h2>Dues are $200.00</h2>
+    <div id="payment-form"></div>
+    <!-- <script src="https://js.braintreegateway.com/web/dropin/1.33.0/js/dropin.min.js" data-braintree-dropin-authorization="<%= @client_token %>" data-paypal.flow="checkout" data-paypal.amount="10.00" data-paypal.currency="USD" ></script> -->
+    <button type="submit" class="btn btn-primary mt-3" id="submit-button">Submit Payment</button
+    <script src="https://js.braintreegateway.com/web/dropin/1.33.0/js/dropin.min.js"></script>
+
+    <script>
+    document.querySelector('.alert-danger').style.display = 'none'
+      var submitButton = document.querySelector('#submit-button');
+      braintree.dropin.create({
+        authorization: '<%= @client_token %>',
+        container: '#payment-form',
+        paypal: {
+            amount: "100.00",
+            currency: "USD",
+            flow: 'checkout'
+        }
+      }, function (err, dropinInstance) {
+        if (err) {
+          // Handle any errors that might've occurred when creating Drop-in
+          console.error(err);
+          return;
+        }
+        submitButton.addEventListener('click', function () {
+            document.querySelector('.alert-danger').style.display = 'none'
+          dropinInstance.requestPaymentMethod(function (err, payload) {
+            if (err) {
+              // Handle errors in requesting payment method
+              document.querySelector('.alert-danger').style.display = 'block';
+                document.querySelector('.alert-danger').textContent = 'Your payment method was invalid. Please enter a valid payment method.';
+            } else{
+                console.log(payload.nonce);
+                $.ajax({
+                    url: 'checkout',
+                    type: 'post',
+                    data: {
+                        nonce: payload.nonce
+                    },
+                    success: function(res){
+                        // if res status code 200 do nothing, server redirect,
+                        console.log(res);
+                        if (res.status == 'error'){
+                            document.querySelector('.alert-danger').style.display = 'block';
+                            document.querySelector('.alert-danger').textContent = 'Your payment method was declined. Please try another payment method.';
+                        }
+                    },
+                    error: function(XMLHttpRequest, textStatus, errorThrown){
+                        // show generic payment declined try another method alert
+                        document.querySelector('.alert-danger').style.display = 'block';
+                        document.querySelector('.alert-danger').textContent = 'Your payment method was declined. Please try another payment method.';
+                    }
+                })
+            }
+          });
+        });
+      });
+    </script>
+</div>

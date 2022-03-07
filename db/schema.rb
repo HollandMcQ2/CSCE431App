@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_01_212350) do
+ActiveRecord::Schema.define(version: 2022_03_06_231855) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -87,9 +87,9 @@ ActiveRecord::Schema.define(version: 2022_03_01_212350) do
     t.index ["user_id"], name: "index_officer_bios_on_user_id"
   end
 
-  create_table "payment_accounts", force: :cascade do |t|
-    t.string "internal_name"
-    t.string "payment_address"
+  create_table "paymentAccount", force: :cascade do |t|
+    t.string "internalName"
+    t.string "paymentAddress"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -124,6 +124,9 @@ ActiveRecord::Schema.define(version: 2022_03_01_212350) do
     t.bigint "attendance_count", default: 0, null: false
     t.boolean "is_current_member", default: true, null: false
     t.boolean "has_paid_dues", default: false
+    t.bigint "transaction_amount"
+    t.bigint "transaction_last_4"
+    t.datetime "transaction_date"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
