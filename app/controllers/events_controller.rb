@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+    before_action :check_admin!, only: [:new, :create, :edit, :update, :delete, :destroy]
     def index
       @events = Event.order("time")
     end
