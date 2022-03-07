@@ -49,6 +49,10 @@ class UsersController < ApplicationController
 
   def payment
     @user = User.find(params[:id])
+    current_date = Date.today
+    # loop through all semesters and collect the dates to use as start and end in this query
+    # @semester = Semester.where("? BETWEEN start AND end", current_date)
+    # p @semester
     if @user[:has_paid_dues] == true
       redirect_to(thank_you_user_path(current_user.id))
     end
