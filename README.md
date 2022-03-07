@@ -4,7 +4,7 @@ Steps to start the docker image and the app
 
 1. start the docker image with this command (depends on if you are on windows or if you are julia):
 ```
-windows: docker run --rm -it --volume "$(PWD):/csce431" -e DATABASE_USER=test_app -e DATABASE_PASSWORD=test_password -p 3000:3000 dmartinez05/ruby_rails_postgresql:latest
+docker run --rm -it --volume "$(PWD):/csce431" -e DATABASE_USER=test_app -e DATABASE_PASSWORD=test_password -p 3000:3000 dmartinez05/ruby_rails_postgresql:latest
 ```
 2. Create and migrate the database:
 ```
