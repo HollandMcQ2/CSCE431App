@@ -13,9 +13,7 @@
             <div class = "mb-3">
                 <p>Description: <%= @event.description %> </p>
             </div>
-            <%# link_to 'Delete', @event, :method => :delete %>
-            <%= link_to "Destroy", event_path(@event), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-            <br>
+            <%= link_to 'Delete', event_path(params[:id]), method: :delete, data: { confirm: 'Are you sure?' } %>
             <%= link_to 'Back', events_path, {class: "mt-5"} %>
         <% end %>
     <% end %>

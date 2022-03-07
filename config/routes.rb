@@ -11,13 +11,13 @@ Rails.application.routes.draw do
   resources :home
   resources :users do
     member do
-      get :meetings
       get :payment
       get :thank_you, to: 'users/:id/thank_you'
       post :checkout
     end
   end
   resources :home_pages
+  resources :about_us_pages
   resources :events do
     member do
       get :delete
