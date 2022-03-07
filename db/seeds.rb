@@ -10,6 +10,9 @@ User.create(:full_name => 'Ken Kirkley', :email => "kenkirkley1330@gmail.com", :
 User.create(:full_name => 'Holland McQuaid', :email => "HollandMcQ2@gmail.com", :role => "admin");
 User.create(:full_name => 'Elaine Mo', :email => "kakashiandflute@gmail.com", :role => "admin");
 User.create(:full_name => 'John Knapp', :email => "jmichaelknapp@gmail.com", :role => "admin");
+Semester.create(:name => 'Spring 2022', :start => "1/22/22", :end=> "5/14/22", :duescost => 200.00)
 
 Event.create(:name => 'Test Event', :password => "testEventPassword", :description => 'This is a test event', :time => '2022-03-04', :link => "www.google.com", :location => 'Test Location', :is_mandatory => true, :is_recurring => false);
+Event.create(:name => 'Test Event2', :password => "password", :description => 'This is a test event', :time => '2022-03-05', :link => "www.google.com", :location => 'Test Location2', :is_mandatory => true, :is_recurring => false);
+Event.create(:name => 'Test Event3', :password => "password", :description => 'This is a test event', :time => '2022-03-06', :link => "www.google.com", :location => 'Test Location3', :is_mandatory => true, :is_recurring => false);
 EventUser.create(:user_id => 2, :event_id => 1, :attended => true);

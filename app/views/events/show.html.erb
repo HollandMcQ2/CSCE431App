@@ -20,6 +20,7 @@
                 <p>Mandatory: <%= @event.is_mandatory %> </p>
             </div>
             <br>
+            <% if user_signed_in? &&  current_user.role == 'admin' %>
             <div class = "mb-3">
                 <%# create checkbox to show or hide the second table %>
                 <input type="checkbox" id="showDidNotAttendTable">
@@ -93,6 +94,7 @@
                     </tbody>
                 </table>
             </div>
+            <% end %>
             <%= link_to 'Back', events_path, {class: "mt-5"} %>
         <% end %>
     <% end %>
