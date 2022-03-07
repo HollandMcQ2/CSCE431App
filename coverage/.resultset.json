@@ -4,6 +4,8 @@
       "/csce431/spec/feature/integration_spec.rb": {
         "lines": [
           1,
+          1,
+          1,
           null,
           1,
           1,
@@ -137,13 +139,6 @@
           null,
           null,
           1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
           null,
           1,
           1,
@@ -152,23 +147,16 @@
           null,
           null,
           1,
-          1,
-          1,
           null,
           null,
           1,
-          null,
-          null,
-          1,
-          null,
-          null,
-          1,
-          null,
           1,
           null,
           null,
           null,
           null,
+          1,
+          1,
           1,
           null,
           null,
@@ -180,11 +168,34 @@
           null,
           1,
           null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
           null,
           null,
           null,
           null,
           null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
           null
         ]
       },
@@ -216,6 +227,7 @@
           null,
           null,
           null,
+          1,
           1
         ]
       },
@@ -666,6 +678,14 @@
           1,
           1,
           1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
           null,
           null,
@@ -679,6 +699,11 @@
           1,
           1,
           1,
+          null,
+          1,
+          1,
+          1,
+          null,
           1,
           0,
           null,
@@ -712,61 +737,6 @@
           null
         ]
       },
-      "/csce431/app/helpers/users_helper.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/csce431/spec/unit/unit_spec.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/csce431/app/models/event.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
-      },
       "/csce431/app/controllers/users/sessions_controller.rb": {
         "lines": [
           1,
@@ -784,10 +754,13 @@
         "lines": [
           1,
           1,
+          0,
+          0,
+          null,
           null
         ]
       }
     },
-    "timestamp": 1644902557
+    "timestamp": 1646680627
   }
 }
