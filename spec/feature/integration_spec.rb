@@ -13,13 +13,13 @@ RSpec.describe 'Home Page', type: :feature do
   end
 end
 
-# RSpec.describe 'Nav Bar Logged In', type: :feature do
-#   scenario 'Log In' do
-#     visit new_user_session_url
-#     expect(page).to have_content('Home')
-#     expect(page).to have_content('About Us')
-#     expect(page).to have_content('Events')
-#     expect(page).to have_content('Contact Us')
-#     click_button(class: 'btn btn-primary')
+
+# RSpec.describe 'User', type: :feature do
+#   include Devise::Test::IntegrationHelpers
+#   fixtures :all
+#   scenario 'shows logged out view' do
+#     sign_in users(:owner)
+#     expect(page).to have_content("Attendance")
+
 #   end
 # end
