@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+    # For the actions outlined in the only: object, devise will check if the user trying to access the method is an admin. If not, they will be redirected to the home page.
     before_action :check_admin!, only: [:new, :create, :edit, :update, :delete, :destroy]
     def index
       @events = Event.order("time")

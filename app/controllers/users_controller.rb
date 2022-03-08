@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   
   require "rubygems"
   require "braintree"
+  # Before accessing any user routes, devise will check to see if the user is logged in. If not, they will be redirected to the sign in page.
   before_action :authenticate_user!
   Braintree::Configuration.environment = :sandbox
   Braintree::Configuration.merchant_id = ENV["MERCHANT_ID"]
@@ -65,20 +66,19 @@ class UsersController < ApplicationController
       end
     end
   end
-
+  # METHOD: GET
+  # This method displays the payment portal for paying dues at the route /user/:id/payment. If the user has already paid their dues, this route will redirect the user to the thank you page with their receipt.
   def payment
     @user = User.find(params[:id])
     current_date = Date.today
-    # loop through all semesters and collect the dates to use as start and end in this query
-    # @semester = Semester.where("? BETWEEN start AND end", current_date)
-    # p @semester
     if @user[:has_paid_dues] == true
       redirect_to(thank_you_user_path(current_user.id))
     end
-    # if user has paid == true, redirect to thank you page
     @client_token = Braintree::ClientToken.generate
   end
-
+  # METHOD: POST
+  # This method processes the transaction from the /user/:id/payment route. If the transaction is successful, attributes in the user model will be updated to store basic, non invasive information to provide the user with a reciept on the thank you page.
+  # In the future, this method will map hasPaid values to individual semesters so that when a new semeseter starts, users will have to repay dues.
   def checkout
     @user = User.find(params[:id])
     nonce = params[:nonce]
@@ -122,28 +122,13 @@ class UsersController < ApplicationController
     p @user[:transaction_amount]
     p @user[:transaction_last_4]
   end
+  # METHOD: GET
+  # This method display all the meetings a specific user has attended (or filtered by not attended)
   def meetings
     @user = User.find(params[:id])
     @events = Event.all
     @event_users = EventUser.all
     puts "I am user @view_meetings: #{@user.id}"
   end
-  #  make edit the attendance route
-  # def create
-  #   @user = User.new(user_params)
 
-  #   respond_to do |format|
-  #     if @user.save
-  #       format.html { redirect_to user_url(@user), notice: "user was successfully created." }
-  #       format.json { render :show, status: :created, location: @user }
-  #     else
-  #       format.html { render :new, status: :unprocessable_entity }
-  #       format.json { render json: @user.errors, status: :unprocessable_entity }
-  #     end
-  #   end
-  # end
-  # private
-  #   def user_params
-  #     params.require(:user).permit(:name,:email,:password)
-  #   end
 end

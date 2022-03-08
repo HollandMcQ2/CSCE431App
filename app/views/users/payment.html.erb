@@ -8,6 +8,7 @@
     <script src="https://js.braintreegateway.com/web/dropin/1.33.0/js/dropin.min.js"></script>
 
     <script>
+    // This script sets up the payment portal from Braintree. It supports manual card input and Paypal
     document.querySelector('.alert-danger').style.display = 'none'
       var submitButton = document.querySelector('#submit-button');
       braintree.dropin.create({
