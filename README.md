@@ -1,3 +1,4 @@
+
 # CSCE431
 
 Steps to start the docker image and the app
@@ -16,3 +17,4 @@ cd csce431/ && bundle install && rails db:create && rails db:migrate && rails db
 rails server --binding=0.0.0.0
 ```
 4. Check the server at http://127.0.0.1:3000
+
