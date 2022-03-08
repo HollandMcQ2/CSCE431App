@@ -1,8 +1,5 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     def google_oauth2
-        #add code to check for role
-        # role = User.find_by(from_google_params).role
-        
         # try catch to access the role
         # exception if the user is not found, which means the user is a member
         begin
@@ -21,21 +18,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
         sign_out_all_scopes
         flash[:success] = t 'devise.omniauth_callbacks.success', kind: 'Google', reason: "Successfully signed in as a #{role}"
-        # "users/index" sign_in_and_redirect user, event: :authentication
         sign_in_and_redirect @user, event: :authentication
 
-        # if role == "admin"
-        #     sign_out_all_scopes
-        #     flash[:success] = t 'devise.omniauth_callbacks.success', kind: 'Google', reason: "you are an admin"
-        #     # "users/index" sign_in_and_redirect user, event: :authentication
-        #     puts "elaine #{user_path(@user)}"
-        #     sign_in_and_redirect @user, event: :authentication
-        # elsif role == "member"
-        #     # flash[:alert] = t 'devise.omniauth_callbacks.failure', kind: 'Google', reason: "#{auth.info.email} is not authorized."
-        #     flash[:success] = t 'devise.omniauth_callbacks.success', kind: 'Google', reason: "Successfully signed in as a member."
-        #     # redirect_to new_user_session_path
-        #     sign_in_and_redirect @user, event: :authentication
-        # end
         
     end
   
@@ -50,22 +34,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         super(resource) 
     end
 
-    # def after_sign_in_path_for(resource)
-    #     stored_location_for(resource) ||
-    #     if resource.is_a?(User) && resource.role == 'admin'
-    #         p "kangaroo"
-    #         p root_path 
-    #         root_path
-    #     elseif resource.is_a?(User) && resource.role == 'member'
-    #         p "kangaroo2"
-    #         p user_root
-    #         user_root
-    #     else
-    #         p "kangaroo1"
-    #         super
-    #     end
-    # end
-  
     def after_omniauth_failure_path_for(_scope)
         new_user_session_path
     end

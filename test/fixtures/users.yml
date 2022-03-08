@@ -9,3 +9,12 @@ one: {}
 #
 two: {}
 # column: value
+
+owner: 
+# column: value
+  first_name: 'Testy'
+  last_name: 'McTesterton'
+  email: 'test@test.com'
+  encrypted_password: <%= Devise.bcrypt(Owner, 'password') %>
+  admin: false
+  confirmed_at: <%= Time.now %>
