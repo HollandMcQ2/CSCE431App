@@ -14,3 +14,11 @@
  *= require_self
  */
  
+ .custom-colors {
+     color: orange;
+     background-color: black;
+ }
+
+ .orange-text-navbar a {
+     color: orange;
+ }
