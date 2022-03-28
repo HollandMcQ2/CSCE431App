@@ -59,8 +59,8 @@
                     <% end %>
                 </ul>
                 <% if user_signed_in? %>
-                    <a class="text-dark mr-3 orange-text" href="<%= user_path(current_user.id) %>">Dashboard</a>
-                    <%= link_to "Sign Out", destroy_user_session_path, {class: "orange-text"} %>
+                    <a class="mr-3" href="<%= user_path(current_user.id) %>">Dashboard</a>
+                    <%= link_to "Sign Out", destroy_user_session_path %>
                 <% else %>
                     <%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path, {class:"btn btn-primary orange-text"} %>
                 <% end %>
