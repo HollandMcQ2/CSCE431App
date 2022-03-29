@@ -69,6 +69,7 @@
             </div>
         </nav>
     </header>
+
     <% if flash.any? %>
       <% flash.each do |key, value| -%>
         <section class="flash flash__<%= key %>"><%= value.html_safe %></section>
@@ -78,5 +79,8 @@
     <%= yield %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <footer>
+    </footer>
   </body>
 </html>
