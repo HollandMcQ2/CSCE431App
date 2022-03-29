@@ -82,4 +82,5 @@ Rails.application.configure do
   ENV['MERCHANT_ID'] = '5z6r9hv6bc9cmmjx'
   ENV['PUBLIC_KEY'] = 'h64bmpjqmn652rj8'
   ENV['PRIVATE_KEY'] = '285f453f319c9622ea78305100d24436'
+  ENV['DISABLE_DATABASE_ENVIRONMENT_CHECK']=1
 end
