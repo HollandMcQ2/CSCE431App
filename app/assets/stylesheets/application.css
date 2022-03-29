@@ -15,10 +15,14 @@
  */
  
  .custom-colors {
-     color: orange;
+     color: yellow;
      background-color: black;
  }
 
  .orange-text-navbar a {
-     color: orange;
+     color: yellow;
+ }
+
+ .table {
+     color: yellow;
  }
