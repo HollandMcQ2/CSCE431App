@@ -32,8 +32,11 @@
 
 
     <header>
-      <nav class="navbar orange-text-navbar navbar-expand-lg">
-        <a class="navbar-brand" href="#">TSAT</a>
+      <nav class="navbar yellow-text-navbar navbar-expand-lg">
+      <%= puts asset_path('logo.png') %>
+        <a class="navbar-brand" href="<%= root_path %>">
+          <%= image_tag image_url('logo.png'), {alt:"img", style:"max-width: 30px; max-height: 30px"} %>
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
