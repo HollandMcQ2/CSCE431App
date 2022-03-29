@@ -3,14 +3,10 @@ class HomePagesController < ApplicationController
     end
     def show
     end
-    def new
-      @homepage = HomePage.new
-      puts "New HomePage Contents"
-    end
     def edit
-      @homepage = HomePage.find(params[:id])
+      @home_page = HomePage.find(params[:id])
     end
     def update
-      @homepage = HomePage.find(params[:id])
+      @home_page = HomePage.find(params[:id])
     end
   end
