@@ -17,4 +17,4 @@
 # Event.create(:name => 'Test Event3', :password => "password", :description => 'This is a test event', :time => '2022-03-06', :link => "www.google.com", :location => 'Test Location3', :is_mandatory => true, :is_recurring => false);
 # EventUser.create(:user_id => 2, :event_id => 1, :attended => true);
 
-User.create(:full_name => 'John Tester', :email => 't3ster219@gmail.com', :role => 'admin');
+User.create(:full_name => 'Elaine Mo', :email => 'elainemo0024@gmail.com', :role => 'admin');
