@@ -1,0 +1,42 @@
+<div class="container">
+<%= form_with(model: home_page) do |form| %>
+    <% if home_page.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+  
+        <ul>
+          <% event.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+   
+    <div class = "field mb-3">
+        <%= form.label :slider_image_1, {class: "form-label name-label"}%>
+        <!-- <%= form.text_field :slider_image_1, {class: "form-control"}%> -->
+        <form action="/action_page.php">
+            <input type="file" id="myFile" name="filename">
+        </form>
+    </div>
+    <div class="field mb-3">
+        <%= form.label :slider_image_2, {class: "form-label name-label"}%>
+        <%= form.text_field :slider_image_2, {class: "form-control"}%>
+    </div>
+    <div class = "field mb-3">
+        <%= form.label :slider_image_3, {class: "form-label name-label"}%>
+        <%= form.text_field :slider_image_3, {class: "form-control"}%>
+    </div>
+    <div class = "field mb-3">
+        <%= form.label :slider_image_4, {class: "form-label name-label"}%>
+        <%= form.text_field :slider_image_4, {class: "form-control"}%>
+    </div>
+    <div class = "field mb-3">
+        <%= form.label :slider_image_5, {class: "form-label name-label"}%>
+        <%= form.text_field :slider_image_5, {class: "form-control"}%>
+    </div>
+    <div class="actions">
+      <%= form.submit "Submit", {class: "btn btn-primary"} %>
+    </div>
+  <% end %>
+</div>
