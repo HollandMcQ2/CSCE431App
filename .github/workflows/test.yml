@@ -1,0 +1,58 @@
+name: CI
+# Controls when the action will run.
+on:
+  # Triggers the workflow on push or pull request events but only for the test branch
+  push:
+    branches: [ test ]
+  pull_request:
+    branches: [ test ]
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  run-tests:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    services:
+      # label used to access the service container
+      postgres:
+        # Docker Hub image
+        image: dmartinez05/ruby_rails_postgresql:latest
+        # service environment variables
+        # `POSTGRES_HOST` is `postgres`
+        env:
+          # required
+          DATABASE_PASSWORD: test_password
+          # optional (defaults to `postgres`)
+          DATABASE_USER: test_app
+        ports:
+          # maps tcp port 5432 on service container to the host
+          - 3000:3000
+        # set health checks to wait until postgres has started
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      # Set up Ruby
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+      - name: Installation of rspec and other configuration
+        run: |
+          bundle install
+          rails db:create
+          rails db:migrate
+          rails g rspec:install
+      # Runs unit tests
+      - name: Unit testing
+        run: rspec spec/unit/unit_spec.rb
+      # Runs integration tests
+      - name: Integration testing
+        run: rspec spec/feature/integration_spec.rb
