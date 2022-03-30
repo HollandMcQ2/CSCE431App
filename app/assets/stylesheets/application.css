@@ -15,12 +15,12 @@
  */
  
  .custom-colors {
-     color: yellow;
+     color: #fbf9a4;
      background-color: #8cb3b1;
  }
 
  .navbar-text a {
-     color: yellow;
+     color: #fbf9a4;
  }
 
  .navbar {
@@ -28,5 +28,5 @@
  }
 
  .table {
-     color: yellow;
+     color: #fbf9a4;
  }
