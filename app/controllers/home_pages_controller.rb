@@ -1,13 +1,14 @@
 class HomePagesController < ApplicationController
     def index
+      @home_page = HomePage.find(1)
     end
     def show
     end
     def edit
-      @home_page = HomePage.find(params[:id])
+      @home_page = HomePage.find(1)
     end
     def update
-      @home_page = HomePage.find(params[:id])
+      @home_page = HomePage.find(1)
       respond_to do |format|
         if @home_page.update(home_page_params)
           format.html { redirect_to home_pages_url, notice: "home_page was successfully updated." }
