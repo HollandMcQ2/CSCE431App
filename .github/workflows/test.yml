@@ -20,6 +20,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Installation of rspec and other configuration
         run: |
+          docker run --rm -it --volume "$(PWD):/csce431" -e DATABASE_USER=test_app -e DATABASE_PASSWORD=test_password -p 3000:3000 dmartinez05/ruby_rails_postgresql:latest
           bundle install
           rails db:create
           rails db:migrate
