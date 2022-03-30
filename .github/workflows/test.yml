@@ -23,8 +23,6 @@ jobs:
         # service environment variables
         # `POSTGRES_HOST` is `postgres`
         env:
-          # optional (defaults to `postgres`)
-          POSTGRES_DB: postgres_db
           # required
           POSTGRES_PASSWORD: test_password
           # optional (defaults to `5432`)
