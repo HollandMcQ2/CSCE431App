@@ -18,6 +18,12 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+      - name: Installation of rspec and other configuration
+        run: |
+          bundle install
+          rails db:create
+          rails db:migrate
+          rails g rspec:install
       # Runs unit tests
       - name: Unit testing
         run: rspec spec/unit/unit_spec.rb
