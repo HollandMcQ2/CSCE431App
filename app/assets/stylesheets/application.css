@@ -15,14 +15,14 @@
  */
  
  .custom-colors {
-     color: yellow;
-     background-color: black;
+     color: white;
+     background-color: #7ed2f4;
  }
 
- .yellow-text-navbar a {
-     color: yellow;
+ .white-text-navbar a {
+     color: white;
  }
 
  .table {
-     color: yellow;
+     color: white;
  }
