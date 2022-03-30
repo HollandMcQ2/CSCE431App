@@ -16,11 +16,15 @@
  
  .custom-colors {
      color: yellow;
-     background-color: black;
+     background-color: #8cb3b1;
  }
 
- .yellow-text-navbar a {
+ .navbar-text a {
      color: yellow;
+ }
+
+ .navbar {
+     background-color: #54a3a5;
  }
 
  .table {
