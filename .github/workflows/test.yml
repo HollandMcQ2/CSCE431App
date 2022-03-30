@@ -11,17 +11,21 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  run-tests:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+      # Set up Ruby
+      - name: Set up Ruby
+9       uses: ruby/setup-ruby@v1
+          with:
+            # runs 'bundle install' and caches installed gems automatically
+            bundler-cache: true
       - name: Installation of rspec and other configuration
         run: |
-          docker run --rm -it --volume "$(PWD):/csce431" -e DATABASE_USER=test_app -e DATABASE_PASSWORD=test_password -p 3000:3000 dmartinez05/ruby_rails_postgresql:latest
-          bundle install
           rails db:create
           rails db:migrate
           rails g rspec:install
