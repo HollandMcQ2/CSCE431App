@@ -33,6 +33,3 @@ jobs:
       # Runs integration tests
       - name: Integration testing
         run: rspec spec/feature/integration_spec.rb
-      # Runs all tests
-      - name: All testing
-        run: rails spec .
