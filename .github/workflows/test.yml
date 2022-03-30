@@ -24,11 +24,9 @@ jobs:
         # `POSTGRES_HOST` is `postgres`
         env:
           # required
-          POSTGRES_ROOT_PASSWORD: test_password
-          # optional (defaults to `5432`)
-          POSTGRES_PORT: 5432
+          DATABASE_PASSWORD: test_password
           # optional (defaults to `postgres`)
-          POSTGRES_USER: test_app
+          DATABASE_USER: test_app
         ports:
           # maps tcp port 5432 on service container to the host
           - 3000:3000
