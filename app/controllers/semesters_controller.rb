@@ -4,6 +4,7 @@ class SemestersController < ApplicationController
 	end
 
 	def show
+		@semester = Semester.find(params[:id])
 	end
 
 	def new

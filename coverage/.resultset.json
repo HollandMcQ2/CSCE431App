@@ -1,26 +1,42 @@
 {
   "RSpec": {
     "coverage": {
-      "/csce431/TSAT_Tracker/spec/views/semesters/index.html.erb_spec.rb": {
+      "/csce431/TSAT_Tracker/spec/views/semesters/show.html.erb_spec.rb": {
         "lines": [
           1,
           null,
           1,
           1,
+          5,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          5,
+          null,
+          null,
+          1,
+          1,
+          null,
           1,
           null,
           null,
+          1,
+          1,
+          1,
           null,
+          1,
+          1,
+          1,
           null,
+          1,
+          1,
+          1,
           null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
+          1,
           1,
           1,
           1,
@@ -107,6 +123,7 @@
           null,
           null,
           1,
+          0,
           null,
           null,
           1,
@@ -150,6 +167,6 @@
         ]
       }
     },
-    "timestamp": 1648705574
+    "timestamp": 1648754977
   }
 }
