@@ -315,7 +315,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   braintree
   byebug
-  capybara (>= 3.26.0)
+  capybara (>= 3.26)
   database_cleaner
   devise
   jbuilder (~> 2.7)
