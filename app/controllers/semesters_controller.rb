@@ -1,5 +1,6 @@
 class SemestersController < ApplicationController
 	def index
+		@semesters = Semester.all
 	end
 
 	def show

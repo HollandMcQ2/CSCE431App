@@ -1,2 +1,38 @@
-<h1>Semesters#index</h1>
-<p>Find me in app/views/semesters/index.html.erb</p>
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <title>View Semesters</title>
+</head>
+
+<body>
+	<div class="container mt-5 mb-5">
+	<h1>View All Semesters</h1>
+		<div class = "mt-5">
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">Name</th>
+						<th scope="col">Start Date</th>
+						<th scope="col">End Date</th>
+						<th scope="col">Dues Cost</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @semesters.each do |semester| %>
+						<tr>
+							<th><%=semester.name=%></td>
+							<td><%=semester.start=%></td>
+							<td><%=semester.end=%></td>
+							<td><%=semester.duescost=%></td>
+						</tr>
+					<% end %>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
