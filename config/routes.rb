@@ -24,6 +24,11 @@ Rails.application.routes.draw do
       get :delete
     end
   end
+  resources :semesters do
+    member do
+      get :delete
+    end
+  end
   # resources :users, only [:index, :show]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
