@@ -1,53 +1,37 @@
-<!doctype html>
+<div class="container mt-5 mb-5">
+    <h1>View Meetings for <%= @user.full_name %></h1>
+    <div class="mt-5">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Meeting</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @events.each do |event| %>
+                    <% didUserAttend = @event_users.where(event_id: event.id, user_id: @user.id) %>
+                    <% status = "" %>
 
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-  <title>View Members</title>
-
-</head>
-
-<body>
-    <div class="container mt-5 mb-5">
-        <h1>View Meetings for <%= @user.full_name %></h1>
-        <div class="mt-5">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">Meeting</th>
-                        <th scope="col">Time</th>
-                        <th scope="col">Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <% @events.each do |event| %>
-                        <% didUserAttend = @event_users.where(event_id: event.id, user_id: @user.id) %>
-                        <% status = "" %>
-
-                        <% if didUserAttend.empty? %>
-                            <% status = "Did not attend" %>
-                        <% else %>
-                            <% status = "Attended" %>
-                        <% end %>
-                        <tr>
-                            <td><%= event.name %></td>
-                            <td><%= event.time %></td>
-                            <td><%= status %></td>
-                        </tr>
+                    <% if didUserAttend.empty? %>
+                        <% status = "Did not attend" %>
+                    <% else %>
+                        <% status = "Attended" %>
                     <% end %>
-                </tbody>
-            </table>
+                    <tr>
+                        <td><%= event.name %></td>
+                        <td><%= event.time %></td>
+                        <td><%= status %></td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
 
 
-            <%= link_to 'Back', user_root_path(current_user.id), {class: "mt-5"} %>
-        </div>
+        <%= link_to 'Back', user_root_path(current_user.id), {class: "mt-5"} %>
     </div>
-
-</body>
-</html>
+</div>
 
 
 
