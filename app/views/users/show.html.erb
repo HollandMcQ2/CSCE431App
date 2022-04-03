@@ -14,7 +14,7 @@
                 <%= link_to "Pay Dues", payment_user_path(current_user.id), {class:"btn btn-primary btn-block my-auto" } %>
             </div>
 
-            <% if current_user.role == 'admin' %>
+            <% if ['admin','president','treasurer'].include? current_user.role %>
                 <div class="col-sm">
                     <%= link_to "Members", user_root_path(current_user.id), {class:"btn btn-primary btn-block my-auto" } %>
                 </div>
