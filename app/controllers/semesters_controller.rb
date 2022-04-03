@@ -96,6 +96,15 @@ class SemestersController < ApplicationController
 		end
 	end
 
+	def destroy_record
+		@record = SemesterUser.find_by(semester_id: params[:id], user_id: params[:user_id])
+		@record.destroy
+		respond_to do |format|
+			format.html {redirect_to records_semester_url, notice: "Record was successfully destroyed."}
+			format.json {head :no_content}
+		end
+	end
+
 	private
 		def semester_params
 			params.require(:semester).permit(:name,:start,:end,:duescost)

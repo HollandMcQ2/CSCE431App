@@ -32,6 +32,7 @@ Rails.application.routes.draw do
 	  post 'records', to: 'semesters#create_record'
 	  get 'records/:user_id/edit', to: 'semesters#edit_record', as: :edit_record
 	  patch 'records', to: 'semesters#update_record'
+	  delete 'records.:user_id', to: 'semesters#destroy_record', as: :delete_record
     end
   end
   # resources :users, only [:index, :show]

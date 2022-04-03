@@ -17,7 +17,7 @@
 					<td><%= if record.paid_dues then "yes" else "no" end %></td>
 					<% if user_signed_in? && ['president','treasurer'].include?(current_user.role)%>
 						<td><%= link_to 'Edit', records_semester_path+"/"+record.user_id.to_s+"/edit", {class: "btn btn-primary w-100"} %></td>
-						<td><%= link_to 'Delete', "", {class: "btn btn-danger w-100"} %></td>
+						<td><%= link_to 'Delete', delete_record_semester_path(@semester,record.user_id), method: :delete, data: {confirm: 'Are you sure you want to delete this record?'}, class: "btn btn-danger w-100" %></td>
 					<% end %>
 				</tr>
 			<% end %>
