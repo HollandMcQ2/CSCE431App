@@ -1,0 +1,35 @@
+<h1>Records <%= @semester.name %></h1>
+<p>This semester has <%= pluralize(SemesterUser.all.size, "record") %>.</p>
+<div class="mt-5">
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">Member ID</th>
+				<th scope="col">Member Name</th>
+				<th scope="col">Paid Dues?</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @records.each do |record| %>
+				<tr>
+					<th><%= record.user_id %></th>
+					<td><%= User.find(record.user_id).full_name %></td>
+					<td><%= if record.paid_dues then "yes" else "no" end %></td>
+					<% if user_signed_in? && ['president','treasurer'].include?(current_user.role)%>
+						<td><%= link_to 'Edit', records_semester_path+"/"+record.user_id.to_s+"/edit", {class: "btn btn-primary w-100"} %></td>
+						<td><%= link_to 'Delete', "", {class: "btn btn-danger w-100"} %></td>
+					<% end %>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+	<% if user_signed_in? %>
+		<% if ['admin','president','treasurer'].include? current_user.role %>
+			<%= link_to "Add New Record", new_record_semester_path %>
+			<br>
+		<% end %>
+		<%= link_to 'Back', semesters_path+"/"+@semester.id.to_s, {class: "mt-5"} %>
+	<% else %>
+		<%= link_to 'Back', root_path, {class: "mt-5"} %>
+	<% end %>
+</div>

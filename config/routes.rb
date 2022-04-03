@@ -27,6 +27,11 @@ Rails.application.routes.draw do
   resources :semesters do
     member do
       get :delete
+	  get :records
+	  get 'records/new', to: 'semesters#new_record', as: :new_record
+	  post 'records', to: 'semesters#create_record'
+	  get 'records/:user_id/edit', to: 'semesters#edit_record', as: :edit_record
+	  patch 'records', to: 'semesters#update_record'
     end
   end
   # resources :users, only [:index, :show]

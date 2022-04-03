@@ -16,3 +16,5 @@ Event.create(:name => 'Test Event', :password => "testEventPassword", :descripti
 Event.create(:name => 'Test Event2', :password => "password", :description => 'This is a test event', :time => '2022-03-05', :link => "www.google.com", :location => 'Test Location2', :is_mandatory => true, :is_recurring => false);
 Event.create(:name => 'Test Event3', :password => "password", :description => 'This is a test event', :time => '2022-03-06', :link => "www.google.com", :location => 'Test Location3', :is_mandatory => true, :is_recurring => false);
 EventUser.create(:user_id => 2, :event_id => 1, :attended => true);
+
+SemesterUser.create(semester_id: Semester.all.last.id, user_id: User.all.last.id, paid_dues: true);

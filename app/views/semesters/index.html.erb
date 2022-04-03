@@ -35,7 +35,7 @@
 							<td><%= link_to 'Details', semester_path(semester), {class: "btn btn-primary w-100"} %></td>
 							<% if user_signed_in? && ['admin','president','treasurer'].include?(current_user.role)%>
 								<td><%= link_to 'Edit', edit_semester_path(semester), {class: "btn btn-primary w-100"} %></td>
-								<td><%= link_to 'Delete', delete_semester_path(semester), {class: "btn btn-danger 1-100"} %></td>
+								<td><%= link_to 'Delete', delete_semester_path(semester), {class: "btn btn-danger w-100"} %></td>
 							<% end %>
 						</tr>
 					<% end %>
