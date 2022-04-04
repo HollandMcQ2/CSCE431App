@@ -14,6 +14,7 @@
                         <th scope="col"></th>
                         <th scope="col"></th>
                         <th scope="col"></th>
+                        <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -27,8 +28,9 @@
                             <td class="align-middle"><%= event.link %></td>
                             <td class="align-middle" colspan="2"><%= link_to 'Details', event_path(event), {class: "btn btn-primary w-100"} %></td>
                             <%# show edit and delete if user is an admin %>
-                            <% if user_signed_in? &&  current_user.role == 'admin' %>
+                            <% if user_signed_in? && ['admin','treasurer','president'].include?(current_user.role) %>
                                 <td class="align-middle"><%= link_to 'Edit', edit_event_path(event), {class: "btn btn-primary w-100"} %></td>
+								<td class="align-middle"><%= link_to 'Notify', notify_event_path(event), {class: "btn btn-primary w-100"} %>
                                 <td class="align-middle"><%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger w-100" %></td>
                             <% end %>
                         </tr>

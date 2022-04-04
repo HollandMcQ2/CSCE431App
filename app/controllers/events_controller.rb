@@ -54,21 +54,24 @@ class EventsController < ApplicationController
     end
 	def notify
 		@event = Event.find(params[:id])
-		puts "===EVENT===", @event.name
+		#puts "===EVENT===", @event.name
 	end
 	def mail
 		@event = Event.find(params[:id])
-		if params[:body].nil? 
+		@users = User.where(is_current_member: true)
+		if params[:body].nil? || params[:body]==""
 			@body = "Event reminder for "+@event.name+":\nTime:\t"+@event.time.to_s+"\nLocation:\t"+@event.location
 		else
 			@body = params[:body]
 		end
-		if params[:subject].nil?
+		if params[:subject].nil? || params[:subject]==""
 			@subject = "Event reminder for "+@event.name
 		else
 			@subject = params[:subject]
 		end
-		EventMailer.with(user: User.find_by(full_name: "John Knapp"), event: @event, body: @body, subject: @subject).event_notification.deliver_now
+		@users.each do |u|
+			EventMailer.with(user: u, event: @event, body: @body, subject: @subject).event_notification.deliver_later
+		end
 	end
     private
       def event_params

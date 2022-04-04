@@ -1,5 +1,5 @@
 <div class="container">
-	<%= form_with(model: @event) do |form| %>
+	<%= form_with(url: notify_event_path, method: :post) do |form| %>
 		<% if @event.errors.any? %>
 			<div id="error_explanation">
 				<h2><%= pluralize(@event.errors.count, "error") %> prevented this notification from being sent. </h2>
@@ -12,6 +12,18 @@
 			</div>
 		<% end %>
 
-		<%= link_to 'Notify', notify_event_path, method: :post %>
+		<h1>Notification for <%= @event.name %></h1>
+		<div class = "field mb-3">
+			<%= form.label :subject, {class: "form-label subject-label"} %>
+			<%= form.text_field :subject, {class: "form-control"} %>
+		</div>
+		<div class = "field mb-3">
+			<%= form.label :body, {class: "form-label body-label"} %>
+			<%= form.text_area :body, {class: "form-control"} %>
+		</div>
+		<div class="actions">
+			<% confirmation_message = "Are you sure you want to send this notification to every active member?" %>
+			<%= form.submit "Submit", {data: {confirm: confirmation_message}, class: "btn btn-primary"} %>
+		</div>
 	<% end %>
 </div>
