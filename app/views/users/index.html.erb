@@ -84,9 +84,9 @@
                             <th scope="col">Role</th>
                             <th scope="col">Attendance Count</th>
                             <th scope="col">Dues Status</th>
-                            <th scope="col">View Meetings</th>
+                            <th scope="col" class="align-middle" colspan="2">View Meetings</th>
                             <% if current_user.role == 'admin' %>
-                                <th scope="col">Edit Role</th>
+                                <th scope="col" class="align-middle" colspan="2">Edit Role</th>
                             <% end %>
                         </tr>
                     </thead>
@@ -99,7 +99,7 @@
                                 <tr>
                             <% end %>
                             
-                                <th><%= memberCount %></td>
+                                <td><%= memberCount %></td>
                                 <td><%= user.full_name %></td>
                                 <td><%= user.email %></td>
                                 <td><%= user.role %></td>
