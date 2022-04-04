@@ -52,6 +52,10 @@ class EventsController < ApplicationController
         format.json { head :no_content }
       end
     end
+	def notify
+		@event = Event.find(params[:id])
+		puts "===EVENT===", @event.name
+	end
 
     private
       def event_params

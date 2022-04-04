@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   resources :events do
     member do
       get :delete
+	  get :notify
     end
   end
   # resources :users, only [:index, :show]
