@@ -13,7 +13,7 @@
     <div class="carousel-inner">
         <div class="carousel-item active">
             <% if @home_page.slider_image_1.attached? %>
-                <div style="display: flex; justify-content: center;"><img class="d-block h-50 w-50" src="<%=(url_for(@home_page.slider_image_1))%>"></div>
+                <div class="carousel-image"><img class="d-block" src="<%=(url_for(@home_page.slider_image_1))%>"></div>
             <% else %>
                 <img class="d-block w-100" src="https://placeimg.com/1080/500/animals" alt="First slide">
             <% end %>
@@ -21,30 +21,30 @@
 
         <div class="carousel-item">
             <% if @home_page.slider_image_2.attached? %>
-            <div style="display: flex; justify-content: center;"><img class="d-block h-50 w-50" src="<%=(url_for(@home_page.slider_image_2))%>"></div>
+                <div class="carousel-image"><img class="d-block" src="<%=(url_for(@home_page.slider_image_2))%>"></div>
             <% else %>
-                <img class="d-block w-100" src="https://placeimg.com/1080/500/animals" alt="First slide">
+                <img class="d-block w-100" src="https://placeimg.com/1080/500/animals" alt="Second slide">
             <% end %>
         </div>
         <div class="carousel-item">
             <% if @home_page.slider_image_3.attached? %>
-                <div style="display: flex; justify-content: center;"><img class="d-block h-50 w-50" src="<%=(url_for(@home_page.slider_image_3))%>"></div>
+                <div class="carousel-image"><img class="d-block" src="<%=(url_for(@home_page.slider_image_3))%>"></div>
             <% else %>
-                <img class="d-block w-100" src="https://placeimg.com/1080/500/animals" alt="First slide">
+                <img class="d-block w-100" src="https://placeimg.com/1080/500/animals" alt="Third slide">
             <% end %>
         </div>
         <div class="carousel-item">
             <% if @home_page.slider_image_4.attached? %>
-            <div style="display: flex; justify-content: center;"><img class="d-block h-50 w-50" src="<%=(url_for(@home_page.slider_image_4))%>"></div>
+            <div class="carousel-image"><img class="d-block" src="<%=(url_for(@home_page.slider_image_4))%>"></div>
             <% else %>
-                <img class="d-block w-100" src="https://placeimg.com/1080/500/animals" alt="First slide">
+                <img class="d-block w-100" src="https://placeimg.com/1080/500/animals" alt="Fourth slide">
             <% end %>
         </div>
         <div class="carousel-item">
             <% if @home_page.slider_image_5.attached? %>
-            <div style="display: flex; justify-content: center;"><img class="d-block h-50 w-50" src="<%=(url_for(@home_page.slider_image_5))%>"></div>
+            <div class="carousel-image"><img class="d-block" src="<%=(url_for(@home_page.slider_image_5))%>"></div>
             <% else %>
-                <img class="d-block w-100" src="https://placeimg.com/1080/500/animals" alt="First slide">
+                <img class="d-block w-100" src="https://placeimg.com/1080/500/animals" alt="Fifth slide">
             <% end %>
         </div>
     </div>
@@ -61,7 +61,5 @@
 <div style="text-align:center">
     <h3><%= @home_page.summary%></h3>
 </div>
-
-
 
 

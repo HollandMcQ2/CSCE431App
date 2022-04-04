@@ -30,3 +30,13 @@
  .table {
      color: #fbf9a4;
  }
+
+ .carousel-image {
+    display: flex; 
+    justify-content: center;
+ }
+
+ img {
+     max-width: 50%;
+     max-height: 50%;
+ }
