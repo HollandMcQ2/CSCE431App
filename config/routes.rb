@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     member do
       get :delete
 	  get :notify
+	  post :notify, to: 'events#mail'
     end
   end
   # resources :users, only [:index, :show]

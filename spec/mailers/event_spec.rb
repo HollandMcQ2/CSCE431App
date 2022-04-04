@@ -9,11 +9,26 @@ RSpec.describe EventMailer, type: :mailer do
 			email: "jmichaelknapp@gmail.com",
 			role: "admin"
 		])
+		Event.create!(
+			:name => 'Test Event',
+			:password => "testEventPassword",
+			:description => 'This is a test event',
+			:time => '2022-03-04',
+			:link => "www.google.com",
+			:location => 'Test Location',
+			:is_mandatory => true,
+			:is_recurring => false
+		);
+		@event = Event.all.first
 	end
 
 	before(:example) do
 		@user = User.find_by(full_name: "John Knapp")
-		p @user
+		#p @user
+	end
+
+	after(:example) do
+		ActionMailer::Base.deliveries.clear
 	end
 
 	after(:context) do
@@ -27,6 +42,9 @@ RSpec.describe EventMailer, type: :mailer do
 		expect(ActionMailer::Base.deliveries.size).to eq(1)
 	end
 
-	it "can accept parameters via Controller call"
+	it "can accept parameters via Controller call", type: :request do
+		post notify_event_path(@event.id), params: {}
+		expect(ActionMailer::Base.deliveries.size).to eq(1)
+	end
 
 end
