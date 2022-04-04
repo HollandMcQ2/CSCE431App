@@ -133,7 +133,6 @@ class UsersController < ApplicationController
 
   def edit_role
     @user = User.find(params[:id])
-    @role = @user.role
     if current_user.role == 'admin'
       respond_to do |format|
         if @user.update(edit_role_params)
@@ -144,6 +143,6 @@ class UsersController < ApplicationController
   end
   private
   def edit_role_params
-    params.require(@user).permit(@role)
+    params.permit(@user.role)
   end
 end
