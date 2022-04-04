@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-04-04T20:20:57+00:00">2022-04-04T20:20:57+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-04-04T20:53:01+00:00">2022-04-04T20:53:01+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="red">
-  64.95%
+  69.57%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.67
+         0.87
        </span>
     </span> hits/line
     )
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>97</b> relevant lines,
-    <span class="green"><b>63</b> lines covered</span> and
-    <span class="red"><b>34</b> lines missed. </span>
+    <b>115</b> relevant lines,
+    <span class="green"><b>80</b> lines covered</span> and
+    <span class="red"><b>35</b> lines missed. </span>
     (<span class="red">
-  64.95%
+  69.57%
 </span>
 )
   </div>
@@ -83,12 +83,12 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#008325842473bf59fd61275e4f31b30b58f16abe" class="src_link" title="app/controllers/events_controller.rb">app/controllers/events_controller.rb</a></td>
-            <td class="red strong cell--number t-file__coverage">37.50 %</td>
-            <td class="cell--number">70</td>
-            <td class="cell--number">48</td>
-            <td class="cell--number">18</td>
-            <td class="cell--number">30</td>
-            <td class="cell--number">0.38</td>
+            <td class="red strong cell--number t-file__coverage">42.59 %</td>
+            <td class="cell--number">81</td>
+            <td class="cell--number">54</td>
+            <td class="cell--number">23</td>
+            <td class="cell--number">31</td>
+            <td class="cell--number">0.61</td>
             
           </tr>
         
@@ -110,7 +110,7 @@
             <td class="cell--number">6</td>
             <td class="cell--number">6</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">1.00</td>
+            <td class="cell--number">1.67</td>
             
           </tr>
         
@@ -128,11 +128,11 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#92d5153c340fb81dfe5934ea68fc64f1bc5c3e1c" class="src_link" title="spec/mailers/event_spec.rb">spec/mailers/event_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">50</td>
-            <td class="cell--number">19</td>
-            <td class="cell--number">19</td>
+            <td class="cell--number">70</td>
+            <td class="cell--number">31</td>
+            <td class="cell--number">31</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">1.11</td>
+            <td class="cell--number">1.19</td>
             
           </tr>
         
@@ -266,7 +266,7 @@
     <h3>app/controllers/events_controller.rb</h3>
     <h4>
       <span class="red">
-  37.5%
+  42.59%
 </span>
 
       lines covered
@@ -275,9 +275,9 @@
     
 
     <div class="t-line-summary">
-      <b>48</b> relevant lines.
-      <span class="green"><b>18</b> lines covered</span> and
-      <span class="red"><b>30</b> lines missed.</span>
+      <b>54</b> relevant lines.
+      <span class="green"><b>23</b> lines covered</span> and
+      <span class="red"><b>31</b> lines missed.</span>
     </div>
 
     
@@ -937,8 +937,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="60">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="3" data-linenumber="60">
+            <span class="hits">3</span>
             
 
             
@@ -948,79 +948,79 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="61">
+          <li class="covered" data-hits="3" data-linenumber="61">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">		if params[:body].nil? </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="62">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">			@body = &quot;Event reminder for &quot;+@event.name+&quot;:\nTime:\t&quot;+@event.time.to_s+&quot;\nLocation:\t&quot;+@event.location</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="63">
+            
+            
+
+            
+
+            <code class="ruby">		else</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="64">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">		@body = &quot;Event reminder for &quot;+@event.name+&quot;:\nTime:\t&quot;+@event.time.to_s+&quot;\nLocation:\t&quot;+@event.location</code>
+            <code class="ruby">			@body = params[:body]</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="62">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="65">
+            
             
 
             
 
-            <code class="ruby">		@subject = &quot;Event reminder for &quot;+@event.name</code>
+            <code class="ruby">		end</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="63">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="3" data-linenumber="66">
+            <span class="hits">3</span>
             
 
             
 
-            <code class="ruby">		EventMailer.with(user: User.find_by(full_name: &quot;John Knapp&quot;), event: @event, body: @body, subject: @subject).event_notification.deliver_now</code>
+            <code class="ruby">		if params[:subject].nil?</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="64">
-            
-            
-
-            
-
-            <code class="ruby">	end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="65">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="2" data-linenumber="67">
+            <span class="hits">2</span>
             
 
             
 
-            <code class="ruby">    private</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="66">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      def event_params</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="67">
-            
-            
-
-            
-
-            <code class="ruby">        params.require(:event).permit(:name,:time,:location, :is_mandatory, :description, :password)</code>
+            <code class="ruby">			@subject = &quot;Event reminder for &quot;+@event.name</code>
           </li>
         </div>
       
@@ -1031,12 +1031,133 @@
 
             
 
+            <code class="ruby">		else</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="69">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">			@subject = params[:subject]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="70">
+            
+            
+
+            
+
+            <code class="ruby">		end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="71">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">		EventMailer.with(user: User.find_by(full_name: &quot;John Knapp&quot;), event: @event, body: @body, subject: @subject).event_notification.deliver_now</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="72">
+            
+            
+
+            
+
+            <code class="ruby">	end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="73">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    private</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="74">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      def event_params</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="75">
+            
+            
+
+            
+
+            <code class="ruby">        params.require(:event).permit(:name,:time,:location, :is_mandatory, :description, :password)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="76">
+            
+            
+
+            
+
             <code class="ruby">      end</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="69">
+          <li class="covered" data-hits="1" data-linenumber="77">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">	  def mailer_params</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="78">
+            
+            
+
+            
+
+            <code class="ruby">		params.require(:event).permit(:subject,:body)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="79">
+            
+            
+
+            
+
+            <code class="ruby">	  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="80">
             
             
 
@@ -1047,7 +1168,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="70">
+          <li class="never" data-hits="" data-linenumber="81">
             
             
 
@@ -1241,8 +1362,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="8">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="3" data-linenumber="8">
+            <span class="hits">3</span>
             
 
             
@@ -1252,8 +1373,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="9">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="3" data-linenumber="9">
+            <span class="hits">3</span>
             
 
             
@@ -1400,8 +1521,8 @@
     
 
     <div class="t-line-summary">
-      <b>19</b> relevant lines.
-      <span class="green"><b>19</b> lines covered</span> and
+      <b>31</b> relevant lines.
+      <span class="green"><b>31</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -1688,8 +1809,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="26">
-            <span class="hits">2</span>
+          <li class="covered" data-hits="4" data-linenumber="26">
+            <span class="hits">4</span>
             
 
             
@@ -1743,8 +1864,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="31">
-            <span class="hits">2</span>
+          <li class="covered" data-hits="4" data-linenumber="31">
+            <span class="hits">4</span>
             
 
             
@@ -1936,7 +2057,7 @@
 
             
 
-            <code class="ruby">	end</code>
+            <code class="ruby">		#puts ActionMailer::Base.deliveries.last.body.to_s</code>
           </li>
         </div>
       
@@ -1947,12 +2068,232 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">	end</code>
           </li>
         </div>
       
         <div>
           <li class="never" data-hits="" data-linenumber="50">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="51">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">	it &quot;sends the correct subject and contents to the correct address&quot;, type: :request do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="52">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">		post notify_event_path(@event.id), params: {}</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="53">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">		mail = ActionMailer::Base.deliveries.last</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="54">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">		expect(mail.to).to include(@user.email)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="55">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">		expect(mail.subject).to match(@event.name)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="56">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">		expect(mail.body).to match(@event.time.to_s)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="57">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">		expect(mail.body).to match(@event.location)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="58">
+            
+            
+
+            
+
+            <code class="ruby">	end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="59">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="60">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">	it &quot;allows the subject and body to be passed in via post request&quot;, type: :request do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="61">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">		post notify_event_path(@event.id), params: {</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="62">
+            
+            
+
+            
+
+            <code class="ruby">			subject: &quot;Secret Event Notification&quot;,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="63">
+            
+            
+
+            
+
+            <code class="ruby">			body: &quot;This is a notification for an event, but it&#39;s secret, so I can&#39;t tell you what it is.&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="64">
+            
+            
+
+            
+
+            <code class="ruby">		}</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="65">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">		mail = ActionMailer::Base.deliveries.last</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="66">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">		expect(mail.subject).to eq(&quot;Secret Event Notification&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="67">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">		expect(mail.body).to eq(&quot;This is a notification for an event, but it&#39;s secret, so I can&#39;t tell you what it is.&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="68">
+            
+            
+
+            
+
+            <code class="ruby">	end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="69">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="70">
             
             
 

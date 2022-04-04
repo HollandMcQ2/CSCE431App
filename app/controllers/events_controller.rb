@@ -58,13 +58,24 @@ class EventsController < ApplicationController
 	end
 	def mail
 		@event = Event.find(params[:id])
-		@body = "Event reminder for "+@event.name+":\nTime:\t"+@event.time.to_s+"\nLocation:\t"+@event.location
-		@subject = "Event reminder for "+@event.name
+		if params[:body].nil? 
+			@body = "Event reminder for "+@event.name+":\nTime:\t"+@event.time.to_s+"\nLocation:\t"+@event.location
+		else
+			@body = params[:body]
+		end
+		if params[:subject].nil?
+			@subject = "Event reminder for "+@event.name
+		else
+			@subject = params[:subject]
+		end
 		EventMailer.with(user: User.find_by(full_name: "John Knapp"), event: @event, body: @body, subject: @subject).event_notification.deliver_now
 	end
     private
       def event_params
         params.require(:event).permit(:name,:time,:location, :is_mandatory, :description, :password)
       end
+	  def mailer_params
+		params.require(:event).permit(:subject,:body)
+	  end
   end
   
