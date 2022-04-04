@@ -131,4 +131,18 @@ class UsersController < ApplicationController
     puts "I am user @view_meetings: #{@user.id}"
   end
 
+  def edit_role
+    @user = User.find(params[:id])
+    if current_user.role == 'admin'
+      respond_to do |format|
+        if @user.update(edit_role_params)
+          format.html { redirect_to users_url, notice: "User role was successfully updated: #{@user.role}."}
+        end
+      end
+    end
+  end
+  private
+  def edit_role_params
+    params.require(@user).permit(:id, :role)
+  end
 end

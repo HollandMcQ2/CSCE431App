@@ -1,0 +1,26 @@
+<div class="container mt-5 mb-5">
+<%= form_with(@user) do |form| %>
+    <%= puts "user below" %>
+    <%= puts @user.role %>
+      <% if user.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+    
+          <ul>
+            <% user.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+  <h1>View Roles for <%= @user.full_name %></h1>
+    
+  <h3>Please choose 1 role for <%= @user.full_name %></h3>
+
+  <%= form.text_field @user.role %>
+  <%= form.select @user.role, [['Officer', admin'], ['President','president'], ['Member','member']] %>
+  <%= form.submit %>
+
+<% end %>
+
+</div>

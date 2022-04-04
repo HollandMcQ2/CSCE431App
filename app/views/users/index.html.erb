@@ -85,6 +85,9 @@
                             <th scope="col">Attendance Count</th>
                             <th scope="col">Dues Status</th>
                             <th scope="col">View Meetings</th>
+                            <% if current_user.role == 'admin' %>
+                                <th scope="col">Edit Role</th>
+                            <% end %>
                         </tr>
                     </thead>
                     <tbody>
@@ -105,6 +108,11 @@
                                 <td class="align-middle" colspan="2">
                                     <%= link_to 'Meetings', meetings_user_path(user.id), {class: "btn btn-primary w-100"} %>
                                 </td>
+                                <% if current_user.role == 'admin' %>
+                                    <td class="align-middle" colspan="2">
+                                        <%= link_to 'Edit Role', edit_role_user_path(user.id), {class: "btn btn-primary w-100"} %>
+                                    </td>
+                                <% end %>
                             </tr>
                         <% end %>
                     </tbody>

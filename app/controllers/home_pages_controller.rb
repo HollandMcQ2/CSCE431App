@@ -24,6 +24,6 @@ class HomePagesController < ApplicationController
 
     private
       def home_params
-        params.require(:home_page).permit(:heading,:summary)
+        params.require(:home_page).permit(:slider_image_1, :slider_image_2, :slider_image_3, :slider_image_4, :slider_image_5, :heading,:summary)
       end
   end
