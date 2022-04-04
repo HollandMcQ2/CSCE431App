@@ -143,6 +143,6 @@ class UsersController < ApplicationController
   end
   private
   def edit_role_params
-    params.require(@user).permit(:id, :role)
+    params.require(@user).permit(@user.id, @user.role)
   end
 end
