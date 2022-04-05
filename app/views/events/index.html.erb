@@ -11,7 +11,7 @@
                         <th scope="col">Location</th>
                         <th scope="col">Mandatory?</th>
                         <th scope="col">Link</th>
-                        <% if user_signed_in? && current_user.role == 'admin' %>
+                        <% if user_signed_in? && (current_user.role == 'admin' || current_user.role == 'president' || current_user.role == 'treasurer') %>
                             <th scope="col">Status</th>
                         <% end %>
                         <th scope="col"></th>
@@ -33,7 +33,7 @@
                             <td class="align-middle"><%= event.link %></td>
 
                             <%# check status of meeting (ie is it opened or closed) %>
-                            <% if user_signed_in? && current_user.role == 'admin' %>
+                            <% if user_signed_in? && (current_user.role == 'admin' || current_user.role == 'president' || current_user.role == 'treasurer') %>
                                 <% message = "I am a placeHolder" %>
                                 <% currTime = Time.now %>
                                 <% if event.open %>
@@ -62,7 +62,7 @@
                 </tbody>
                 </table>
 
-                <% if user_signed_in? && current_user.role == 'admin' %>
+                <% if user_signed_in? && (current_user.role == 'admin' || current_user.role == 'president' || current_user.role == 'treasurer') %>
                     <%= link_to "Add Event", new_event_path %>
                 <% end %>
                 <br>
