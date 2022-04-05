@@ -52,10 +52,16 @@ class EventsController < ApplicationController
         format.json { head :no_content }
       end
     end
+    def close
+      @event = Event.find(params[:id])
+      @event.update(open: !@event.open)
+      puts @event.open
+      # redirect_to events_path
+    end
 
     private
       def event_params
-        params.require(:event).permit(:name,:time,:location, :is_mandatory, :description, :password)
+        params.require(:event).permit(:name,:time, :end_time,:location, :is_mandatory, :description, :open, :password)
       end
   end
   

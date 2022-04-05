@@ -48,19 +48,40 @@ class UsersController < ApplicationController
       @event = Event.where(password: params[:user]['password']).last
       # if password is valid for a meeting
       if @event
-        @user.increment!(:attendance_count)
-        @event.increment!(:attendance_count)
-        @event_user = EventUser.create(:user_id => @user.id, :event_id => @event.id, :attended => true)
+        # get current time
+        current_time = Time.now
+        puts current_time
+        puts Time.now
 
-        if @user.save && @event.save && @event_user.save
-          format.html { redirect_to user_path(current_user.id), notice: "Attendance was successfully updated." }
-          format.json { render :show, status: :ok, location: @user }
-        else
-          format.html { render :edit, status: :unprocessable_entity }
+        # if the meeting is open, give attendance credit
+        if (current_time < @event.end_time && current_time > @event.time) || @event.open
+
+          # check if user has already gotten credit for this event
+          @event_user = EventUser.where(user_id: @user.id, event_id: @event.id).first
+          if @event_user
+            flash.now[:error] = "You have already attended this event."
+            format.html { render :edit, status: :unprocessable_entity  }
+            format.json { render json: @user.errors, status: :unprocessable_entity }
+          else
+            @user.increment!(:attendance_count)
+            @event.increment!(:attendance_count)
+            @event_user = EventUser.create(:user_id => @user.id, :event_id => @event.id, :attended => true)
+
+            if @user.save && @event.save && @event_user.save
+              format.html { redirect_to user_path(current_user.id), notice: "Attendance was successfully updated." }
+              format.json { render :show, status: :ok, location: @user }
+            else
+              format.html { render :edit, status: :unprocessable_entity }
+              format.json { render json: @user.errors, status: :unprocessable_entity }
+            end
+          end
+        elsif !@event.open # if the meeting is closed
+          flash.now[:error] = "This event is closed."
+          format.html { render :edit, status: :unprocessable_entity  }
           format.json { render json: @user.errors, status: :unprocessable_entity }
         end
       else # if the user inputs an invalid password
-        flash.now[:error] = "Invalid email/password combination"
+        flash.now[:error] = "Invalid password"
         format.html { render :edit, status: :unprocessable_entity  }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
