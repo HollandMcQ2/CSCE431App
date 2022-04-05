@@ -85,7 +85,7 @@
                             <th scope="col">Attendance Count</th>
                             <th scope="col">Dues Status</th>
                             <th scope="col" class="align-middle" colspan="2">View Meetings</th>
-                            <% if current_user.role == 'admin' %>
+                            <% if current_user.role == 'admin' %> <!-- supposed to be president -->
                                 <th scope="col" class="align-middle" colspan="2">Edit Role</th>
                             <% end %>
                         </tr>
@@ -105,12 +105,15 @@
                                 <td><%= user.role %></td>
                                 <td><%= user.attendance_count %></td>
                                 <td><%= user.has_paid_dues ? "Up to Date" : "Not up to Date" %></td>
-                                <td class="align-middle" colspan="2">
+                                <td class="align-middle" colspan="2"> <!-- supposed to be president -->
                                     <%= link_to 'Meetings', meetings_user_path(user.id), {class: "btn btn-primary w-100"} %>
                                 </td>
-                                <% if current_user.role == 'admin' %>
-                                    <td class="align-middle" colspan="2">
-                                        <%= link_to 'Edit Role', edit_role_user_path(user.id), {class: "btn btn-primary w-100"} %>
+                                <% if current_user.role == 'admin'  %>
+                                    <td class="align-middle" colspan="1">
+                                        <%= link_to '+', edit_role_plus_user_path(user.id), {class: "btn btn-primary w-100"} %>
+                                    </td>
+                                    <td class="align-middle" colspan="1">
+                                        <%= link_to '-', edit_role_minus_user_path(user.id), {class: "btn btn-primary w-100"} %>
                                     </td>
                                 <% end %>
                             </tr>
