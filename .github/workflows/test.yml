@@ -14,45 +14,45 @@ jobs:
   run-tests:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
+    
     services:
-      # label used to access the service container
-      postgres:
-        # Docker Hub image
-        image: dmartinez05/ruby_rails_postgresql:latest
-        # service environment variables
-        # `POSTGRES_HOST` is `postgres`
+      db:
+        image: postgres:11
+        ports: ["5432:5432"]
         env:
-          # required
-          DATABASE_PASSWORD: test_password
-          # optional (defaults to `postgres`)
-          DATABASE_USER: test_app
-        ports:
-          # maps tcp port 5432 on service container to the host
-          - 3000:3000
-        # set health checks to wait until postgres has started
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
+      redis:
+        image: redis
+        ports: ["6379:6379"]
+        options: --entrypoint redis-server
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-      # Set up Ruby
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-      - name: Installation of rspec and other configuration
+      - uses: actions/checkout@v1
+      - name: Setup Ruby
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 2.7.x
+      - uses: borales/actions-yarn@v2.3.0
+        with:
+          cmd: install
+      - name: Build and run test
+        env:
+          DATABASE_URL: postgres://postgres:@localhost:5432/test
+          REDIS_URL: redis://localhost:6379/0
+          RAILS_ENV: test
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
         run: |
-          bundle install
-          rails db:create
-          rails db:migrate
-          rails g rspec:install
-      # Runs unit tests
-      - name: Unit testing
-        run: rspec spec/unit/unit_spec.rb
-      # Runs integration tests
-      - name: Integration testing
-        run: rspec spec/feature/integration_spec.rb
+          sudo apt-get -yqq install libpq-dev
+          gem install bundler
+          bundle install --jobs 4 --retry 3
+          bundle exec rake db:create
+          bundle exec rake db:migrate
+          bundle exec rspec .
