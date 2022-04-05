@@ -13,11 +13,11 @@
             <div class="col-sm">
                 <%= link_to "Pay Dues", payment_user_path(current_user.id), {class:"btn btn-primary btn-block my-auto" } %>
             </div>
+            <div class="col-sm">
+                <%= link_to "Members", user_root_path(current_user.id), {class:"btn btn-primary btn-block my-auto" } %>
+            </div>
 
             <% if current_user.role == 'admin' %>
-                <div class="col-sm">
-                    <%= link_to "Members", user_root_path(current_user.id), {class:"btn btn-primary btn-block my-auto" } %>
-                </div>
                 <div class="col-sm">
                     <%= link_to "Edit Home Page", edit_home_page_path(), {class:"btn btn-primary btn-block my-auto" } %>
                 </div>
@@ -25,6 +25,5 @@
         </div>
     </div>
 </body>
-
 
 
