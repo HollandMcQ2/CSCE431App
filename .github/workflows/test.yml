@@ -32,13 +32,12 @@ jobs:
         ports: ["6379:6379"]
         options: --entrypoint redis-server
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - uses: actions/checkout@v1
       - name: Setup Ruby
         uses: actions/setup-ruby@v1
         with:
-          ruby-version: 2.7.x
+          ruby-version: 3.0.x
       - uses: borales/actions-yarn@v2.3.0
         with:
           cmd: install
