@@ -1,2 +1,19 @@
-<h1>ContactForm#show</h1>
-<p>Find me in app/views/contact_form/show.html.erb</p>
+<div class="container">
+	<div class="field mb-3">
+		<b>From: </b><%= @form.name %>
+	</div>
+	<div class="field mb-3">
+		<b>Company: </b><%= @form.company %>
+	</div>
+	<div class="field mb-3">
+		<b>Email: </b><%= @form.email %>
+	</div>
+	<div class="field mb-3">
+		<b>Sent at: </b><%= @form.created_at %>
+	</div>
+	<div class="field mb-3">
+		<b>Content</b><br>
+		<%= @form.message %>
+	</div>
+	<%= link_to 'Back', contact_forms_path, {class: "mt-5"} %>
+</div>

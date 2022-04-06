@@ -1,2 +1,41 @@
-<h1>ContactForm#index</h1>
-<p>Find me in app/views/contact_form/index.html.erb</p>
+<%= content_tag(:div, class: "container align-items-center mt-5 custom-colors") do %>
+	<%= content_tag(:div, class: "row align-items-center justify-content-center") do %>
+		<%= content_tag(:div, class: "col-30 col-md-20") do %>
+			<h1>'Contact Us' Messages</h1>
+			<table class="table orange-text">
+				<thead>
+					<tr>
+						<th scope="col">Sender Name</th>
+						<th scope="col">Company</th>
+						<th scope="col">Email</th>
+						<!-- <th scope="col">Subject</th> -->
+						<th scope="col">Preview</th>
+						<th scope="col">Sent at</th>
+						<th scope="col"></th>
+						<th scope="col"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @forms.each do |f| %>
+						<tr>
+							<td class="align-middle"><%= f.name.empty? ? simple_format("<i>Anonymous</i>", sanitize: false) : f.name %></td>
+							<td class="align-middle"><%= f.company.empty? ? simple_format("<i>No company</i>", sanitize: false) : f.company %></td>
+							<td class="align-middle"><%= f.email.empty? ? simple_format("<i>No email</i>", sanitize: false) : f.email %>
+							<!-- <td class="align-middle"><%# f.subject %></td> -->
+							<td class="align-middle"><%= f.message[0,50] %>
+							<td class="align-middle"><%= f.created_at %></td>
+							<td class="align-middle"><%= link_to 'View', contact_form_path(f), {class: "btn btn-primary w-100"} %></td>
+							<td class="align-middle"><%= link_to 'Delete', f, method: :delete, data: {confirm: "Are you sure you want to delete this message?" }, class: "btn btn-danger w-100" %></td>
+						</tr>
+					<% end %>
+					<% if @forms.empty? %>
+						<tr>
+							<td colspan="10" class="text-center">No messages to display</td>
+						</tr>
+					<% end %>
+				</tbody>
+			</table>
+			<%= link_to 'Back', user_path(current_user.id), {class: "mt-5"} %>
+		<% end %>
+	<% end %>
+<% end %>
