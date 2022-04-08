@@ -34,13 +34,12 @@ jobs:
         run: |
           bundler exec rails db:create RAILS_ENV=test
           bundler exec rails db:migrate RAILS_ENV=test
+          bundler exec rails db:seed RAILS_ENV=test
       - uses: borales/actions-yarn@v2.3.0
         with:
           cmd: install
       - name: Run tests
         run: bundler exec rspec ./spec
-      - name: Run brakeman
-        run: brakeman -o brakeman.txt
       - name: Run rubocop
         run: bundler exec rubocop --out rubocop.txt
       - name: Upload coverage results
