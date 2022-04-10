@@ -4,12 +4,7 @@
             <h1 class="mt-5 mb-5">Thank You for Paying your Dues!</h1>
         </div>
         <div class="row justify-content-center flex-column">
-            <p> Reciept: </p>
-            <% if @user[:transaction_last_4] != 0 %>
-                <p> Your card ending in <%= @user[:transaction_last_4] %> was charged for <%= @user[:transaction_amount] %>.00 on <%= @user[:transaction_date].strftime("%m/%d/%Y %I:%M") %> UTC</p>
-            <% else %>
-                <p> Your account was charged for <%= @user[:transaction_amount] %>.00 on <%= @user[:transaction_date].strftime("%m/%d/%Y %I:%M") %></p>
-            <% end %>
+            <p> Your account was charged for $20.00 dollars! </p>
             <p> We are glad to have you as a member!
         </div>
         <!-- <div class="row justify-content-center mt-3"> -->
