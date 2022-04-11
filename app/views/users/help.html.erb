@@ -79,6 +79,15 @@
         <% end %>
         <br>
         <br>
+
+        <% if user_signed_in? && (current_user.role == 'admin' || current_user.role == 'treasurer' || current_user.role == 'president') %>
+            <h2>Semesters</h2>
+            <p>REQUIRED: This page will allow you to create new semesters that will allow you to track the payment status of your members. In order to accept and track payments correctly, you must create a semester first. At the start of a school semester, please create a new semester. Fill in the start date and end date with the start and end date of the school semester, and enter the desired cost for club dues.</p>
+            <p>Please pay particular attention to the end date of your semesters. The website automatically runs a check every day to see if the semester is over. If today is the same end date as one of your created semesters, it will reset everyone's payment status in preparation for the new semester. Do not set the end date to be any other date than the end of the semester unless you want to reset payment status.
+            <br>
+            If you ever need to reset the payment status of all members, please create a semester and set the end date to be tomorrow. Then, the day after you set it the website will automatically end the semester you just created and reset all members' payments.
+            </p>
+        <% end %>
         <br>
         <%= link_to 'Back', user_root_path(current_user.id), {class: "mt-5"} %>
     </div>

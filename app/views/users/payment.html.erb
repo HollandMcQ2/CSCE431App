@@ -10,7 +10,11 @@
 <div class="container mt-5 px-5">
     <!-- <div class='alert alert-danger'></div> -->
     <h1>Pay Club Dues</h1>
-    <h2>Dues are $20.00</h2>
+    <% if @current_semester %>
+    <h2> Dues are <%= @current_semester.duescost %> </h2>
+    <% else %>
+    <h2> Dues are unannounced </h2>
+    <% end %>
 	<% if ENV['PAYPAL_CLIENT_ID'] != ''%>
     	<script src="https://www.paypal.com/sdk/js?client-id=<%= ENV['PAYPAL_CLIENT_ID'] %>&currency=USD&enable-funding=venmo"></script>
 	<% else %>
@@ -28,7 +32,7 @@
           return actions.order.create({
             purchase_units: [{
               amount: {
-                value: '20.00' // Can also reference a variable or function
+                value: '<% if @current_semester %><%= @current_semester.duescost %><% else %>20.00<% end %>' // Can also reference a variable or function
               }
             }]
           });

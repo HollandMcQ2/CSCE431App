@@ -97,7 +97,7 @@ class UsersController < ApplicationController
     if @user[:has_paid_dues] == true
       redirect_to(thank_you_user_path(current_user.id))
     end
-    @client_token = Braintree::ClientToken.generate
+    @current_semester = Semester.where(end: Date.today..).where(start: ..Date.today).take
   end
   # METHOD: POST
   # This method processes the transaction from the /user/:id/payment route. If the transaction is successful, attributes in the user model will be updated to store basic, non invasive information to provide the user with a reciept on the thank you page.
