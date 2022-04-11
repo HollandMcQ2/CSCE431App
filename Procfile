@@ -1,2 +1,2 @@
-release: rails db:seed:replant DISABLE_ENVIRONMENT_CHECK=1 
+release: heroku restart; heroku pg:reset DATABASE --confirm tsat-app1; heroku run rake db:migrate
 rails db:migrate
