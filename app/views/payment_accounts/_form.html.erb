@@ -13,11 +13,11 @@
 		<% end %>
 
 		<div class="field mb-3">
-			<%= form.label :internal_name, {class: "form-label internal_name-label"} %>
+			<%= form.label :internal_name, text="Account Name", {class: "form-label internal_name-label"} %>
 			<%= form.text_field :internal_name, {class: "form-control"} %>
 		</div>
 		<div class="field mb-3">
-			<%= form.label :payment_address, {class: "form-label payment_address-label"} %>
+			<%= form.label :payment_address, text="Paypal Client-ID", {class: "form-label payment_address-label"} %>
 			<%= form.text_field :payment_address, {class: "form-control"} %>
 		</div>
 		<div class="actions">

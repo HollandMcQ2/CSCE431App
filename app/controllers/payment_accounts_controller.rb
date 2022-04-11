@@ -54,7 +54,7 @@ class PaymentAccountsController < ApplicationController
 
 	def select
 		@account = PaymentAccount.find(params[:id])
-		puts "This function is a stub pending necessary implementation details of payment processing"
+		ENV['PAYPAL_CLIENT_ID']=@account.payment_address
 		respond_to do |format|
 			format.html {redirect_to payment_accounts_path, notice: "Account was selected as payment destination*."}
 			format.json {head :no_content}

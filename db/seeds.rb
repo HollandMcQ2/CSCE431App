@@ -21,3 +21,4 @@ Event.create(:name => 'Test Event3', :password => "password", :description => 'T
 EventUser.create(:user_id => 2, :event_id => 1, :attended => true);
 
 HomePage.create(:heading => 'Howdy', :summary => 'Hello');
+PaymentAccount.create(internal_name: 'Default Account', payment_address: 'AZ7cvFNlXaeTjUVqghWxEaqvBuJEHCz3BKwX7fksAdrleR1tqTQksTwO9oI6NgB3_k7Pb9XstqeIBuIW')
