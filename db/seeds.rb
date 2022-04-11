@@ -13,10 +13,11 @@ User.create(:full_name => 'John Knapp', :email => "jmichaelknapp@gmail.com", :ro
 User.create(:full_name => 'John Tester', :email => "t3ster219@gmail.com", :role => "admin");
 User.create(:full_name => 'Johnathan Torres', :email => "torres404@tamu.edu", :role => "admin");
 Semester.create(:name => 'Spring 2022', :start => "1/22/22", :end=> "5/14/22", :duescost => 200.00)
+User.find_by_email("kakashiandflute@gmail.com").update(:role => 'president')
 
-Event.create(:name => 'Test Event', :password => "testEventPassword", :description => 'This is a test event', :time => '2022-03-04', :link => "www.google.com", :location => 'Test Location', :is_mandatory => true, :is_recurring => false);
-Event.create(:name => 'Test Event2', :password => "password", :description => 'This is a test event', :time => '2022-03-05', :link => "www.google.com", :location => 'Test Location2', :is_mandatory => true, :is_recurring => false);
-Event.create(:name => 'Test Event3', :password => "password", :description => 'This is a test event', :time => '2022-03-06', :link => "www.google.com", :location => 'Test Location3', :is_mandatory => true, :is_recurring => false);
+Event.create(:name => 'Test Event', :password => "testEventPassword", :description => 'This is a test event', :time => '2022-03-04', :end_time => '2022-03-5', :link => "www.google.com", :location => 'Test Location', :is_mandatory => true, :is_recurring => false);
+Event.create(:name => 'Test Event2', :password => "password", :description => 'This is a test event', :time => '2022-03-05', :end_time => '2022-03-6', :link => "www.google.com", :location => 'Test Location2', :is_mandatory => true, :is_recurring => false);
+Event.create(:name => 'Test Event3', :password => "password", :description => 'This is a test event', :time => '2022-03-06', :end_time => '2022-03-7', :link => "www.google.com", :location => 'Test Location3', :is_mandatory => true, :is_recurring => false);
 EventUser.create(:user_id => 2, :event_id => 1, :attended => true);
 
 HomePage.create(:heading => 'Howdy', :summary => 'Hello');
