@@ -7,9 +7,14 @@
                     <tr>
                         <th scope="col">Name</th>
                         <th scope="col" colspan="2">Time</th>
+                        <th scope="col" colspan="2">End Time</th>
                         <th scope="col">Location</th>
                         <th scope="col">Mandatory?</th>
                         <th scope="col">Link</th>
+                        <% if user_signed_in? && (current_user.role == 'admin' || current_user.role == 'president' || current_user.role == 'treasurer') %>
+                            <th scope="col">Status</th>
+                        <% end %>
+                        <th scope="col"></th>
                         <th scope="col"></th>
                         <th scope="col"></th>
                         <th scope="col"></th>
@@ -23,12 +28,27 @@
                         <tr>
                             <td class="align-middle"><%= event.name %></td>
                             <td class="align-middle" colspan="2"><%= event.time.strftime("%m/%d/%Y %I:%M") %></td>
+                            <td class="align-middle" colspan="2"><%= event.end_time.strftime("%m/%d/%Y %I:%M") %></td>
                             <td class="align-middle"><%= event.location %></td>
                             <td class="align-middle"><%= event.is_mandatory %></td>
                             <td class="align-middle"><%= event.link %></td>
+
+                            <%# check status of meeting (ie is it opened or closed) %>
+                            <% if user_signed_in? && (current_user.role == 'admin' || current_user.role == 'president' || current_user.role == 'treasurer') %>
+                                <% message = "I am a placeHolder" %>
+                                <% currTime = Time.now %>
+                                <% if event.open %>
+                                    <% message = "Open" %>
+                                <% elsif currTime < event.end_time && curr_Time > event.time %>
+                                    <% message = "Open" %>
+                                <% else %>
+                                    <% message = "Closed" %>
+                                <% end %>
+                                <td class="align-middle"><%= message %></td>
+                            <% end %>
                             <td class="align-middle" colspan="2"><%= link_to 'Details', event_path(event), {class: "btn btn-primary w-100"} %></td>
                             <%# show edit and delete if user is an admin %>
-                            <% if user_signed_in? && ['admin','treasurer','president'].include?(current_user.role) %>
+                            <% if user_signed_in? &&  (current_user.role == 'admin' || current_user.role == 'president' || current_user.role == 'treasurer') %>
                                 <td class="align-middle"><%= link_to 'Edit', edit_event_path(event), {class: "btn btn-primary w-100"} %></td>
 								<td class="align-middle"><%= link_to 'Notify', notify_event_path(event), {class: "btn btn-primary w-100"} %>
                                 <td class="align-middle"><%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger w-100" %></td>
@@ -44,7 +64,7 @@
                 </tbody>
                 </table>
 
-                <% if user_signed_in? && current_user.role == 'admin' %>
+                <% if user_signed_in? && (current_user.role == 'admin' || current_user.role == 'president' || current_user.role == 'treasurer') %>
                     <%= link_to "Add Event", new_event_path %>
                 <% end %>
                 <br>

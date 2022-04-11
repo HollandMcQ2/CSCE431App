@@ -73,9 +73,16 @@ class EventsController < ApplicationController
 			EventMailer.with(user: u, event: @event, body: @body, subject: @subject).event_notification.deliver_later
 		end
 	end
+    def close
+      @event = Event.find(params[:id])
+      @event.update(open: !@event.open)
+      puts @event.open
+      # redirect_to events_path
+    end
+
     private
       def event_params
-        params.require(:event).permit(:name,:time,:location, :is_mandatory, :description, :password)
+        params.require(:event).permit(:name,:time, :end_time,:location, :is_mandatory, :description, :open, :password)
       end
 	  def mailer_params
 		params.require(:event).permit(:subject,:body)
