@@ -35,11 +35,16 @@ gem 'xpath', '>= 3.2.0'
 gem 'capybara', '>= 3.26.0'
 gem 'webdrivers', '>= 5.0.0'
 gem 'nokogiri', '>= 1.13.1'
+gem 'rubocop', :require => false
+gem 'rubocop-performance', :require => false
+gem 'rubocop-rails', :require => false
+gem 'rubocop-rspec', :require => false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails'
+  gem 'brakeman'
 end
 
 group :development do
@@ -62,7 +67,7 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  # gem 'capybara', '>= 3.26'
+  gem 'capybara', '>= 3.26'
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers', '>= 5.0.0'

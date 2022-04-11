@@ -5,7 +5,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         begin
             # try to find user by email and get their role, will throw error if user is not found
             role = User.find_by(email: from_google_params[:email]).role
-            if role == "admin"
+            if role == "admin" || role == "president" || role == "treasurer"
                 @user = User.from_google_admin(from_google_params)
                 
             elsif role == "member"

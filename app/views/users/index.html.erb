@@ -66,7 +66,7 @@
         </div>
 
         <%# if user is an admin, show all users and allow them to view all users meetings %>
-        <% if user_signed_in? && current_user.role == "admin" %>
+        <% if user_signed_in? && (current_user.role == 'admin' || current_user.role == 'treasurer' || current_user.role == 'president') %>
             <h1>View All Members</h1>
             <div class = "mb-3">
                 <%# create checkbox to show or hide the second table %>
@@ -84,7 +84,13 @@
                             <th scope="col">Role</th>
                             <th scope="col">Attendance Count</th>
                             <th scope="col">Dues Status</th>
-                            <th scope="col">View Meetings</th>
+                            <th scope="col" class="align-middle" colspan="2">View Meetings</th>
+                            <% if current_user.role == 'president' %>
+                                <th scope="col" class="align-middle" colspan="2">Edit Role</th>
+                            <% end %>
+                            <% if current_user.role == 'admin' || current_user.role == 'treasurer' || current_user.role == 'president' %>
+                                <th scope="col" class="align-middle" colspan="1">Delete</th>
+                            <% end %>
                         </tr>
                     </thead>
                     <tbody>
@@ -96,15 +102,26 @@
                                 <tr>
                             <% end %>
                             
-                                <th><%= memberCount %></td>
+                                <td><%= memberCount %></td>
                                 <td><%= user.full_name %></td>
                                 <td><%= user.email %></td>
                                 <td><%= user.role %></td>
                                 <td><%= user.attendance_count %></td>
                                 <td><%= user.has_paid_dues ? "Up to Date" : "Not up to Date" %></td>
-                                <td class="align-middle" colspan="2">
+                                <td class="align-middle" colspan="2"> <!-- supposed to be president -->
                                     <%= link_to 'Meetings', meetings_user_path(user.id), {class: "btn btn-primary w-100"} %>
                                 </td>
+                                <% if current_user.role == 'president' %>
+                                    <td class="align-middle" colspan="1">
+                                        <%= link_to '+', edit_role_plus_user_path(user.id), data: { confirm: 'Are you sure?' }, class: "btn btn-primary w-100"  %>
+                                    </td>
+                                    <td class="align-middle" colspan="1">
+                                        <%= link_to '-', edit_role_minus_user_path(user.id), data: { confirm: 'Are you sure?' }, class: "btn btn-primary w-100" %>
+                                    </td>
+                                <% end %>
+                                <% if current_user.role == 'admin' || current_user.role == 'treasurer' || current_user.role == 'president' %>
+                                    <td class="align-middle"><%= link_to 'Delete', user, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger w-100" %></td>
+                                <% end %>
                             </tr>
                         <% end %>
                     </tbody>

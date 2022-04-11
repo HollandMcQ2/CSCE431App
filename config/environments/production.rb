@@ -126,4 +126,6 @@ Rails.application.configure do
   ENV['MERCHANT_ID'] = '5z6r9hv6bc9cmmjx'
   ENV['PUBLIC_KEY'] = 'h64bmpjqmn652rj8'
   ENV['PRIVATE_KEY'] = '285f453f319c9622ea78305100d24436'
+  ENV['PAYPAL_CLIENT_ID'] = 'AZ7cvFNlXaeTjUVqghWxEaqvBuJEHCz3BKwX7fksAdrleR1tqTQksTwO9oI6NgB3_k7Pb9XstqeIBuIW'
+  ENV['PAYPAL_PRODUCTION_ID'] = 'AVIm79GenDCRKLseYe4vbl6cjyGkVuIWuA2CF4YztZejCKGIRFX3q4OzY_A3sGP-X69Q6Fbw_RnQnqcG'
 end

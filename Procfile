@@ -1,3 +1,3 @@
-release: rails db:reset
-release: rails db:migrate
-release: rails db:seed:replant
+release: rails db:migrate 
+rails db:seed
+

@@ -7,6 +7,9 @@
             <div class="mb-3">
                 <p>Time: <%= @event.time.strftime("%m/%d/%Y %I:%M") %></p>
             </div>
+            <div class="mb-3">
+                <p>End Time: <%= @event.end_time.strftime("%m/%d/%Y %I:%M") %></p>
+            </div>
             <div class = "mb-3">
                 <p>Location: <%= @event.location %> </p>
             </div>
@@ -14,86 +17,94 @@
                 <p>Description: <%= @event.description %> </p>
             </div>
             <div class = "mb-3">
+                <p>Link: <%= @event.link %> </p>
+            </div>
+            <div class = "mb-3">
                 <p>Number of people attended: <%= @event.attendance_count %> </p>
             </div>
             <div class = "mb-3">
                 <p>Mandatory: <%= @event.is_mandatory %> </p>
             </div>
-            <br>
             <% if user_signed_in? &&  current_user.role == 'admin' %>
-            <div class = "mb-3">
-                <%# create checkbox to show or hide the second table %>
-                <input type="checkbox" id="showDidNotAttendTable">
-                <label for="showDidNotAttendTable">Show/hide members who did not attend this meeting</label><br>
-            </div>
-            <%# create table to show all users that attended this meeting %>
-            <div class="mt-5">
-                <b style="font-size: 24px;">Users who attended this meeting:</b>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Full Name</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Attended</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <% @attendees.each do |attendee| %>
-                            <% currUser = @users.where(id: attendee.user_id, is_current_member: true).first%>
-                            <%# check if currUser is nil, if its not, put data in table %>
-                            <% if !currUser.nil? %>
-                                <tr>
-                                    <td><%= currUser.id %></td>
-                                    <td><%= currUser.full_name %></td>
-                                    <td><%= currUser.email %></td>
-                                    <td><%= attendee.attended %></td>
-                                </tr>
-                            <% end %> 
-                        <% end %>
-                        <%# check if anyone has attended the meeting, if no one has display message %>
-                        <% if @attendees.empty? %>
-                            <tr>
-                                <td colspan="3" style="text-align:center;">No one has attended this meeting</td>
-                            </td>
-                        <% end %>
-                    </tbody>
-                </table>
-            </div>
+                <div class = "mb-3">
+                    <p>Password: <%= @event.password %> </p>
+                </div>
+            <% end %>
             <br>
-            <div class="mt-5" id="didNotAttendTable" style="display: none;">
-                <b style="font-size: 24px;">Users who did not attend this meeting:</b>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Full Name</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Attended</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <% @users.each do |user| %>
-                            <% currUser = @attendees.find_by(user_id: user.id) %>
-                            <%# check if currUser is nil, if it is, put data in table because they did not attend the meeting %>
-                            <% if currUser.nil? %>
-                                <tr>
-                                    <td><%= user.id %></td>
-                                    <td><%= user.full_name %></td>
-                                    <td><%= user.email %></td>
-                                    <td><%= false %></td>
-                                </tr>
-                            <% end %> 
-                        <% end %>
-                        <%# check if anyone has attended the meeting, if no one has display message %>
-                        <% if @attendees.length == @users.length %>
+            <% if user_signed_in? &&  current_user.role == 'admin' || current_user.role == 'president' || current_user.role == 'treasurer' %>
+                <div class = "mb-3">
+                    <%# create checkbox to show or hide the second table %>
+                    <input type="checkbox" id="showDidNotAttendTable">
+                    <label for="showDidNotAttendTable">Show/hide members who did not attend this meeting</label><br>
+                </div>
+                <%# create table to show all users that attended this meeting %>
+                <div class="mt-5">
+                    <b style="font-size: 24px;">Users who attended this meeting:</b>
+                    <table class="table">
+                        <thead>
                             <tr>
-                                <td colspan="3" style="text-align:center;">Everyone attended this meeting</td>
-                            </td>
-                        <% end %>
-                    </tbody>
-                </table>
-            </div>
+                                <th scope="col">ID</th>
+                                <th scope="col">Full Name</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Attended</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% @attendees.each do |attendee| %>
+                                <% currUser = @users.where(id: attendee.user_id, is_current_member: true).first%>
+                                <%# check if currUser is nil, if its not, put data in table %>
+                                <% if !currUser.nil? %>
+                                    <tr>
+                                        <td><%= currUser.id %></td>
+                                        <td><%= currUser.full_name %></td>
+                                        <td><%= currUser.email %></td>
+                                        <td><%= attendee.attended %></td>
+                                    </tr>
+                                <% end %> 
+                            <% end %>
+                            <%# check if anyone has attended the meeting, if no one has display message %>
+                            <% if @attendees.empty? %>
+                                <tr>
+                                    <td colspan="3" style="text-align:center;">No one has attended this meeting</td>
+                                </td>
+                            <% end %>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <div class="mt-5" id="didNotAttendTable" style="display: none;">
+                    <b style="font-size: 24px;">Users who did not attend this meeting:</b>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Full Name</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Attended</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% @users.each do |user| %>
+                                <% currUser = @attendees.find_by(user_id: user.id) %>
+                                <%# check if currUser is nil, if it is, put data in table because they did not attend the meeting %>
+                                <% if currUser.nil? %>
+                                    <tr>
+                                        <td><%= user.id %></td>
+                                        <td><%= user.full_name %></td>
+                                        <td><%= user.email %></td>
+                                        <td><%= false %></td>
+                                    </tr>
+                                <% end %> 
+                            <% end %>
+                            <%# check if anyone has attended the meeting, if no one has display message %>
+                            <% if @attendees.length == @users.length %>
+                                <tr>
+                                    <td colspan="3" style="text-align:center;">Everyone attended this meeting</td>
+                                </td>
+                            <% end %>
+                        </tbody>
+                    </table>
+                </div>
             <% end %>
             <%= link_to 'Back', events_path, {class: "mt-5"} %>
         <% end %>

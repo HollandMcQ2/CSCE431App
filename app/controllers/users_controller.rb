@@ -37,6 +37,8 @@ class UsersController < ApplicationController
     puts "I am user @attendance: #{@user.id}"
     puts "current user role: #{@user.role}"
   end
+  # METHOD: PATCH
+  # UPDATE: This method updates the users attendance if the current time is valid.
   def update
     @user = User.find(params[:id])
     respond_to do |format|
@@ -48,22 +50,55 @@ class UsersController < ApplicationController
       @event = Event.where(password: params[:user]['password']).last
       # if password is valid for a meeting
       if @event
-        @user.increment!(:attendance_count)
-        @event.increment!(:attendance_count)
-        @event_user = EventUser.create(:user_id => @user.id, :event_id => @event.id, :attended => true)
+        # get current time
+        current_time = Time.now
+        puts current_time
+        puts Time.now
 
-        if @user.save && @event.save && @event_user.save
-          format.html { redirect_to user_path(current_user.id), notice: "Attendance was successfully updated." }
-          format.json { render :show, status: :ok, location: @user }
-        else
-          format.html { render :edit, status: :unprocessable_entity }
+        # if the meeting is open, give attendance credit
+        if (current_time < @event.end_time && current_time > @event.time) || @event.open
+
+          # check if user has already gotten credit for this event
+          @event_user = EventUser.where(user_id: @user.id, event_id: @event.id).first
+          if @event_user
+            flash.now[:error] = "You have already attended this event."
+            format.html { render :edit, status: :unprocessable_entity  }
+            format.json { render json: @user.errors, status: :unprocessable_entity }
+          else
+            @user.increment!(:attendance_count)
+            @event.increment!(:attendance_count)
+            @event_user = EventUser.create(:user_id => @user.id, :event_id => @event.id, :attended => true)
+
+            if @user.save && @event.save && @event_user.save
+              format.html { redirect_to user_path(current_user.id), notice: "Attendance was successfully updated." }
+              format.json { render :show, status: :ok, location: @user }
+            else
+              format.html { render :edit, status: :unprocessable_entity }
+              format.json { render json: @user.errors, status: :unprocessable_entity }
+            end
+          end
+        elsif !@event.open # if the meeting is closed
+          flash.now[:error] = "This event is closed."
+          format.html { render :edit, status: :unprocessable_entity  }
           format.json { render json: @user.errors, status: :unprocessable_entity }
         end
       else # if the user inputs an invalid password
-        flash.now[:error] = "Invalid email/password combination"
+        flash.now[:error] = "Invalid password"
         format.html { render :edit, status: :unprocessable_entity  }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
+    end
+  end
+  def delete
+    @user = User.find(params[:id])
+  end
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+
+    respond_to do |format|
+      format.html { redirect_to users_url, notice: "User was successfully destroyed." }
+      format.json { head :no_content }
     end
   end
   # METHOD: GET
@@ -74,53 +109,49 @@ class UsersController < ApplicationController
     if @user[:has_paid_dues] == true
       redirect_to(thank_you_user_path(current_user.id))
     end
-    @client_token = Braintree::ClientToken.generate
+    @current_semester = Semester.where(end: Date.today..).where(start: ..Date.today).take
   end
   # METHOD: POST
   # This method processes the transaction from the /user/:id/payment route. If the transaction is successful, attributes in the user model will be updated to store basic, non invasive information to provide the user with a reciept on the thank you page.
   # In the future, this method will map hasPaid values to individual semesters so that when a new semeseter starts, users will have to repay dues.
   def checkout
     @user = User.find(params[:id])
-    nonce = params[:nonce]
-    p "nonce: "
-    p nonce
-    result = Braintree::Transaction.sale(
-      :amount => "200.00",
-      :payment_method_nonce => nonce,
-      :options => {
-        :submit_for_settlement => true
-      }
-    )
-    if result.success?
+    # nonce = params[:nonce]
+    # p "nonce: "
+    # p nonce
+    # result = Braintree::Transaction.sale(
+    #   :amount => "200.00",
+    #   :payment_method_nonce => nonce,
+    #   :options => {
+    #     :submit_for_settlement => true
+    #   }
+    # )
+    # if result.success?
       # See result.transaction for details
       # TODO: change hasPaid on a per semester basis
       # redirect to thank you page
-      p result.transaction
+      # p result.transaction
       @user.update_column("has_paid_dues", true);
       # update semester and join
       # need to determine current semester with time comparisons
       # then need to create new entity in semester_user
-      @user.update_column("transaction_amount", result.transaction.amount)
-      @user.update_column("transaction_last_4", result.transaction.credit_card_details.last_4.to_f);
-      @user.update_column("transaction_date", result.transaction.created_at);
+      # @user.update_column("transaction_amount", result.transaction.amount)
+      # @user.update_column("transaction_last_4", result.transaction.credit_card_details.last_4.to_f);
+      # @user.update_column("transaction_date", result.transaction.created_at);
       # redirect to thank you
       redirect_to(thank_you_user_path(current_user.id))
-    else
+    # else
       # TODO: Handle error
-      p result.message
-      render json: {status: "error", code: 400, message: result.message}
-    end
+    #   p result.message
+    #   render json: {status: "error", code: 400, message: result.message}
+    # end
   end
   def thank_you
     @user = User.find(params[:id])
     if @user[:has_paid_dues] == false
       redirect_to(payment_user_path(current_user.id))
     end
-    # this may not work with paypal
-    
-    p "transaction info:"
-    p @user[:transaction_amount]
-    p @user[:transaction_last_4]
+    @current_semester = Semester.where(end: Date.today..).where(start: ..Date.today).take
   end
   # METHOD: GET
   # This method display all the meetings a specific user has attended (or filtered by not attended)
@@ -130,5 +161,44 @@ class UsersController < ApplicationController
     @event_users = EventUser.all
     puts "I am user @view_meetings: #{@user.id}"
   end
+  def help
+    @user = User.find(params[:id])
+  end
 
+  def edit_role_plus
+    @user = User.find(params[:id])
+    if @user.role == 'member'
+      @user.role = 'admin'
+    elsif @user.role == 'admin'
+      @user.role = 'treasurer'
+    else @user.role == 'treasurer'
+      @user.role = 'president'
+    end
+    @user.save
+    redirect_to users_url, notice: "Role successfully updated"
+  end
+
+  def edit_role_minus
+    @user = User.find(params[:id])
+    only_1_pres = false
+    change_notice = false
+    if User.where("role = 'president'").count == 1
+      only_1_pres = true
+    end
+    if @user.role == 'president' && only_1_pres == false
+      @user.role = 'treasurer'
+    elsif @user.role == 'president' && only_1_pres == true
+      change_notice = true
+    elsif @user.role == 'treasurer'
+      @user.role = 'admin'
+    else
+      @user.role = 'member'
+    end
+    @user.save
+    if only_1_pres && change_notice
+      redirect_to users_url, notice: "Must have at least 1 member with president role."
+    else
+      redirect_to users_url, notice: "Role successfully updated"
+    end
+  end
 end
