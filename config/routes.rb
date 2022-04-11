@@ -29,6 +29,7 @@ Rails.application.routes.draw do
 	  post :notify, to: 'events#mail'
     end
   end
+  resources :contact_forms, except: [:edit, :update]
   resources :semesters do
     member do
       get :delete
