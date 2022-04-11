@@ -113,10 +113,10 @@
                                 </td>
                                 <% if current_user.role == 'president' %>
                                     <td class="align-middle" colspan="1">
-                                        <%= link_to '+', edit_role_plus_user_path(user.id), {class: "btn btn-primary w-100"} %>
+                                        <%= link_to '+', edit_role_plus_user_path(user.id), data: { confirm: 'Are you sure?' }, class: "btn btn-primary w-100"  %>
                                     </td>
                                     <td class="align-middle" colspan="1">
-                                        <%= link_to '-', edit_role_minus_user_path(user.id), {class: "btn btn-primary w-100"} %>
+                                        <%= link_to '-', edit_role_minus_user_path(user.id), data: { confirm: 'Are you sure?' }, class: "btn btn-primary w-100" %>
                                     </td>
                                 <% end %>
                                 <% if current_user.role == 'admin' || current_user.role == 'treasurer' || current_user.role == 'president' %>

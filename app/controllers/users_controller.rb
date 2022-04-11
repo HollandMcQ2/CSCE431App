@@ -175,19 +175,30 @@ class UsersController < ApplicationController
       @user.role = 'president'
     end
     @user.save
-    redirect_to users_url
+    redirect_to users_url, notice: "Role successfully updated"
   end
 
   def edit_role_minus
     @user = User.find(params[:id])
-    if @user.role == 'president'
+    only_1_pres = false
+    change_notice = false
+    if User.where("role = 'president'").count == 1
+      only_1_pres = true
+    end
+    if @user.role == 'president' && only_1_pres == false
       @user.role = 'treasurer'
+    elsif @user.role == 'president' && only_1_pres == true
+      change_notice = true
     elsif @user.role == 'treasurer'
       @user.role = 'admin'
     else
       @user.role = 'member'
     end
     @user.save
-    redirect_to users_url
+    if only_1_pres && change_notice
+      redirect_to users_url, notice: "Must have at least 1 member with president role."
+    else
+      redirect_to users_url, notice: "Role successfully updated"
+    end
   end
 end
