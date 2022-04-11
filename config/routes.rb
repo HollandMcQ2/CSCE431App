@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :users do
     member do
       get :meetings
+      get :help
       get :edit_role_plus, to: 'users/:id/edit_role_plus'
       get :edit_role_minus, to: 'users/:id/edit_role_minus'
       get :payment
