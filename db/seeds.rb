@@ -10,7 +10,8 @@ User.create(:full_name => 'Ken Kirkley', :email => "kenkirkley1330@gmail.com", :
 User.create(:full_name => 'Holland McQuaid', :email => "HollandMcQ2@gmail.com", :role => "admin", :attendance_count => 1, :has_paid_dues => true);
 User.create(:full_name => 'Elaine Mo', :email => "kakashiandflute@gmail.com", :role => "admin");
 User.create(:full_name => 'John Knapp', :email => "jmichaelknapp@gmail.com", :role => "admin");
-Semester.create(:name => 'Spring 2022', :start => Date.new(2022,1,22), :end=> Date.new(2022,5,14), :duescost => 200.00)
+
+Semester.create(:name => 'Spring 2022', :start => Date.new(2022,1,22), :end=> Date.new(2022,5,14), :duescost => 2.00)
 User.create(:full_name => 'John Tester', :email => "t3ster219@gmail.com", :role => "admin");
 User.create(:full_name => 'Johnathan Torres', :email => "torres404@tamu.edu", :role => "admin");
 User.find_by_email("kakashiandflute@gmail.com").update(:role => 'president')
