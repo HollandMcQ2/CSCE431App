@@ -3,7 +3,7 @@
 
     <div class="container">
         <h1 class="mb-5 text-center">TSAT Member Dashboard</h1>
-        <div class="row">
+        <div class="row mt-1">
             <div class="col-sm">
                 <%= link_to "Events", events_path, {class:"btn btn-primary btn-block my-auto" }%>
             </div>
@@ -29,13 +29,14 @@
 					<%= link_to "Semesters", semesters_path, {class:"btn btn-primary btn-block my-auto" }%>
 				</div>
             <% end %>
-          
+        </div>
+        <div class="row mt-1">
             <% if ['treasurer','president'].include? current_user.role %>
-              <div class="col-sm">
+                <div class="col-sm">
                 <%= link_to "Payment Details", payment_accounts_path, {class: "btn btn-primary btn-block my-auto"} %>
-              </div>
+                </div>
             <% end %>
-          
+            
             <div class="col-sm">
                 <%= link_to "Help", help_user_path(current_user.id), {class:"btn btn-primary btn-block my-auto" } %>
             </div>
