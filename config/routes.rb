@@ -27,6 +27,17 @@ Rails.application.routes.draw do
       get :delete
     end
   end
+  resources :semesters do
+    member do
+      get :delete
+	  get :records
+	  get 'records/new', to: 'semesters#new_record', as: :new_record
+	  post 'records', to: 'semesters#create_record'
+	  get 'records/:user_id/edit', to: 'semesters#edit_record', as: :edit_record
+	  patch 'records', to: 'semesters#update_record'
+	  delete 'records.:user_id', to: 'semesters#destroy_record', as: :delete_record
+    end
+  end
   resources :payment_accounts do
     member do
       patch :select
