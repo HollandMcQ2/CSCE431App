@@ -139,11 +139,6 @@ class UsersController < ApplicationController
     if @user[:has_paid_dues] == false
       redirect_to(payment_user_path(current_user.id))
     end
-    # this may not work with paypal
-    
-    p "transaction info:"
-    p @user[:transaction_amount]
-    p @user[:transaction_last_4]
   end
   # METHOD: GET
   # This method display all the meetings a specific user has attended (or filtered by not attended)
