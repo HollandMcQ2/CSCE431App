@@ -22,6 +22,9 @@
                     <%= link_to "Edit Home Page", edit_home_page_path(), {class:"btn btn-primary btn-block my-auto" } %>
                 </div>
             <% end %>
+            <div class="col-sm">
+                <%= link_to "Help", help_user_path(current_user.id), {class:"btn btn-primary btn-block my-auto" } %>
+            </div>
         </div>
     </div>
 </body>
