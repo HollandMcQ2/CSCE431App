@@ -1,58 +1,63 @@
-name: CI
-# Controls when the action will run.
-on:
-  # Triggers the workflow on push or pull request events but only for the test branch
-  push:
-    branches: [ test ]
-  pull_request:
-    branches: [ test ]
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+env:
+  RUBY_VERSION: 3.0.2
+  POSTGRES_USER: postgres
+  POSTGRES_PASSWORD: password
+  DATABASE_USER: postgres
+  DATABASE_PASSWORD: password
+
+name: Rails tests
+on: [push, pull_request]
 jobs:
-  # This workflow contains a single job called "build"
-  run-tests:
-    # The type of runner that the job will run on
+  rspec-test:
+    name: RSpec
     runs-on: ubuntu-latest
-
     services:
-      # label used to access the service container
       postgres:
-        # Docker Hub image
-        image: dmartinez05/ruby_rails_postgresql:latest
-        # service environment variables
-        # `POSTGRES_HOST` is `postgres`
-        env:
-          # required
-          DATABASE_PASSWORD: test_password
-          # optional (defaults to `postgres`)
-          DATABASE_USER: test_app
+        image: postgres:12
         ports:
-          # maps tcp port 5432 on service container to the host
-          - 3000:3000
-        # set health checks to wait until postgres has started
-        options: >-
-          --health-cmd pg_isready
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
+        - 5432:5432
+        env:
+          POSTGRES_USER: ${{ env.POSTGRES_USER }}
+          POSTGRES_PASSWORD: ${{ env.POSTGRES_PASSWORD }}
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      # Set up Ruby
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-      - name: Installation of rspec and other configuration
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ env.RUBY_VERSION }}
+      - name: Install postgres client
+        run: sudo apt-get install libpq-dev
+      - name: Install dependencies
         run: |
-          bundle install
-          rails db:create
-          rails db:migrate
-          rails g rspec:install
-      # Runs unit tests
-      - name: Unit testing
-        run: rspec spec/unit/unit_spec.rb
-      # Runs integration tests
-      - name: Integration testing
-        run: rspec spec/feature/integration_spec.rb
+          gem install bundler
+          bundler install
+      - name: Create database
+        run: |
+          bundler exec rails db:create RAILS_ENV=test
+          bundler exec rails db:migrate RAILS_ENV=test
+      - uses: borales/actions-yarn@v2.3.0
+        with:
+          cmd: install
+      - name: Run tests
+        run: bundler exec rspec ./spec
+      - name: Run brakeman
+        run: brakeman -o brakeman.txt
+      - name: Run rubocop
+        run: bundler exec rubocop --out rubocop.txt
+      - name: Upload coverage results
+        uses: actions/upload-artifact@master
+        if: always()
+        with:
+          name: coverage-report
+          path: coverage
+      - name: Upload rubocop report
+        uses: actions/upload-artifact@master
+        if: always()
+        with:
+          name: rubocop-report.txt
+          path: rubocop.txt
+      - name: Upload brakeman report
+        uses: actions/upload-artifact@master
+        if: always()
+        with:
+          name: brakeman-report.txt
+          path: brakeman.txt

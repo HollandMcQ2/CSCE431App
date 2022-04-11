@@ -7,20 +7,45 @@
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img class="d-block w-100" src="https://placeimg.com/1080/500/animals" alt="First slide">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>My Caption Title (1st Image)</h5>
-                <p>The whole caption will only show up if the screen is at least medium size.</p>
-            </div>
+            <% if @home_page.slider_image_1.attached? %>
+                <div class="carousel-image"><img class="d-block" src="<%=(url_for(@home_page.slider_image_1))%>"></div>
+            <% else %>
+                <img class="d-block w-100" src="https://placeimg.com/1080/500/animals" alt="First slide">
+            <% end %>
+        </div>
+
+        <div class="carousel-item">
+            <% if @home_page.slider_image_2.attached? %>
+                <div class="carousel-image"><img class="d-block" src="<%=(url_for(@home_page.slider_image_2))%>"></div>
+            <% else %>
+                <img class="d-block w-100" src="https://placeimg.com/1080/500/animals" alt="Second slide">
+            <% end %>
         </div>
         <div class="carousel-item">
-            <img class="d-block w-100" src="https://placeimg.com/1080/500/arch" alt="Second slide">
+            <% if @home_page.slider_image_3.attached? %>
+                <div class="carousel-image"><img class="d-block" src="<%=(url_for(@home_page.slider_image_3))%>"></div>
+            <% else %>
+                <img class="d-block w-100" src="https://placeimg.com/1080/500/animals" alt="Third slide">
+            <% end %>
         </div>
         <div class="carousel-item">
-            <img class="d-block w-100" src="https://placeimg.com/1080/500/nature" alt="Third slide">
+            <% if @home_page.slider_image_4.attached? %>
+            <div class="carousel-image"><img class="d-block" src="<%=(url_for(@home_page.slider_image_4))%>"></div>
+            <% else %>
+                <img class="d-block w-100" src="https://placeimg.com/1080/500/animals" alt="Fourth slide">
+            <% end %>
+        </div>
+        <div class="carousel-item">
+            <% if @home_page.slider_image_5.attached? %>
+            <div class="carousel-image"><img class="d-block" src="<%=(url_for(@home_page.slider_image_5))%>"></div>
+            <% else %>
+                <img class="d-block w-100" src="https://placeimg.com/1080/500/animals" alt="Fifth slide">
+            <% end %>
         </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -36,7 +61,5 @@
 <div style="text-align:center">
     <h3><%= @home_page.summary%></h3>
 </div>
-
-
 
 
