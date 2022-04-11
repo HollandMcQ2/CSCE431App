@@ -31,7 +31,7 @@
                 </div>
             <% end %>
             <br>
-            <% if user_signed_in? &&  current_user.role == 'admin' %>
+            <% if user_signed_in? &&  current_user.role == 'admin' || current_user.role == 'president' || current_user.role == 'treasurer' %>
                 <div class = "mb-3">
                     <%# create checkbox to show or hide the second table %>
                     <input type="checkbox" id="showDidNotAttendTable">

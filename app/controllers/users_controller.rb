@@ -89,6 +89,18 @@ class UsersController < ApplicationController
       end
     end
   end
+  def delete
+    @user = User.find(params[:id])
+  end
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+
+    respond_to do |format|
+      format.html { redirect_to users_url, notice: "User was successfully destroyed." }
+      format.json { head :no_content }
+    end
+  end
   # METHOD: GET
   # This method displays the payment portal for paying dues at the route /user/:id/payment. If the user has already paid their dues, this route will redirect the user to the thank you page with their receipt.
   def payment
