@@ -1,0 +1,89 @@
+<div class="container mt-5 mb-5">
+    <h1>Help Page</h1>
+    <div class="mt-5">
+    
+        <h2>Dashboard</h2>
+        The Dashboard is your main hub for doing everything you need to in the app. The functions of each of the buttons are as follows:
+        <ul>
+            <li>
+                <h4>
+                    Events
+                </h4>
+                <p>
+                    View events and information about events. <% if user_signed_in? && (current_user.role == 'admin' || current_user.role == 'treasurer' || current_user.role == 'president') %> Create new events, Edit events, or delete events. <% end %>
+                </p>
+            </li>
+            <li>
+                <h4>
+                    Attendance
+                </h4>
+                <p>
+                    Insert a meeting password to get credit for meeting attendance.
+                </p>
+            </li>
+            <li>
+                <h4>
+                    Pay Dues
+                </h4>
+                <p>
+                    Pay your dues. If you have already paid your dues you can see confirmation of your payment on this page.
+                </p>
+            </li>
+            <li>
+                <h4>
+                    Members
+                </h4>
+                <p>
+                    View your dues status and which meeting you have and have not attended. Admins will be able to see a list of all members in the club and the meetings they have attended, as well as their dues status.
+                </p>
+            </li>
+            <% if user_signed_in? && (current_user.role == 'admin' || current_user.role == 'treasurer' || current_user.role == 'president') %>
+                <li>
+                    <h4>
+                        Edit Home Page
+                    </h4>
+                    <p>
+                        This is the place to edit all of the information and content on the home pages.
+                    </p>
+                </li>
+            <% end %>
+        </ul>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <h2>Events Page</h2>
+        The events tab is used to view all of the events happening (or that have happened). This page will make it easy to find when your next meeting is, where it is, how long it will be, and if it is mandatory or not. Press the details button that is next to each meeting in order to see all of the additional details about each meeting, such as the zoom link if necessary.
+        <% if user_signed_in? && (current_user.role == 'admin' || current_user.role == 'treasurer' || current_user.role == 'president') %>
+            <br>
+            As an officer in TSAT, you have the privileges to create, delete and edit meetings.
+            <br>
+            To Create a meeting, navigate to the events page from the dashboard and find the button at the bottom of the screen that says “Add Event”. Upon clicking this you will be prompted to fill out a form to create the meeting. Not all of the data is required to create a meeting, but be mindful that if you want your members to be able to sign in to the meeting you must provide a password. Click submit at the bottom and the event will be created.
+            <br>
+            To Edit an event, Click the “Edit” button that is next to the event. You will be able to change all of the information about an event. The Edit button will also allow you to open meetings that have already closed, which will allow your members to use the password to sign in to the meeting even if it is technically over.
+            <br>
+            To Delete an event, click the delete button next to each event on the events page. This is a permanent deletion so be careful. The website will ask you to confirm that you want to delete before actual deletion.
+        <% end %>
+        <h2>Attendance Page</h2>
+        This page consists of one text box where you can enter a password in order to get credit for a meeting. If the meeting is open and the password is valid, you will get credit for attending the meeting. If the password is invalid, you will not get credit for the meeting. If the meeting is over or has not started yet, you will not get credit for the meeting, even if the password is valid. Admins/Officers are able to reopen meetings after they have closed which will allow for password to work.
+        
+        <br>
+        <h2>Members Page</h2>
+        On the members page you will be able to see basic information about your own account, including your email, dues status, meeting attendance count, and the meetings you have or have not attended.
+        <br>
+        As an admin/officer you will be able to see a list of members in TSAT as well as their emails, roles in the club, dues status, and meeting attendance count. Also, for each member you can click the “Meetings” button by their name to see all the meetings they attended. Lastly, if you check the box titled “Filter by Member's Dues status” you can filter the list of members to only show people that have not yet paid their dues.  
+        <% if user_signed_in? && (current_user.role == 'admin' || current_user.role == 'treasurer' || current_user.role == 'president') %>
+            <h2>Edit Home Page</h2>
+            This page will allow admins/officers to change the content on the home page by uploading new images and inserting new text for the page.
+        <% end %>
+        <br>
+        <br>
+        <br>
+        <%= link_to 'Back', user_root_path(current_user.id), {class: "mt-5"} %>
+    </div>
+</div>
+
+
+
+

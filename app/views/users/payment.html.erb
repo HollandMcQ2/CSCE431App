@@ -1,62 +1,68 @@
-<div class="container mt-5 px-5">
-    <div class='alert alert-danger'></div>
-    <h1>Pay Club Dues</h1>
-    <h2>Dues are $200.00</h2>
-    <div id="payment-form"></div>
-    <!-- <script src="https://js.braintreegateway.com/web/dropin/1.33.0/js/dropin.min.js" data-braintree-dropin-authorization="<%= @client_token %>" data-paypal.flow="checkout" data-paypal.amount="10.00" data-paypal.currency="USD" ></script> -->
-    <button type="submit" class="btn btn-primary mt-3" id="submit-button">Submit Payment</button
-    <script src="https://js.braintreegateway.com/web/dropin/1.33.0/js/dropin.min.js"></script>
+<% content_for(:body_attributes) do %>
+  data-turbolinks="false"
+<% end %>
+<% content_for (:for_head) do %>
+  <meta name="turbolinks-visit-control" content="reload">
+<% end %>
 
+
+
+<div class="container mt-5 px-5">
+    <!-- <div class='alert alert-danger'></div> -->
+    <h1>Pay Club Dues</h1>
+    <h2>Dues are $20.00</h2>
+	<% if ENV['PAYPAL_CLIENT_ID'] != ''%>
+    	<script src="https://www.paypal.com/sdk/js?client-id=<%= ENV['PAYPAL_CLIENT_ID'] %>&currency=USD&enable-funding=venmo"></script>
+	<% else %>
+		<div id="error_explanation">
+			Payment cannot be accepted at this time because the payment destination has not been set.<br>
+			Please tell a treasurer or president if you encounterd this error. 
+		</div>
+	<% end %>
+    <!-- Set up a container element for the button -->
+    <div id="paypal-button-container"></div>
     <script>
-    // This script sets up the payment portal from Braintree. It supports manual card input and Paypal
-    document.querySelector('.alert-danger').style.display = 'none'
-      var submitButton = document.querySelector('#submit-button');
-      braintree.dropin.create({
-        authorization: '<%= @client_token %>',
-        container: '#payment-form',
-        paypal: {
-            amount: "100.00",
-            currency: "USD",
-            flow: 'checkout'
-        }
-      }, function (err, dropinInstance) {
-        if (err) {
-          // Handle any errors that might've occurred when creating Drop-in
-          console.error(err);
-          return;
-        }
-        submitButton.addEventListener('click', function () {
-            document.querySelector('.alert-danger').style.display = 'none'
-          dropinInstance.requestPaymentMethod(function (err, payload) {
-            if (err) {
-              // Handle errors in requesting payment method
-              document.querySelector('.alert-danger').style.display = 'block';
-                document.querySelector('.alert-danger').textContent = 'Your payment method was invalid. Please enter a valid payment method.';
-            } else{
-                console.log(payload.nonce);
-                $.ajax({
-                    url: 'checkout',
-                    type: 'post',
-                    data: {
-                        nonce: payload.nonce
-                    },
-                    success: function(res){
-                        // if res status code 200 do nothing, server redirect,
-                        console.log(res);
-                        if (res.status == 'error'){
-                            document.querySelector('.alert-danger').style.display = 'block';
-                            document.querySelector('.alert-danger').textContent = 'Your payment method was declined. Please try another payment method.';
-                        }
-                    },
-                    error: function(XMLHttpRequest, textStatus, errorThrown){
-                        // show generic payment declined try another method alert
-                        document.querySelector('.alert-danger').style.display = 'block';
-                        document.querySelector('.alert-danger').textContent = 'Your payment method was declined. Please try another payment method.';
-                    }
-                })
-            }
+      paypal.Buttons({
+        // Sets up the transaction when a payment button is clicked
+        createOrder: (data, actions) => {
+          return actions.order.create({
+            purchase_units: [{
+              amount: {
+                value: '20.00' // Can also reference a variable or function
+              }
+            }]
           });
-        });
-      });
+        },
+        // Finalize the transaction after payer approval
+        onApprove: (data, actions) => {
+          return actions.order.capture().then(function(orderData) {
+            }).then(function(res) {
+              const csrf = document.querySelector("meta[name='csrf-token']").getAttribute("content");
+              fetch('/users/<%= @user.id %>/checkout', {
+                method: 'POST',
+                redirect: 'follow',  
+                headers: {
+                  'Content-Type': 'application/json',
+                  'X-CSRF-Token': csrf
+                },
+                body: JSON.stringify({
+                  orderID: data.orderID
+                })
+              }
+              ).then(function(captureData) {
+                if (captureData.error === 'INSTRUMENT_DECLINED'){
+                  return actions.restart();
+                } else{
+                  window.location.replace('/users/<%= @user.id %>/thank_you');
+                }
+              });
+          });
+        },
+        onError: function (err) {
+          console.log(err);
+        },
+        onShippingChange: function (e){
+          // this forces popup
+        }
+      }).render('#paypal-button-container');
     </script>
-</div>

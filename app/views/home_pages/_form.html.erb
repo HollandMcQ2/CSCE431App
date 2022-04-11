@@ -11,37 +11,42 @@
         </ul>
       </div>
     <% end %>
-   
-    <!-- 
-      <div class = "field mb-3">
-          <%= form.label :slider_image_1, {class: "form-label name-label"}%>
-          <%= form.text_field :slider_image_1, {class: "form-control"}%>
-      </div>
-      <div class="field mb-3">
-          <%= form.label :slider_image_2, {class: "form-label name-label"}%>
-          <%= form.text_field :slider_image_2, {class: "form-control"}%>
-      </div>
-      <div class = "field mb-3">
-          <%= form.label :slider_image_3, {class: "form-label name-label"}%>
-          <%= form.text_field :slider_image_3, {class: "form-control"}%>
-      </div>
-      <div class = "field mb-3">
-          <%= form.label :slider_image_4, {class: "form-label name-label"}%>
-          <%= form.text_field :slider_image_4, {class: "form-control"}%>
-      </div>
-      <div class = "field mb-3">
-          <%= form.label :slider_image_5, {class: "form-label name-label"}%>
-          <%= form.text_field :slider_image_5, {class: "form-control"}%>
-      </div>
-    -->
+    
+    <div class = "field mb-3">
+        <%= form.label :slider_image_1, {class: "form-label name-label"}%>
+        <%= form.file_field :slider_image_1, {class: "form-control"}%>
+    </div>
+
+    <div class="field mb-3">
+      <%= form.label :slider_image_2, {class: "form-label name-label"}%>
+      <%= form.file_field :slider_image_2, {class: "form-control"}%>
+    </div>
+
+    <div class = "field mb-3">
+      <%= form.label :slider_image_3, {class: "form-label name-label"}%>
+      <%= form.file_field :slider_image_3, {class: "form-control"}%>
+    </div>
+
+    <div class = "field mb-3">
+      <%= form.label :slider_image_4, {class: "form-label name-label"}%>
+      <%= form.file_field :slider_image_4, {class: "form-control"}%>
+    </div>
+
+    <div class = "field mb-3">
+        <%= form.label :slider_image_5, {class: "form-label name-label"}%>
+        <%= form.file_field :slider_image_5, {class: "form-control"}%>
+    </div>
+
     <div class = "field mb-3">
         <%= form.label :heading, {class: "form-label name-label"}%>
         <%= form.text_field :heading, {class: "form-control"}%>
     </div>
+
     <div class = "field mb-3">
         <%= form.label :summary, {class: "form-label name-label"}%>
         <%= form.text_field :summary, {class: "form-control"}%>
     </div>
+
     <div class="actions">
       <%= form.submit "Submit", {class: "btn btn-primary"} %>
     </div>
