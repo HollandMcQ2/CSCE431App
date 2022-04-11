@@ -52,6 +52,27 @@ class EventsController < ApplicationController
         format.json { head :no_content }
       end
     end
+	def notify
+		@event = Event.find(params[:id])
+		#puts "===EVENT===", @event.name
+	end
+	def mail
+		@event = Event.find(params[:id])
+		@users = User.where(is_current_member: true)
+		if params[:body].nil? || params[:body]==""
+			@body = "Event reminder for "+@event.name+":\nTime:\t"+@event.time.to_s+"\nLocation:\t"+@event.location
+		else
+			@body = params[:body]
+		end
+		if params[:subject].nil? || params[:subject]==""
+			@subject = "Event reminder for "+@event.name
+		else
+			@subject = params[:subject]
+		end
+		@users.each do |u|
+			EventMailer.with(user: u, event: @event, body: @body, subject: @subject).event_notification.deliver_later
+		end
+	end
     def close
       @event = Event.find(params[:id])
       @event.update(open: !@event.open)
@@ -63,5 +84,8 @@ class EventsController < ApplicationController
       def event_params
         params.require(:event).permit(:name,:time, :end_time,:location, :is_mandatory, :description, :open, :password)
       end
+	  def mailer_params
+		params.require(:event).permit(:subject,:body)
+	  end
   end
   

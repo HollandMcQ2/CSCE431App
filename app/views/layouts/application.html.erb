@@ -11,8 +11,9 @@
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-    <script src="https://js.braintreegateway.com/web/dropin/1.33.0/js/dropin.min.js"></script>
+    <% if content_for? :for_head %>
+      <%= yield :for_head %>
+    <% end %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <style>
         .flash__alert   { color: red; }
@@ -21,7 +22,10 @@
     </style>
   </head>
 
-  <body class="custom-colors orange-text">
+  <body class="custom-colors orange-text"
+  <% if content_for?(:body_attributes) %>
+    <%= yield(:body_attributes) %> 
+  <% end %>>
   
      
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -53,7 +57,7 @@
                         <a class="nav-link" href="<%= events_path %>">Events</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact Us</a>
+                        <a class="nav-link" href=<%= new_contact_form_path %>>Contact Us</a>
                     </li>
                     <% if user_signed_in? &&  current_user.role == 'admin' %>
                     <li class="nav-item">
