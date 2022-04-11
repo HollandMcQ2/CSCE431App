@@ -22,7 +22,9 @@ RSpec.describe "ContactForms", type: :request do
 		end
 
 		it "gives feedback upon saving a valid submitted form" do
-			HomePage.create!(id: 1, heading: "test page", summary: "test page")
+			if HomePage.all.empty?
+				HomePage.create(id: 1, heading: "test page", summary: "test page")
+			end
 			post "/contact_forms", params: {contact_form: {message: "test"}}
 			follow_redirect!
 			
@@ -30,7 +32,9 @@ RSpec.describe "ContactForms", type: :request do
 		end
 
 		it "returns users to the home page after a valid submission" do
-			HomePage.create!(id: 1, heading: "test page", summary: "test page")
+			if HomePage.all.empty?
+				HomePage.create(id: 1, heading: "test page", summary: "test page")
+			end
 			post contact_forms_path, params: {contact_form: {message: "test"}}
 
 			expect(response).to redirect_to(root_path)
