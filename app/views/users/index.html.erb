@@ -88,6 +88,9 @@
                             <% if current_user.role == 'president' %>
                                 <th scope="col" class="align-middle" colspan="2">Edit Role</th>
                             <% end %>
+                            <% if current_user.role == 'admin' || current_user.role == 'treasurer' || current_user.role == 'president' %>
+                                <th scope="col" class="align-middle" colspan="1">Delete</th>
+                            <% end %>
                         </tr>
                     </thead>
                     <tbody>
@@ -115,6 +118,9 @@
                                     <td class="align-middle" colspan="1">
                                         <%= link_to '-', edit_role_minus_user_path(user.id), {class: "btn btn-primary w-100"} %>
                                     </td>
+                                <% end %>
+                                <% if current_user.role == 'admin' || current_user.role == 'treasurer' || current_user.role == 'president' %>
+                                    <td class="align-middle"><%= link_to 'Delete', user, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger w-100" %></td>
                                 <% end %>
                             </tr>
                         <% end %>

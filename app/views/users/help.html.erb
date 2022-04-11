@@ -34,7 +34,7 @@
                     Members
                 </h4>
                 <p>
-                    View your dues status and which meeting you have and have not attended. Admins will be able to see a list of all members in the club and the meetings they have attended, as well as their dues status.
+                    View your dues status and which meeting you have and have not attended. Admins will be able to see a list of all members in the club and the meetings they have attended, as well as their dues status, and delete all members.
                 </p>
             </li>
             <% if user_signed_in? && (current_user.role == 'admin' || current_user.role == 'treasurer' || current_user.role == 'president') %>
