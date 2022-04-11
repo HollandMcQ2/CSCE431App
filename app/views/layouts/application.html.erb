@@ -57,7 +57,7 @@
                         <a class="nav-link" href="<%= events_path %>">Events</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact Us</a>
+                        <a class="nav-link" href=<%= new_contact_form_path %>>Contact Us</a>
                     </li>
                     <% if user_signed_in? &&  current_user.role == 'admin' %>
                     <li class="nav-item">

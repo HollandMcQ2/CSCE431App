@@ -1,0 +1,62 @@
+<%= content_tag(:div, class: "container align-items-center mt-5 custom-colors") do %>
+	<%= content_tag(:div, class: "row align-items-center justify-content-center") do %>
+		<%= content_tag(:div, class: "col-12 col-md-10") do %>
+			<h1>Dues Cost</h1>
+			<div class="field mb-3">
+				<% if @semesters.size == 1 %>
+					<% semester = @semesters.first %>
+					Dues are currently set to $<%= semester.duescost %>.<br>
+					You can change this by editing the dues cost for the current semester (<%= semester.name %>)
+				<% elsif @semesters.size == 0 %>
+					Dues costs are currently not set, because there is no semester currently active.<br>
+					To set the cost of dues, create a semester that includes today's date and set the cost of its dues.
+				<% else %>
+					Multiple semesters are currently active; this is likely unintended and may cause errors.<br>
+					Dues costs will be pulled from the most recently created semeseter (@semeseters.last).<br>
+					Dues are currently set to $<%= @semeseters.last.duescost %>.
+				<%end%>
+			<div class="field mb-3">
+			<br>
+
+			<h1>Payment Accounts</h1>
+			<div class="field mb-3">
+				<% if @current_account != nil %>
+					Current account: <%= @current_account.internal_name %>
+				<% else %>
+					No account selected
+				<% end %>
+			</div>
+			<table class="table orange-text">
+				<thead>
+					<tr>
+						<th scope="col">Name</th>
+						<th scope="col">Address</th>
+						<th scope="col"></th>
+						<th scope="col"></th>
+						<th scope="col"></th>
+						<th scope="col"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @accounts.each do |account| %>
+						<tr>
+							<td class="align-middle"><%= account.internal_name %></td>
+							<td class="align-middle"><%= account.payment_address %></td>
+							<td class="align-middle"><%= link_to 'Show', payment_account_path(account), {class: "btn btn-primary w-100"} %></td>
+							<td class="align-middle"><%= link_to 'Edit', edit_payment_account_path(account), {class: "btn btn-primary w-100"} %></td>
+							<td class="align-middle"><%= link_to 'Select', select_payment_account_path(account), method: :patch, class: "btn btn-primary w-100" %></td>
+							<td class="align-middle"><%= link_to 'Delete', account, method: :delete, data: {confirm: 'Are you sure you want to delete this payment account?'}, class: "btn btn-danger w-100" %></td>
+						</tr>
+					<% end %>
+					<% if @accounts.empty? %>
+						<tr>
+							<td colspan="10" class="text-center">No payment accounts found</td>
+						</tr>
+					<% end %>
+				</tbody>
+			</table>
+		<% end %>
+	<% end %>
+	<%= link_to "Add Account", new_payment_account_path %><br>
+	<%= link_to 'Back', user_path(current_user.id), {class: "mt-5"} %>
+<% end %>

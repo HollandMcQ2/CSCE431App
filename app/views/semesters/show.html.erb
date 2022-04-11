@@ -1,0 +1,21 @@
+<%= content_tag(:div, class: "container align-items-center mt-5") do %>
+	<%= content_tag(:div, class: "row align-items-center justify-content-center") do %>
+		<%= content_tag(:div, class: "col-10 col-sm-8 col-md-6") do %>
+			<div class = "mb-3">
+				<h1>Semester: <%= @semester.name %></h1>
+			</div>
+			<div class = "mb-3">
+				<p>Start date: <%= @semester.start %></p>
+			</div>
+			<div class = "mb-3">
+				<p>End date: <%= @semester.end %></p>
+			</div>
+			<div class = "mb-3">
+				<p>Dues cost: <%= @semester.duescost %></p>
+			</div>
+			<%= link_to 'View User Records for this Semester', records_semester_path, {class: "mt-5"} %>
+			<br>
+			<%= link_to 'Back', semesters_path, {class: "mt-5"} %>
+		<% end %>
+	<% end %>
+<% end %>

@@ -148,6 +148,9 @@ class UsersController < ApplicationController
     @event_users = EventUser.all
     puts "I am user @view_meetings: #{@user.id}"
   end
+  def help
+    @user = User.find(params[:id])
+  end
 
   def edit_role_plus
     @user = User.find(params[:id])
