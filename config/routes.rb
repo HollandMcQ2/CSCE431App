@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   resources :users do
     member do
       get :meetings
+      get :help
+      get :edit_role_plus, to: 'users/:id/edit_role_plus'
+      get :edit_role_minus, to: 'users/:id/edit_role_minus'
       get :payment
       get :thank_you, to: 'users/:id/thank_you'
       post :checkout
@@ -34,6 +37,11 @@ Rails.application.routes.draw do
 	  patch 'records', to: 'semesters#update_record'
 	  delete 'records.:user_id', to: 'semesters#destroy_record', as: :delete_record
     end
+  end
+  resources :payment_accounts do
+    member do
+      patch :select
+	end	
   end
   # resources :users, only [:index, :show]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
