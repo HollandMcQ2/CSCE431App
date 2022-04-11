@@ -11,6 +11,11 @@
           1,
           1,
           1,
+          null,
+          null,
+          1,
+          1,
+          1,
           1,
           1,
           1,
@@ -19,12 +24,12 @@
           null,
           null,
           null,
-          1,
-          1,
-          1,
-          1,
-          0,
-          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null,
           null,
           null
@@ -99,10 +104,48 @@
           null
         ]
       },
+      "/csce431/app/models/home_page.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
       "/csce431/app/controllers/home_pages_controller.rb": {
         "lines": [
           1,
           1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          0,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          0,
           null,
           null
         ]
@@ -116,29 +159,8 @@
           null,
           null
         ]
-      },
-      "/csce431/app/models/contact_form.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/csce431/app/models/event.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
-          null
-        ]
-      },
-      "/csce431/app/models/home_page.rb": {
-        "lines": [
-          1,
-          null
-        ]
       }
     },
-    "timestamp": 1646705381
+    "timestamp": 1649704274
   }
 }
