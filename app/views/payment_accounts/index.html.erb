@@ -17,8 +17,15 @@
 				<%end%>
 			<div class="field mb-3">
 			<br>
-			
+
 			<h1>Payment Accounts</h1>
+			<div class="field mb-3">
+				<% if @current_account != nil %>
+					Current account: <%= @current_account.internal_name %>
+				<% else %>
+					No account selected
+				<% end %>
+			</div>
 			<table class="table orange-text">
 				<thead>
 					<tr>

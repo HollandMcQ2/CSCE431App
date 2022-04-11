@@ -11,7 +11,14 @@
     <!-- <div class='alert alert-danger'></div> -->
     <h1>Pay Club Dues</h1>
     <h2>Dues are $20.00</h2>
-    <script src="https://www.paypal.com/sdk/js?client-id=<%= ENV['PAYPAL_CLIENT_ID'] %>&currency=USD&enable-funding=venmo"></script>
+	<% if ENV['PAYPAL_CLIENT_ID'] != ''%>
+    	<script src="https://www.paypal.com/sdk/js?client-id=<%= ENV['PAYPAL_CLIENT_ID'] %>&currency=USD&enable-funding=venmo"></script>
+	<% else %>
+		<div id="error_explanation">
+			Payment cannot be accepted at this time because the payment destination has not been set.<br>
+			Please tell a treasurer or president if you encounterd this error. 
+		</div>
+	<% end %>
     <!-- Set up a container element for the button -->
     <div id="paypal-button-container"></div>
     <script>

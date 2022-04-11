@@ -18,7 +18,7 @@ class PaymentAccountsController < ApplicationController
 
 	def index
 		@semesters = Semester.where(["semesters.start < :now AND semesters.end > :now", {now: DateTime.now}]).order(created_at: :desc)
-
+		@current_account = PaymentAccount.find_by(payment_address: ENV['PAYPAL_CLIENT_ID'])
 		@accounts = PaymentAccount.all
 	end
 
