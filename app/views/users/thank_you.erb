@@ -4,7 +4,11 @@
             <h1 class="mt-5 mb-5">Thank You for Paying your Dues!</h1>
         </div>
         <div class="row justify-content-center flex-column">
-            <p> Your account was charged for $20.00 dollars! </p>
+            <p> Your account was charged for <% if @current_semester %>
+            <%= sprintf("%0.02f", @current_semester.duescost)  %>
+            <% else %>
+            20.00
+            <% end %> dollars! </p>
             <p> We are glad to have you as a member!
         </div>
         <!-- <div class="row justify-content-center mt-3"> -->

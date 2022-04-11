@@ -139,6 +139,7 @@ class UsersController < ApplicationController
     if @user[:has_paid_dues] == false
       redirect_to(payment_user_path(current_user.id))
     end
+    @current_semester = Semester.where(end: Date.today..).where(start: ..Date.today).take
   end
   # METHOD: GET
   # This method display all the meetings a specific user has attended (or filtered by not attended)

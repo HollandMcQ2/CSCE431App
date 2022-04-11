@@ -11,12 +11,14 @@
     <!-- <div class='alert alert-danger'></div> -->
     <h1>Pay Club Dues</h1>
     <% if @current_semester %>
-    <h2> Dues are <%= @current_semester.duescost %> </h2>
+    <h2> Dues are $<%= sprintf("%0.02f", @current_semester.duescost) %> </h2>
     <% else %>
     <h2> Dues are unannounced </h2>
     <% end %>
-	<% if ENV['PAYPAL_CLIENT_ID'] != ''%>
-    	<script src="https://www.paypal.com/sdk/js?client-id=<%= ENV['PAYPAL_CLIENT_ID'] %>&currency=USD&enable-funding=venmo"></script>
+	<% if ENV['PAYPAL_PRODUCTION_ID']%>
+    	<script src="https://www.paypal.com/sdk/js?client-id=<%= ENV['PAYPAL_PRODUCTION_ID'] %>&currency=USD&enable-funding=venmo"></script>
+	<% elsif ENV['PAYPAL_CLIENT_ID']%>
+      <script src="https://www.paypal.com/sdk/js?client-id=<%= ENV['PAYPAL_CLIENT_ID'] %>&currency=USD&enable-funding=venmo"></script>
 	<% else %>
 		<div id="error_explanation">
 			Payment cannot be accepted at this time because the payment destination has not been set.<br>
@@ -32,7 +34,7 @@
           return actions.order.create({
             purchase_units: [{
               amount: {
-                value: '<% if @current_semester %><%= @current_semester.duescost %><% else %>20.00<% end %>' // Can also reference a variable or function
+                value: '<% if @current_semester %><%= @current_semester.duescost%><% else %>20.00<% end %>' // Can also reference a variable or function
               }
             }]
           });
