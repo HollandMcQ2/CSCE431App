@@ -25,6 +25,8 @@ Rails.application.routes.draw do
   resources :events do
     member do
       get :delete
+	  get :notify
+	  post :notify, to: 'events#mail'
     end
   end
   resources :semesters do

@@ -82,5 +82,17 @@ Rails.application.configure do
   ENV['MERCHANT_ID'] = '5z6r9hv6bc9cmmjx'
   ENV['PUBLIC_KEY'] = 'h64bmpjqmn652rj8'
   ENV['PRIVATE_KEY'] = '285f453f319c9622ea78305100d24436'
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.gmail.com',
+    port:                 587,
+    #domain:               'example.com',
+    user_name:            '<email>',
+    password:             '<password>',
+    authentication:       'plain',
+    enable_starttls_auto: true,
+    open_timeout:         5,
+    read_timeout:         5 }
   ENV['PAYPAL_CLIENT_ID'] = '' #'AZ7cvFNlXaeTjUVqghWxEaqvBuJEHCz3BKwX7fksAdrleR1tqTQksTwO9oI6NgB3_k7Pb9XstqeIBuIW'
 end
