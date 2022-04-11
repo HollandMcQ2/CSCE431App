@@ -43,7 +43,7 @@
                         Edit Home Page
                     </h4>
                     <p>
-                        This is the place to edit all of the information and content on the home pages. Files can be uploaded for the 5 slider images and the heading and summary can be typed out in a text box provided.
+                        This is the place to edit all of the information and content on the home pages.
                     </p>
                 </li>
             <% end %>
@@ -85,7 +85,7 @@
         <% if user_signed_in? && (current_user.role == 'admin' || current_user.role == 'treasurer' || current_user.role == 'president') %>
             <br>
             <h2>Edit Home Page</h2>
-            This page will allow admins/officers to change the content on the home page by uploading new images and inserting new text for the page.
+            This page will allow admins/officers to change the content on the home page by uploading new images and inserting new text for the page. Files can be uploaded for the 5 slider images and the heading and summary can be typed out in a text box provided.
         <% end %>
         <br>
         <br>
