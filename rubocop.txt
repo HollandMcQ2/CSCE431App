@@ -1839,7 +1839,7 @@ app/controllers/users/sessions_controller.rb:7:5: C: [Correctable] Layout/Indent
 app/controllers/users/sessions_controller.rb:9:4: C: [Correctable] Layout/TrailingEmptyLines: Final newline missing.
 end
    
-app/controllers/users_controller.rb:1:1: C: Metrics/ClassLength: Class has too many lines. [127/100]
+app/controllers/users_controller.rb:1:1: C: Metrics/ClassLength: Class has too many lines. [150/100]
 class UsersController < ApplicationController ...
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 app/controllers/users_controller.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class UsersController.
@@ -1939,81 +1939,105 @@ app/controllers/users_controller.rb:86:29: C: [Correctable] Style/StringLiterals
 app/controllers/users_controller.rb:87:66: C: [Correctable] Layout/ExtraSpacing: Unnecessary spacing detected.
         format.html { render :edit, status: :unprocessable_entity  }
                                                                  ^
-app/controllers/users_controller.rb:93:121: C: Layout/LineLength: Line is too long. [208/120]
+app/controllers/users_controller.rb:92:3: C: [Correctable] Layout/EmptyLineBetweenDefs: Expected 1 empty line between method definitions; found 0.
+  def delete
+  ^^^^^^^^^^
+app/controllers/users_controller.rb:95:3: C: [Correctable] Layout/EmptyLineBetweenDefs: Expected 1 empty line between method definitions; found 0.
+  def destroy
+  ^^^^^^^^^^^
+app/controllers/users_controller.rb:100:52: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      format.html { redirect_to users_url, notice: "User was successfully destroyed." }
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/users_controller.rb:105:121: C: Layout/LineLength: Line is too long. [208/120]
   # This method displays the payment portal for paying dues at the route /user/:id/payment. If the user has already paid their dues, this route will redirect the user to the thank you page with their receipt.
                                                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/users_controller.rb:94:3: C: [Correctable] Layout/EmptyLineBetweenDefs: Expected 1 empty line between method definitions; found 0.
+app/controllers/users_controller.rb:106:3: C: [Correctable] Layout/EmptyLineBetweenDefs: Expected 1 empty line between method definitions; found 0.
   def payment
   ^^^^^^^^^^^
-app/controllers/users_controller.rb:96:5: W: Lint/UselessAssignment: Useless assignment to variable - current_date. Did you mean current_user?
+app/controllers/users_controller.rb:108:5: W: Lint/UselessAssignment: Useless assignment to variable - current_date. Did you mean current_user?
     current_date = Date.today
     ^^^^^^^^^^^^
-app/controllers/users_controller.rb:97:5: C: [Correctable] Style/IfUnlessModifier: Favor modifier if usage when having a single-line body. Another good alternative is the usage of control flow &&/||.
+app/controllers/users_controller.rb:109:5: C: [Correctable] Style/IfUnlessModifier: Favor modifier if usage when having a single-line body. Another good alternative is the usage of control flow &&/||.
     if @user[:has_paid_dues] == true
     ^^
-app/controllers/users_controller.rb:103:121: C: Layout/LineLength: Line is too long. [253/120]
+app/controllers/users_controller.rb:115:121: C: Layout/LineLength: Line is too long. [253/120]
   # This method processes the transaction from the /user/:id/payment route. If the transaction is successful, attributes in the user model will be updated to store basic, non invasive information to provide the user with a reciept on the thank you page.
                                                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/users_controller.rb:104:121: C: Layout/LineLength: Line is too long. [146/120]
+app/controllers/users_controller.rb:116:121: C: Layout/LineLength: Line is too long. [146/120]
   # In the future, this method will map hasPaid values to individual semesters so that when a new semeseter starts, users will have to repay dues.
                                                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/users_controller.rb:105:3: C: [Correctable] Layout/EmptyLineBetweenDefs: Expected 1 empty line between method definitions; found 0.
+app/controllers/users_controller.rb:117:3: C: [Correctable] Layout/EmptyLineBetweenDefs: Expected 1 empty line between method definitions; found 0.
   def checkout
   ^^^^^^^^^^^^
-app/controllers/users_controller.rb:117:5: C: [Correctable] Layout/CommentIndentation: Incorrect indentation detected (column 4 instead of 6).
+app/controllers/users_controller.rb:129:5: C: [Correctable] Layout/CommentIndentation: Incorrect indentation detected (column 4 instead of 6).
     # if result.success?
     ^^^^^^^^^^^^^^^^^^^^
-app/controllers/users_controller.rb:122:7: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+app/controllers/users_controller.rb:134:7: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
       @user.update_column("has_paid_dues", true);
       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/users_controller.rb:122:27: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+app/controllers/users_controller.rb:134:27: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
       @user.update_column("has_paid_dues", true);
                           ^^^^^^^^^^^^^^^
-app/controllers/users_controller.rb:122:49: C: [Correctable] Style/Semicolon: Do not use semicolons to terminate expressions.
+app/controllers/users_controller.rb:134:49: C: [Correctable] Style/Semicolon: Do not use semicolons to terminate expressions.
       @user.update_column("has_paid_dues", true);
                                                 ^
-app/controllers/users_controller.rb:130:7: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+app/controllers/users_controller.rb:142:7: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
       redirect_to(thank_you_user_path(current_user.id))
       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/users_controller.rb:131:5: C: [Correctable] Layout/CommentIndentation: Incorrect indentation detected (column 4 instead of 6).
+app/controllers/users_controller.rb:143:5: C: [Correctable] Layout/CommentIndentation: Incorrect indentation detected (column 4 instead of 6).
     # else
     ^^^^^^
-app/controllers/users_controller.rb:132:7: C: [Correctable] Layout/CommentIndentation: Incorrect indentation detected (column 6 instead of 4).
+app/controllers/users_controller.rb:144:7: C: [Correctable] Layout/CommentIndentation: Incorrect indentation detected (column 6 instead of 4).
       # TODO: Handle error
       ^^^^^^^^^^^^^^^^^^^^
-app/controllers/users_controller.rb:137:3: C: [Correctable] Layout/EmptyLineBetweenDefs: Expected 1 empty line between method definitions; found 0.
+app/controllers/users_controller.rb:149:3: C: [Correctable] Layout/EmptyLineBetweenDefs: Expected 1 empty line between method definitions; found 0.
   def thank_you
   ^^^^^^^^^^^^^
-app/controllers/users_controller.rb:139:5: C: Style/GuardClause: Use a guard clause (return unless @user[:has_paid_dues] == false) instead of wrapping the code inside a conditional expression.
+app/controllers/users_controller.rb:151:5: C: [Correctable] Style/IfUnlessModifier: Favor modifier if usage when having a single-line body. Another good alternative is the usage of control flow &&/||.
     if @user[:has_paid_dues] == false
     ^^
-app/controllers/users_controller.rb:139:5: C: [Correctable] Style/IfUnlessModifier: Favor modifier if usage when having a single-line body. Another good alternative is the usage of control flow &&/||.
-    if @user[:has_paid_dues] == false
-    ^^
-app/controllers/users_controller.rb:145:3: C: [Correctable] Layout/EmptyLineBetweenDefs: Expected 1 empty line between method definitions; found 0.
+app/controllers/users_controller.rb:158:3: C: [Correctable] Layout/EmptyLineBetweenDefs: Expected 1 empty line between method definitions; found 0.
   def meetings
   ^^^^^^^^^^^^
-app/controllers/users_controller.rb:151:3: C: [Correctable] Layout/EmptyLineBetweenDefs: Expected 1 empty line between method definitions; found 0.
+app/controllers/users_controller.rb:164:3: C: [Correctable] Layout/EmptyLineBetweenDefs: Expected 1 empty line between method definitions; found 0.
   def help
   ^^^^^^^^
-app/controllers/users_controller.rb:157:5: C: [Correctable] Style/CaseLikeIf: Convert if-elsif to case-when.
+app/controllers/users_controller.rb:170:5: C: [Correctable] Style/CaseLikeIf: Convert if-elsif to case-when.
     if @user.role == 'member' ...
     ^^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/users_controller.rb:161:10: W: [Correctable] Lint/ElseLayout: Odd else layout detected. Did you mean to use elsif?
+app/controllers/users_controller.rb:174:10: W: [Correctable] Lint/ElseLayout: Odd else layout detected. Did you mean to use elsif?
     else @user.role == 'treasurer'
          ^^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/users_controller.rb:161:21: W: Lint/Void: Operator == used in void context.
+app/controllers/users_controller.rb:174:21: W: Lint/Void: Operator == used in void context.
     else @user.role == 'treasurer'
                     ^^
-app/controllers/users_controller.rb:162:7: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+app/controllers/users_controller.rb:175:7: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
       @user.role = 'president'
       ^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/users_controller.rb:170:5: C: [Correctable] Style/CaseLikeIf: Convert if-elsif to case-when.
-    if @user.role == 'president' ...
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/users_controller.rb:170:5: C: [Correctable] Style/ConditionalAssignment: Use the return of the conditional for variable assignment and comparison.
-    if @user.role == 'president' ...
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/users_controller.rb:178:36: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    redirect_to users_url, notice: "Role successfully updated"
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/users_controller.rb:181:3: C: Metrics/AbcSize: Assignment Branch Condition size for edit_role_minus is too high. [<8, 16, 16> 24/17]
+  def edit_role_minus ...
+  ^^^^^^^^^^^^^^^^^^^
+app/controllers/users_controller.rb:181:3: C: Metrics/CyclomaticComplexity: Cyclomatic complexity for edit_role_minus is too high. [9/7]
+  def edit_role_minus ...
+  ^^^^^^^^^^^^^^^^^^^
+app/controllers/users_controller.rb:181:3: C: Metrics/MethodLength: Method has too many lines. [21/10]
+  def edit_role_minus ...
+  ^^^^^^^^^^^^^^^^^^^
+app/controllers/users_controller.rb:181:3: C: Metrics/PerceivedComplexity: Perceived complexity for edit_role_minus is too high. [11/8]
+  def edit_role_minus ...
+  ^^^^^^^^^^^^^^^^^^^
+app/controllers/users_controller.rb:185:5: C: [Correctable] Style/IfUnlessModifier: Favor modifier if usage when having a single-line body. Another good alternative is the usage of control flow &&/||.
+    if User.where("role = 'president'").count == 1
+    ^^
+app/controllers/users_controller.rb:199:38: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      redirect_to users_url, notice: "Must have at least 1 member with president role."
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/users_controller.rb:201:38: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      redirect_to users_url, notice: "Role successfully updated"
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 app/helpers/application_helper.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for module ApplicationHelper.
 module ApplicationHelper
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2658,16 +2682,13 @@ config/environments/development.rb:96:5: C: [Correctable] Layout/HashAlignment: 
 config/environments/development.rb:96:29: C: [Correctable] Layout/MultilineHashBraceLayout: Closing hash brace must be on the line after the last hash element when opening brace is on a separate line from the first hash element.
     read_timeout:         5 }
                             ^
-config/environments/development.rb:97:32: C: [Correctable] Layout/LeadingCommentSpace: Missing space after #.
-  ENV['PAYPAL_CLIENT_ID'] = '' #'AZ7cvFNlXaeTjUVqghWxEaqvBuJEHCz3BKwX7fksAdrleR1tqTQksTwO9oI6NgB3_k7Pb9XstqeIBuIW'
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 config/environments/production.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 require "active_support/core_ext/integer/time"
 ^
 config/environments/production.rb:1:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
 require "active_support/core_ext/integer/time"
         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-config/environments/production.rb:3:1: C: Metrics/BlockLength: Block has too many lines. [28/25]
+config/environments/production.rb:3:1: C: Metrics/BlockLength: Block has too many lines. [30/25]
 Rails.application.configure do ...
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 config/environments/production.rb:58:22: C: [Correctable] Layout/SpaceInsideArrayLiteralBrackets: Do not use space inside array brackets.
@@ -5732,4 +5753,4 @@ class ActiveSupport::TestCase
       ^^^^^^^^^^^^^^^^^^^^^^^
 test/test_helper.rb:11:1: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
 
-132 files inspected, 1940 offenses detected, 1824 offenses auto-correctable
+132 files inspected, 1947 offenses detected, 1828 offenses auto-correctable
