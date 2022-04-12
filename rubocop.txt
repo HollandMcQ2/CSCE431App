@@ -3811,217 +3811,217 @@ User.create(:full_name => 'John Knapp', :email => "jmichaelknapp@gmail.com", :ro
 db/seeds.rb:12:95: C: [Correctable] Style/Semicolon: Do not use semicolons to terminate expressions.
 User.create(:full_name => 'John Knapp', :email => "jmichaelknapp@gmail.com", :role => "admin");
                                                                                               ^
-db/seeds.rb:13:17: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
-Semester.create(:name => 'Spring 2022', :start => Date.new(2022,1,22), :end=> Date.new(2022,5,14), :duescost => 200.00)
+db/seeds.rb:14:17: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+Semester.create(:name => 'Spring 2022', :start => Date.new(2022,1,22), :end=> Date.new(2022,5,14), :duescost => 2.00)
                 ^^^^^^^^
-db/seeds.rb:13:41: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
-Semester.create(:name => 'Spring 2022', :start => Date.new(2022,1,22), :end=> Date.new(2022,5,14), :duescost => 200.00)
+db/seeds.rb:14:41: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+Semester.create(:name => 'Spring 2022', :start => Date.new(2022,1,22), :end=> Date.new(2022,5,14), :duescost => 2.00)
                                         ^^^^^^^^^
-db/seeds.rb:13:64: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
-Semester.create(:name => 'Spring 2022', :start => Date.new(2022,1,22), :end=> Date.new(2022,5,14), :duescost => 200.00)
+db/seeds.rb:14:64: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+Semester.create(:name => 'Spring 2022', :start => Date.new(2022,1,22), :end=> Date.new(2022,5,14), :duescost => 2.00)
                                                                ^
-db/seeds.rb:13:66: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
-Semester.create(:name => 'Spring 2022', :start => Date.new(2022,1,22), :end=> Date.new(2022,5,14), :duescost => 200.00)
+db/seeds.rb:14:66: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+Semester.create(:name => 'Spring 2022', :start => Date.new(2022,1,22), :end=> Date.new(2022,5,14), :duescost => 2.00)
                                                                  ^
-db/seeds.rb:13:72: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
-Semester.create(:name => 'Spring 2022', :start => Date.new(2022,1,22), :end=> Date.new(2022,5,14), :duescost => 200.00)
+db/seeds.rb:14:72: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+Semester.create(:name => 'Spring 2022', :start => Date.new(2022,1,22), :end=> Date.new(2022,5,14), :duescost => 2.00)
                                                                        ^^^^^^
-db/seeds.rb:13:76: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator =>.
-Semester.create(:name => 'Spring 2022', :start => Date.new(2022,1,22), :end=> Date.new(2022,5,14), :duescost => 200.00)
+db/seeds.rb:14:76: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator =>.
+Semester.create(:name => 'Spring 2022', :start => Date.new(2022,1,22), :end=> Date.new(2022,5,14), :duescost => 2.00)
                                                                            ^^
-db/seeds.rb:13:92: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
-Semester.create(:name => 'Spring 2022', :start => Date.new(2022,1,22), :end=> Date.new(2022,5,14), :duescost => 200.00)
+db/seeds.rb:14:92: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+Semester.create(:name => 'Spring 2022', :start => Date.new(2022,1,22), :end=> Date.new(2022,5,14), :duescost => 2.00)
                                                                                            ^
-db/seeds.rb:13:94: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
-Semester.create(:name => 'Spring 2022', :start => Date.new(2022,1,22), :end=> Date.new(2022,5,14), :duescost => 200.00)
+db/seeds.rb:14:94: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+Semester.create(:name => 'Spring 2022', :start => Date.new(2022,1,22), :end=> Date.new(2022,5,14), :duescost => 2.00)
                                                                                              ^
-db/seeds.rb:13:100: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
-Semester.create(:name => 'Spring 2022', :start => Date.new(2022,1,22), :end=> Date.new(2022,5,14), :duescost => 200.00)
+db/seeds.rb:14:100: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+Semester.create(:name => 'Spring 2022', :start => Date.new(2022,1,22), :end=> Date.new(2022,5,14), :duescost => 2.00)
                                                                                                    ^^^^^^^^^^^^
-db/seeds.rb:14:13: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+db/seeds.rb:15:13: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
 User.create(:full_name => 'John Tester', :email => "t3ster219@gmail.com", :role => "admin");
             ^^^^^^^^^^^^^
-db/seeds.rb:14:42: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+db/seeds.rb:15:42: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
 User.create(:full_name => 'John Tester', :email => "t3ster219@gmail.com", :role => "admin");
                                          ^^^^^^^^^
-db/seeds.rb:14:52: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+db/seeds.rb:15:52: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
 User.create(:full_name => 'John Tester', :email => "t3ster219@gmail.com", :role => "admin");
                                                    ^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:14:75: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+db/seeds.rb:15:75: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
 User.create(:full_name => 'John Tester', :email => "t3ster219@gmail.com", :role => "admin");
                                                                           ^^^^^^^^
-db/seeds.rb:14:84: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+db/seeds.rb:15:84: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
 User.create(:full_name => 'John Tester', :email => "t3ster219@gmail.com", :role => "admin");
                                                                                    ^^^^^^^
-db/seeds.rb:14:92: C: [Correctable] Style/Semicolon: Do not use semicolons to terminate expressions.
+db/seeds.rb:15:92: C: [Correctable] Style/Semicolon: Do not use semicolons to terminate expressions.
 User.create(:full_name => 'John Tester', :email => "t3ster219@gmail.com", :role => "admin");
                                                                                            ^
-db/seeds.rb:15:13: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+db/seeds.rb:16:13: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
 User.create(:full_name => 'Johnathan Torres', :email => "torres404@tamu.edu", :role => "admin");
             ^^^^^^^^^^^^^
-db/seeds.rb:15:47: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+db/seeds.rb:16:47: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
 User.create(:full_name => 'Johnathan Torres', :email => "torres404@tamu.edu", :role => "admin");
                                               ^^^^^^^^^
-db/seeds.rb:15:57: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+db/seeds.rb:16:57: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
 User.create(:full_name => 'Johnathan Torres', :email => "torres404@tamu.edu", :role => "admin");
                                                         ^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:15:79: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+db/seeds.rb:16:79: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
 User.create(:full_name => 'Johnathan Torres', :email => "torres404@tamu.edu", :role => "admin");
                                                                               ^^^^^^^^
-db/seeds.rb:15:88: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+db/seeds.rb:16:88: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
 User.create(:full_name => 'Johnathan Torres', :email => "torres404@tamu.edu", :role => "admin");
                                                                                        ^^^^^^^
-db/seeds.rb:15:96: C: [Correctable] Style/Semicolon: Do not use semicolons to terminate expressions.
+db/seeds.rb:16:96: C: [Correctable] Style/Semicolon: Do not use semicolons to terminate expressions.
 User.create(:full_name => 'Johnathan Torres', :email => "torres404@tamu.edu", :role => "admin");
                                                                                                ^
-db/seeds.rb:16:20: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+db/seeds.rb:17:20: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
 User.find_by_email("kakashiandflute@gmail.com").update(:role => 'president')
                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:16:56: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+db/seeds.rb:17:56: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
 User.find_by_email("kakashiandflute@gmail.com").update(:role => 'president')
                                                        ^^^^^^^^
-db/seeds.rb:18:14: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+db/seeds.rb:19:14: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
 Event.create(:name => 'Test Event', :password => "testEventPassword", :description => 'This is a test event', :time => '2022-03-04', :end_time => '2022-03-5', :link => "www.google.com", :location => 'Test Location', :is_mandatory => true, :is_recurring => false);
              ^^^^^^^^
-db/seeds.rb:18:37: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+db/seeds.rb:19:37: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
 Event.create(:name => 'Test Event', :password => "testEventPassword", :description => 'This is a test event', :time => '2022-03-04', :end_time => '2022-03-5', :link => "www.google.com", :location => 'Test Location', :is_mandatory => true, :is_recurring => false);
                                     ^^^^^^^^^^^^
-db/seeds.rb:18:50: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+db/seeds.rb:19:50: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
 Event.create(:name => 'Test Event', :password => "testEventPassword", :description => 'This is a test event', :time => '2022-03-04', :end_time => '2022-03-5', :link => "www.google.com", :location => 'Test Location', :is_mandatory => true, :is_recurring => false);
                                                  ^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:18:71: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+db/seeds.rb:19:71: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
 Event.create(:name => 'Test Event', :password => "testEventPassword", :description => 'This is a test event', :time => '2022-03-04', :end_time => '2022-03-5', :link => "www.google.com", :location => 'Test Location', :is_mandatory => true, :is_recurring => false);
                                                                       ^^^^^^^^^^^^^^^
-db/seeds.rb:18:111: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+db/seeds.rb:19:111: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
 Event.create(:name => 'Test Event', :password => "testEventPassword", :description => 'This is a test event', :time => '2022-03-04', :end_time => '2022-03-5', :link => "www.google.com", :location => 'Test Location', :is_mandatory => true, :is_recurring => false);
                                                                                                               ^^^^^^^^
-db/seeds.rb:18:121: C: [Correctable] Layout/LineLength: Line is too long. [263/120]
+db/seeds.rb:19:121: C: [Correctable] Layout/LineLength: Line is too long. [263/120]
 Event.create(:name => 'Test Event', :password => "testEventPassword", :description => 'This is a test event', :time => '2022-03-04', :end_time => '2022-03-5', :link => "www.google.com", :location => 'Test Location', :is_mandatory => true, :is_recurring => false);
                                                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:18:134: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+db/seeds.rb:19:134: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
 Event.create(:name => 'Test Event', :password => "testEventPassword", :description => 'This is a test event', :time => '2022-03-04', :end_time => '2022-03-5', :link => "www.google.com", :location => 'Test Location', :is_mandatory => true, :is_recurring => false);
                                                                                                                                      ^^^^^^^^^^^^
-db/seeds.rb:18:160: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+db/seeds.rb:19:160: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
 Event.create(:name => 'Test Event', :password => "testEventPassword", :description => 'This is a test event', :time => '2022-03-04', :end_time => '2022-03-5', :link => "www.google.com", :location => 'Test Location', :is_mandatory => true, :is_recurring => false);
                                                                                                                                                                ^^^^^^^^
-db/seeds.rb:18:169: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+db/seeds.rb:19:169: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
 Event.create(:name => 'Test Event', :password => "testEventPassword", :description => 'This is a test event', :time => '2022-03-04', :end_time => '2022-03-5', :link => "www.google.com", :location => 'Test Location', :is_mandatory => true, :is_recurring => false);
                                                                                                                                                                         ^^^^^^^^^^^^^^^^
-db/seeds.rb:18:187: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+db/seeds.rb:19:187: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
 Event.create(:name => 'Test Event', :password => "testEventPassword", :description => 'This is a test event', :time => '2022-03-04', :end_time => '2022-03-5', :link => "www.google.com", :location => 'Test Location', :is_mandatory => true, :is_recurring => false);
                                                                                                                                                                                           ^^^^^^^^^^^^
-db/seeds.rb:18:217: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+db/seeds.rb:19:217: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
 Event.create(:name => 'Test Event', :password => "testEventPassword", :description => 'This is a test event', :time => '2022-03-04', :end_time => '2022-03-5', :link => "www.google.com", :location => 'Test Location', :is_mandatory => true, :is_recurring => false);
                                                                                                                                                                                                                         ^^^^^^^^^^^^^^^^
-db/seeds.rb:18:240: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+db/seeds.rb:19:240: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
 Event.create(:name => 'Test Event', :password => "testEventPassword", :description => 'This is a test event', :time => '2022-03-04', :end_time => '2022-03-5', :link => "www.google.com", :location => 'Test Location', :is_mandatory => true, :is_recurring => false);
                                                                                                                                                                                                                                                ^^^^^^^^^^^^^^^^
-db/seeds.rb:18:263: C: [Correctable] Style/Semicolon: Do not use semicolons to terminate expressions.
+db/seeds.rb:19:263: C: [Correctable] Style/Semicolon: Do not use semicolons to terminate expressions.
 Event.create(:name => 'Test Event', :password => "testEventPassword", :description => 'This is a test event', :time => '2022-03-04', :end_time => '2022-03-5', :link => "www.google.com", :location => 'Test Location', :is_mandatory => true, :is_recurring => false);
                                                                                                                                                                                                                                                                       ^
-db/seeds.rb:19:14: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
-Event.create(:name => 'Test Event2', :password => "password", :description => 'This is a test event', :time => '2022-03-05', :end_time => '2022-03-6', :link => "www.google.com", :location => 'Test Location2', :is_mandatory => true, :is_recurring => false);
-             ^^^^^^^^
-db/seeds.rb:19:38: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
-Event.create(:name => 'Test Event2', :password => "password", :description => 'This is a test event', :time => '2022-03-05', :end_time => '2022-03-6', :link => "www.google.com", :location => 'Test Location2', :is_mandatory => true, :is_recurring => false);
-                                     ^^^^^^^^^^^^
-db/seeds.rb:19:51: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-Event.create(:name => 'Test Event2', :password => "password", :description => 'This is a test event', :time => '2022-03-05', :end_time => '2022-03-6', :link => "www.google.com", :location => 'Test Location2', :is_mandatory => true, :is_recurring => false);
-                                                  ^^^^^^^^^^
-db/seeds.rb:19:63: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
-Event.create(:name => 'Test Event2', :password => "password", :description => 'This is a test event', :time => '2022-03-05', :end_time => '2022-03-6', :link => "www.google.com", :location => 'Test Location2', :is_mandatory => true, :is_recurring => false);
-                                                              ^^^^^^^^^^^^^^^
-db/seeds.rb:19:103: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
-Event.create(:name => 'Test Event2', :password => "password", :description => 'This is a test event', :time => '2022-03-05', :end_time => '2022-03-6', :link => "www.google.com", :location => 'Test Location2', :is_mandatory => true, :is_recurring => false);
-                                                                                                      ^^^^^^^^
-db/seeds.rb:19:121: C: [Correctable] Layout/LineLength: Line is too long. [256/120]
-Event.create(:name => 'Test Event2', :password => "password", :description => 'This is a test event', :time => '2022-03-05', :end_time => '2022-03-6', :link => "www.google.com", :location => 'Test Location2', :is_mandatory => true, :is_recurring => false);
-                                                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:19:126: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
-Event.create(:name => 'Test Event2', :password => "password", :description => 'This is a test event', :time => '2022-03-05', :end_time => '2022-03-6', :link => "www.google.com", :location => 'Test Location2', :is_mandatory => true, :is_recurring => false);
-                                                                                                                             ^^^^^^^^^^^^
-db/seeds.rb:19:152: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
-Event.create(:name => 'Test Event2', :password => "password", :description => 'This is a test event', :time => '2022-03-05', :end_time => '2022-03-6', :link => "www.google.com", :location => 'Test Location2', :is_mandatory => true, :is_recurring => false);
-                                                                                                                                                       ^^^^^^^^
-db/seeds.rb:19:161: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-Event.create(:name => 'Test Event2', :password => "password", :description => 'This is a test event', :time => '2022-03-05', :end_time => '2022-03-6', :link => "www.google.com", :location => 'Test Location2', :is_mandatory => true, :is_recurring => false);
-                                                                                                                                                                ^^^^^^^^^^^^^^^^
-db/seeds.rb:19:179: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
-Event.create(:name => 'Test Event2', :password => "password", :description => 'This is a test event', :time => '2022-03-05', :end_time => '2022-03-6', :link => "www.google.com", :location => 'Test Location2', :is_mandatory => true, :is_recurring => false);
-                                                                                                                                                                                  ^^^^^^^^^^^^
-db/seeds.rb:19:210: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
-Event.create(:name => 'Test Event2', :password => "password", :description => 'This is a test event', :time => '2022-03-05', :end_time => '2022-03-6', :link => "www.google.com", :location => 'Test Location2', :is_mandatory => true, :is_recurring => false);
-                                                                                                                                                                                                                 ^^^^^^^^^^^^^^^^
-db/seeds.rb:19:233: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
-Event.create(:name => 'Test Event2', :password => "password", :description => 'This is a test event', :time => '2022-03-05', :end_time => '2022-03-6', :link => "www.google.com", :location => 'Test Location2', :is_mandatory => true, :is_recurring => false);
-                                                                                                                                                                                                                                        ^^^^^^^^^^^^^^^^
-db/seeds.rb:19:256: C: [Correctable] Style/Semicolon: Do not use semicolons to terminate expressions.
-Event.create(:name => 'Test Event2', :password => "password", :description => 'This is a test event', :time => '2022-03-05', :end_time => '2022-03-6', :link => "www.google.com", :location => 'Test Location2', :is_mandatory => true, :is_recurring => false);
-                                                                                                                                                                                                                                                               ^
 db/seeds.rb:20:14: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
-Event.create(:name => 'Test Event3', :password => "password", :description => 'This is a test event', :time => '2022-03-06', :end_time => '2022-03-7', :link => "www.google.com", :location => 'Test Location3', :is_mandatory => true, :is_recurring => false);
+Event.create(:name => 'Test Event2', :password => "password", :description => 'This is a test event', :time => '2022-03-05', :end_time => '2022-03-6', :link => "www.google.com", :location => 'Test Location2', :is_mandatory => true, :is_recurring => false);
              ^^^^^^^^
 db/seeds.rb:20:38: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
-Event.create(:name => 'Test Event3', :password => "password", :description => 'This is a test event', :time => '2022-03-06', :end_time => '2022-03-7', :link => "www.google.com", :location => 'Test Location3', :is_mandatory => true, :is_recurring => false);
+Event.create(:name => 'Test Event2', :password => "password", :description => 'This is a test event', :time => '2022-03-05', :end_time => '2022-03-6', :link => "www.google.com", :location => 'Test Location2', :is_mandatory => true, :is_recurring => false);
                                      ^^^^^^^^^^^^
 db/seeds.rb:20:51: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-Event.create(:name => 'Test Event3', :password => "password", :description => 'This is a test event', :time => '2022-03-06', :end_time => '2022-03-7', :link => "www.google.com", :location => 'Test Location3', :is_mandatory => true, :is_recurring => false);
+Event.create(:name => 'Test Event2', :password => "password", :description => 'This is a test event', :time => '2022-03-05', :end_time => '2022-03-6', :link => "www.google.com", :location => 'Test Location2', :is_mandatory => true, :is_recurring => false);
                                                   ^^^^^^^^^^
 db/seeds.rb:20:63: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
-Event.create(:name => 'Test Event3', :password => "password", :description => 'This is a test event', :time => '2022-03-06', :end_time => '2022-03-7', :link => "www.google.com", :location => 'Test Location3', :is_mandatory => true, :is_recurring => false);
+Event.create(:name => 'Test Event2', :password => "password", :description => 'This is a test event', :time => '2022-03-05', :end_time => '2022-03-6', :link => "www.google.com", :location => 'Test Location2', :is_mandatory => true, :is_recurring => false);
                                                               ^^^^^^^^^^^^^^^
 db/seeds.rb:20:103: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
-Event.create(:name => 'Test Event3', :password => "password", :description => 'This is a test event', :time => '2022-03-06', :end_time => '2022-03-7', :link => "www.google.com", :location => 'Test Location3', :is_mandatory => true, :is_recurring => false);
+Event.create(:name => 'Test Event2', :password => "password", :description => 'This is a test event', :time => '2022-03-05', :end_time => '2022-03-6', :link => "www.google.com", :location => 'Test Location2', :is_mandatory => true, :is_recurring => false);
                                                                                                       ^^^^^^^^
 db/seeds.rb:20:121: C: [Correctable] Layout/LineLength: Line is too long. [256/120]
-Event.create(:name => 'Test Event3', :password => "password", :description => 'This is a test event', :time => '2022-03-06', :end_time => '2022-03-7', :link => "www.google.com", :location => 'Test Location3', :is_mandatory => true, :is_recurring => false);
+Event.create(:name => 'Test Event2', :password => "password", :description => 'This is a test event', :time => '2022-03-05', :end_time => '2022-03-6', :link => "www.google.com", :location => 'Test Location2', :is_mandatory => true, :is_recurring => false);
                                                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 db/seeds.rb:20:126: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
-Event.create(:name => 'Test Event3', :password => "password", :description => 'This is a test event', :time => '2022-03-06', :end_time => '2022-03-7', :link => "www.google.com", :location => 'Test Location3', :is_mandatory => true, :is_recurring => false);
+Event.create(:name => 'Test Event2', :password => "password", :description => 'This is a test event', :time => '2022-03-05', :end_time => '2022-03-6', :link => "www.google.com", :location => 'Test Location2', :is_mandatory => true, :is_recurring => false);
                                                                                                                              ^^^^^^^^^^^^
 db/seeds.rb:20:152: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
-Event.create(:name => 'Test Event3', :password => "password", :description => 'This is a test event', :time => '2022-03-06', :end_time => '2022-03-7', :link => "www.google.com", :location => 'Test Location3', :is_mandatory => true, :is_recurring => false);
+Event.create(:name => 'Test Event2', :password => "password", :description => 'This is a test event', :time => '2022-03-05', :end_time => '2022-03-6', :link => "www.google.com", :location => 'Test Location2', :is_mandatory => true, :is_recurring => false);
                                                                                                                                                        ^^^^^^^^
 db/seeds.rb:20:161: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-Event.create(:name => 'Test Event3', :password => "password", :description => 'This is a test event', :time => '2022-03-06', :end_time => '2022-03-7', :link => "www.google.com", :location => 'Test Location3', :is_mandatory => true, :is_recurring => false);
+Event.create(:name => 'Test Event2', :password => "password", :description => 'This is a test event', :time => '2022-03-05', :end_time => '2022-03-6', :link => "www.google.com", :location => 'Test Location2', :is_mandatory => true, :is_recurring => false);
                                                                                                                                                                 ^^^^^^^^^^^^^^^^
 db/seeds.rb:20:179: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
-Event.create(:name => 'Test Event3', :password => "password", :description => 'This is a test event', :time => '2022-03-06', :end_time => '2022-03-7', :link => "www.google.com", :location => 'Test Location3', :is_mandatory => true, :is_recurring => false);
+Event.create(:name => 'Test Event2', :password => "password", :description => 'This is a test event', :time => '2022-03-05', :end_time => '2022-03-6', :link => "www.google.com", :location => 'Test Location2', :is_mandatory => true, :is_recurring => false);
                                                                                                                                                                                   ^^^^^^^^^^^^
 db/seeds.rb:20:210: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
-Event.create(:name => 'Test Event3', :password => "password", :description => 'This is a test event', :time => '2022-03-06', :end_time => '2022-03-7', :link => "www.google.com", :location => 'Test Location3', :is_mandatory => true, :is_recurring => false);
+Event.create(:name => 'Test Event2', :password => "password", :description => 'This is a test event', :time => '2022-03-05', :end_time => '2022-03-6', :link => "www.google.com", :location => 'Test Location2', :is_mandatory => true, :is_recurring => false);
                                                                                                                                                                                                                  ^^^^^^^^^^^^^^^^
 db/seeds.rb:20:233: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
-Event.create(:name => 'Test Event3', :password => "password", :description => 'This is a test event', :time => '2022-03-06', :end_time => '2022-03-7', :link => "www.google.com", :location => 'Test Location3', :is_mandatory => true, :is_recurring => false);
+Event.create(:name => 'Test Event2', :password => "password", :description => 'This is a test event', :time => '2022-03-05', :end_time => '2022-03-6', :link => "www.google.com", :location => 'Test Location2', :is_mandatory => true, :is_recurring => false);
                                                                                                                                                                                                                                         ^^^^^^^^^^^^^^^^
 db/seeds.rb:20:256: C: [Correctable] Style/Semicolon: Do not use semicolons to terminate expressions.
+Event.create(:name => 'Test Event2', :password => "password", :description => 'This is a test event', :time => '2022-03-05', :end_time => '2022-03-6', :link => "www.google.com", :location => 'Test Location2', :is_mandatory => true, :is_recurring => false);
+                                                                                                                                                                                                                                                               ^
+db/seeds.rb:21:14: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+Event.create(:name => 'Test Event3', :password => "password", :description => 'This is a test event', :time => '2022-03-06', :end_time => '2022-03-7', :link => "www.google.com", :location => 'Test Location3', :is_mandatory => true, :is_recurring => false);
+             ^^^^^^^^
+db/seeds.rb:21:38: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+Event.create(:name => 'Test Event3', :password => "password", :description => 'This is a test event', :time => '2022-03-06', :end_time => '2022-03-7', :link => "www.google.com", :location => 'Test Location3', :is_mandatory => true, :is_recurring => false);
+                                     ^^^^^^^^^^^^
+db/seeds.rb:21:51: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+Event.create(:name => 'Test Event3', :password => "password", :description => 'This is a test event', :time => '2022-03-06', :end_time => '2022-03-7', :link => "www.google.com", :location => 'Test Location3', :is_mandatory => true, :is_recurring => false);
+                                                  ^^^^^^^^^^
+db/seeds.rb:21:63: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+Event.create(:name => 'Test Event3', :password => "password", :description => 'This is a test event', :time => '2022-03-06', :end_time => '2022-03-7', :link => "www.google.com", :location => 'Test Location3', :is_mandatory => true, :is_recurring => false);
+                                                              ^^^^^^^^^^^^^^^
+db/seeds.rb:21:103: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+Event.create(:name => 'Test Event3', :password => "password", :description => 'This is a test event', :time => '2022-03-06', :end_time => '2022-03-7', :link => "www.google.com", :location => 'Test Location3', :is_mandatory => true, :is_recurring => false);
+                                                                                                      ^^^^^^^^
+db/seeds.rb:21:121: C: [Correctable] Layout/LineLength: Line is too long. [256/120]
+Event.create(:name => 'Test Event3', :password => "password", :description => 'This is a test event', :time => '2022-03-06', :end_time => '2022-03-7', :link => "www.google.com", :location => 'Test Location3', :is_mandatory => true, :is_recurring => false);
+                                                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/seeds.rb:21:126: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+Event.create(:name => 'Test Event3', :password => "password", :description => 'This is a test event', :time => '2022-03-06', :end_time => '2022-03-7', :link => "www.google.com", :location => 'Test Location3', :is_mandatory => true, :is_recurring => false);
+                                                                                                                             ^^^^^^^^^^^^
+db/seeds.rb:21:152: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+Event.create(:name => 'Test Event3', :password => "password", :description => 'This is a test event', :time => '2022-03-06', :end_time => '2022-03-7', :link => "www.google.com", :location => 'Test Location3', :is_mandatory => true, :is_recurring => false);
+                                                                                                                                                       ^^^^^^^^
+db/seeds.rb:21:161: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+Event.create(:name => 'Test Event3', :password => "password", :description => 'This is a test event', :time => '2022-03-06', :end_time => '2022-03-7', :link => "www.google.com", :location => 'Test Location3', :is_mandatory => true, :is_recurring => false);
+                                                                                                                                                                ^^^^^^^^^^^^^^^^
+db/seeds.rb:21:179: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+Event.create(:name => 'Test Event3', :password => "password", :description => 'This is a test event', :time => '2022-03-06', :end_time => '2022-03-7', :link => "www.google.com", :location => 'Test Location3', :is_mandatory => true, :is_recurring => false);
+                                                                                                                                                                                  ^^^^^^^^^^^^
+db/seeds.rb:21:210: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+Event.create(:name => 'Test Event3', :password => "password", :description => 'This is a test event', :time => '2022-03-06', :end_time => '2022-03-7', :link => "www.google.com", :location => 'Test Location3', :is_mandatory => true, :is_recurring => false);
+                                                                                                                                                                                                                 ^^^^^^^^^^^^^^^^
+db/seeds.rb:21:233: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+Event.create(:name => 'Test Event3', :password => "password", :description => 'This is a test event', :time => '2022-03-06', :end_time => '2022-03-7', :link => "www.google.com", :location => 'Test Location3', :is_mandatory => true, :is_recurring => false);
+                                                                                                                                                                                                                                        ^^^^^^^^^^^^^^^^
+db/seeds.rb:21:256: C: [Correctable] Style/Semicolon: Do not use semicolons to terminate expressions.
 Event.create(:name => 'Test Event3', :password => "password", :description => 'This is a test event', :time => '2022-03-06', :end_time => '2022-03-7', :link => "www.google.com", :location => 'Test Location3', :is_mandatory => true, :is_recurring => false);
                                                                                                                                                                                                                                                                ^
-db/seeds.rb:21:18: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+db/seeds.rb:22:18: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
 EventUser.create(:user_id => 2, :event_id => 1, :attended => true);
                  ^^^^^^^^^^^
-db/seeds.rb:21:33: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+db/seeds.rb:22:33: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
 EventUser.create(:user_id => 2, :event_id => 1, :attended => true);
                                 ^^^^^^^^^^^^
-db/seeds.rb:21:49: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+db/seeds.rb:22:49: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
 EventUser.create(:user_id => 2, :event_id => 1, :attended => true);
                                                 ^^^^^^^^^^^^
-db/seeds.rb:21:67: C: [Correctable] Style/Semicolon: Do not use semicolons to terminate expressions.
+db/seeds.rb:22:67: C: [Correctable] Style/Semicolon: Do not use semicolons to terminate expressions.
 EventUser.create(:user_id => 2, :event_id => 1, :attended => true);
                                                                   ^
-db/seeds.rb:23:99: C: [Correctable] Style/Semicolon: Do not use semicolons to terminate expressions.
+db/seeds.rb:24:99: C: [Correctable] Style/Semicolon: Do not use semicolons to terminate expressions.
 SemesterUser.create(semester_id: Semester.all.last.id, user_id: User.all.last.id, paid_dues: true);
                                                                                                   ^
-db/seeds.rb:24:17: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+db/seeds.rb:25:17: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
 HomePage.create(:heading => 'Howdy', :summary => 'Hello');
                 ^^^^^^^^^^^
-db/seeds.rb:24:38: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+db/seeds.rb:25:38: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
 HomePage.create(:heading => 'Howdy', :summary => 'Hello');
                                      ^^^^^^^^^^^
-db/seeds.rb:24:58: C: [Correctable] Style/Semicolon: Do not use semicolons to terminate expressions.
+db/seeds.rb:25:58: C: [Correctable] Style/Semicolon: Do not use semicolons to terminate expressions.
 HomePage.create(:heading => 'Howdy', :summary => 'Hello');
                                                          ^
-db/seeds.rb:25:121: C: [Correctable] Layout/LineLength: Line is too long. [156/120]
+db/seeds.rb:26:121: C: [Correctable] Layout/LineLength: Line is too long. [156/120]
 PaymentAccount.create(internal_name: 'Default Account', payment_address: 'AZ7cvFNlXaeTjUVqghWxEaqvBuJEHCz3BKwX7fksAdrleR1tqTQksTwO9oI6NgB3_k7Pb9XstqeIBuIW')
                                                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 lib/tasks/payments.rake:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
@@ -4094,7 +4094,7 @@ require "rails_helper"
 spec/mailers/event_spec.rb:2:1: C: [Correctable] Layout/LeadingCommentSpace: Missing space after #.
 #require "test_helper"
 ^^^^^^^^^^^^^^^^^^^^^^
-spec/mailers/event_spec.rb:4:1: C: Metrics/BlockLength: Block has too many lines. [53/25]
+spec/mailers/event_spec.rb:4:1: C: Metrics/BlockLength: Block has too many lines. [56/25]
 RSpec.describe EventMailer, type: :mailer do ...
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 spec/mailers/event_spec.rb:5:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
@@ -4298,93 +4298,102 @@ spec/mailers/event_spec.rb:46:2: C: [Correctable] Layout/IndentationWidth: Use 2
 		post notify_event_path(@event.id), params: {}
  ^
 spec/mailers/event_spec.rb:47:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+		perform_enqueued_jobs
+^^
+spec/mailers/event_spec.rb:49:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
 		expect(ActionMailer::Base.deliveries.size).to eq(1)
 ^^
-spec/mailers/event_spec.rb:48:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+spec/mailers/event_spec.rb:50:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
 		#puts ActionMailer::Base.deliveries.last.body.to_s
 ^^
-spec/mailers/event_spec.rb:48:3: C: [Correctable] Layout/CommentIndentation: Incorrect indentation detected (column 2 instead of 3).
+spec/mailers/event_spec.rb:50:3: C: [Correctable] Layout/CommentIndentation: Incorrect indentation detected (column 2 instead of 3).
 		#puts ActionMailer::Base.deliveries.last.body.to_s
   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/mailers/event_spec.rb:48:3: C: [Correctable] Layout/LeadingCommentSpace: Missing space after #.
+spec/mailers/event_spec.rb:50:3: C: [Correctable] Layout/LeadingCommentSpace: Missing space after #.
 		#puts ActionMailer::Base.deliveries.last.body.to_s
   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/mailers/event_spec.rb:49:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+spec/mailers/event_spec.rb:51:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
 	end
 ^
-spec/mailers/event_spec.rb:51:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+spec/mailers/event_spec.rb:53:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
 	it "sends the correct subject and contents to the correct address", type: :request do
 ^
-spec/mailers/event_spec.rb:51:5: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+spec/mailers/event_spec.rb:53:5: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
 	it "sends the correct subject and contents to the correct address", type: :request do
     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/mailers/event_spec.rb:52:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+spec/mailers/event_spec.rb:54:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
 		post notify_event_path(@event.id), params: {}
 ^^
-spec/mailers/event_spec.rb:52:2: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+spec/mailers/event_spec.rb:54:2: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
 		post notify_event_path(@event.id), params: {}
  ^
-spec/mailers/event_spec.rb:53:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
-		mail = ActionMailer::Base.deliveries.last
-^^
-spec/mailers/event_spec.rb:54:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
-		expect(mail.to).to include(@user.email)
-^^
 spec/mailers/event_spec.rb:55:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
-		expect(mail.subject).to match(@event.name)
+		perform_enqueued_jobs
 ^^
 spec/mailers/event_spec.rb:56:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
-		expect(mail.body).to match(@event.time.to_s)
-^^
-spec/mailers/event_spec.rb:57:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
-		expect(mail.body).to match(@event.location)
-^^
-spec/mailers/event_spec.rb:58:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
-	end
-^
-spec/mailers/event_spec.rb:60:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
-	it "allows the subject and body to be passed in via post request", type: :request do
-^
-spec/mailers/event_spec.rb:60:5: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-	it "allows the subject and body to be passed in via post request", type: :request do
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/mailers/event_spec.rb:61:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
-		post notify_event_path(@event.id), params: {
-^^
-spec/mailers/event_spec.rb:61:2: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
-		post notify_event_path(@event.id), params: {
- ^
-spec/mailers/event_spec.rb:62:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
-			subject: "Secret Event Notification",
-^^^
-spec/mailers/event_spec.rb:62:4: C: [Correctable] Layout/FirstHashElementIndentation: Use 2 spaces for indentation in a hash, relative to the start of the line where the left curly brace is.
-			subject: "Secret Event Notification",
-   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/mailers/event_spec.rb:62:13: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-			subject: "Secret Event Notification",
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/mailers/event_spec.rb:63:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
-			body: "This is a notification for an event, but it's secret, so I can't tell you what it is."
-^^^
-spec/mailers/event_spec.rb:64:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
-		}
-^^
-spec/mailers/event_spec.rb:65:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
 		mail = ActionMailer::Base.deliveries.last
 ^^
-spec/mailers/event_spec.rb:66:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
-		expect(mail.subject).to eq("Secret Event Notification")
+spec/mailers/event_spec.rb:58:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+		expect(mail.to).to include(@user.email)
 ^^
-spec/mailers/event_spec.rb:66:30: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-		expect(mail.subject).to eq("Secret Event Notification")
-                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/mailers/event_spec.rb:67:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
-		expect(mail.body).to eq("This is a notification for an event, but it's secret, so I can't tell you what it is.")
+spec/mailers/event_spec.rb:59:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+		expect(mail.subject).to match(@event.name)
 ^^
-spec/mailers/event_spec.rb:68:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+spec/mailers/event_spec.rb:60:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+		expect(mail.body).to match(@event.time.to_s)
+^^
+spec/mailers/event_spec.rb:61:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+		expect(mail.body).to match(@event.location)
+^^
+spec/mailers/event_spec.rb:62:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
 	end
 ^
-spec/mailers/event_spec.rb:69:1: C: [Correctable] Layout/EmptyLinesAroundBlockBody: Extra empty line detected at block body end.
+spec/mailers/event_spec.rb:64:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	it "allows the subject and body to be passed in via post request", type: :request do
+^
+spec/mailers/event_spec.rb:64:5: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+	it "allows the subject and body to be passed in via post request", type: :request do
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/mailers/event_spec.rb:65:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+		post notify_event_path(@event.id), params: {
+^^
+spec/mailers/event_spec.rb:65:2: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+		post notify_event_path(@event.id), params: {
+ ^
+spec/mailers/event_spec.rb:66:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+			subject: "Secret Event Notification",
+^^^
+spec/mailers/event_spec.rb:66:4: C: [Correctable] Layout/FirstHashElementIndentation: Use 2 spaces for indentation in a hash, relative to the start of the line where the left curly brace is.
+			subject: "Secret Event Notification",
+   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/mailers/event_spec.rb:66:13: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+			subject: "Secret Event Notification",
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/mailers/event_spec.rb:67:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+			body: "This is a notification for an event, but it's secret, so I can't tell you what it is."
+^^^
+spec/mailers/event_spec.rb:68:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+		}
+^^
+spec/mailers/event_spec.rb:69:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+		perform_enqueued_jobs
+^^
+spec/mailers/event_spec.rb:70:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+		mail = ActionMailer::Base.deliveries.last
+^^
+spec/mailers/event_spec.rb:72:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+		expect(mail.subject).to eq("Secret Event Notification")
+^^
+spec/mailers/event_spec.rb:72:30: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+		expect(mail.subject).to eq("Secret Event Notification")
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/mailers/event_spec.rb:73:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+		expect(mail.body).to eq("This is a notification for an event, but it's secret, so I can't tell you what it is.")
+^^
+spec/mailers/event_spec.rb:74:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	end
+^
+spec/mailers/event_spec.rb:75:1: C: [Correctable] Layout/EmptyLinesAroundBlockBody: Extra empty line detected at block body end.
 spec/mailers/previews/event_preview.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 # Preview all emails at http://localhost:3000/rails/mailers/event
 ^
@@ -4392,18 +4401,49 @@ spec/mailers/previews/event_preview.rb:3:1: C: [Correctable] Layout/EmptyLinesAr
 spec/models/about_us_page_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 require 'rails_helper'
 ^
+spec/models/about_us_page_spec.rb:2:1: C: [Correctable] Layout/TrailingEmptyLines: 2 trailing blank lines detected.
 spec/models/contact_form_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 require 'rails_helper'
 ^
+spec/models/contact_form_spec.rb:2:1: C: [Correctable] Layout/TrailingEmptyLines: 1 trailing blank lines detected.
 spec/models/event_user_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 require 'rails_helper'
 ^
+spec/models/event_user_spec.rb:2:1: C: [Correctable] Layout/TrailingEmptyLines: 2 trailing blank lines detected.
 spec/models/home_page_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 require 'rails_helper'
 ^
+spec/models/home_page_spec.rb:5:36: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    @hp = HomePage.create(heading: "Howdy", summary: "Hello")
+                                   ^^^^^^^
+spec/models/home_page_spec.rb:5:54: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    @hp = HomePage.create(heading: "Howdy", summary: "Hello")
+                                                     ^^^^^^^
+spec/models/home_page_spec.rb:7:1: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+spec/models/home_page_spec.rb:23:16: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+    @hp.update(:heading => "John Casey")
+               ^^^^^^^^^^^
+spec/models/home_page_spec.rb:23:28: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    @hp.update(:heading => "John Casey")
+                           ^^^^^^^^^^^^
+spec/models/home_page_spec.rb:24:16: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+    @hp.update(:summary => "johncasey@gmail.com")
+               ^^^^^^^^^^^
+spec/models/home_page_spec.rb:24:28: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    @hp.update(:summary => "johncasey@gmail.com")
+                           ^^^^^^^^^^^^^^^^^^^^^
+spec/models/home_page_spec.rb:25:37: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    expect(HomePage.find_by_heading("John Casey")).to eq(@hp)
+                                    ^^^^^^^^^^^^
+spec/models/home_page_spec.rb:27:1: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+spec/models/home_page_spec.rb:33:1: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+spec/models/home_page_spec.rb:34:4: C: [Correctable] Layout/TrailingEmptyLines: Final newline missing.
+end
+   
 spec/models/officer_bio_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 require 'rails_helper'
 ^
+spec/models/officer_bio_spec.rb:2:1: C: [Correctable] Layout/TrailingEmptyLines: 1 trailing blank lines detected.
 spec/models/payment_account_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 require 'rails_helper'
 ^
@@ -4626,442 +4666,567 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 spec/requests/contact_form_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 require 'rails_helper'
 ^
-spec/requests/contact_form_spec.rb:3:1: C: Metrics/BlockLength: Block has too many lines. [52/25]
+spec/requests/contact_form_spec.rb:2:1: C: Style/MixinUsage: include is used at the top level. Use inside class or module.
+include Warden::Test::Helpers
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/requests/contact_form_spec.rb:4:1: C: Metrics/BlockLength: Block has too many lines. [59/25]
 RSpec.describe "ContactForms", type: :request do ...
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/requests/contact_form_spec.rb:3:16: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+spec/requests/contact_form_spec.rb:4:16: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
 RSpec.describe "ContactForms", type: :request do
                ^^^^^^^^^^^^^^
-spec/requests/contact_form_spec.rb:4:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+spec/requests/contact_form_spec.rb:5:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
 	describe "GET /new" do
 ^
-spec/requests/contact_form_spec.rb:4:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+spec/requests/contact_form_spec.rb:5:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
 	describe "GET /new" do
 ^
-spec/requests/contact_form_spec.rb:4:11: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+spec/requests/contact_form_spec.rb:5:11: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
 	describe "GET /new" do
           ^^^^^^^^^^
-spec/requests/contact_form_spec.rb:5:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+spec/requests/contact_form_spec.rb:6:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
 		it "returns http success" do
 ^^
-spec/requests/contact_form_spec.rb:5:2: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+spec/requests/contact_form_spec.rb:6:2: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
 		it "returns http success" do
  ^
-spec/requests/contact_form_spec.rb:5:6: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+spec/requests/contact_form_spec.rb:6:6: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
 		it "returns http success" do
      ^^^^^^^^^^^^^^^^^^^^^^
-spec/requests/contact_form_spec.rb:6:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+spec/requests/contact_form_spec.rb:7:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
 			get "/contact_forms/new"
 ^^^
-spec/requests/contact_form_spec.rb:6:3: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+spec/requests/contact_form_spec.rb:7:3: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
 			get "/contact_forms/new"
   ^
-spec/requests/contact_form_spec.rb:6:8: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+spec/requests/contact_form_spec.rb:7:8: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
 			get "/contact_forms/new"
        ^^^^^^^^^^^^^^^^^^^^
-spec/requests/contact_form_spec.rb:7:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+spec/requests/contact_form_spec.rb:8:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
 			expect(response).to have_http_status(:success)
 ^^^
-spec/requests/contact_form_spec.rb:8:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+spec/requests/contact_form_spec.rb:9:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
 		end
 ^^
-spec/requests/contact_form_spec.rb:9:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+spec/requests/contact_form_spec.rb:10:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
 	end
 ^
-spec/requests/contact_form_spec.rb:11:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+spec/requests/contact_form_spec.rb:12:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
 	describe "POST /#" do
 ^
-spec/requests/contact_form_spec.rb:11:2: C: Metrics/BlockLength: Block has too many lines. [32/25]
+spec/requests/contact_form_spec.rb:12:2: C: Metrics/BlockLength: Block has too many lines. [36/25]
 	describe "POST /#" do ...
  ^^^^^^^^^^^^^^^^^^^^^
-spec/requests/contact_form_spec.rb:11:11: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+spec/requests/contact_form_spec.rb:12:11: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
 	describe "POST /#" do
           ^^^^^^^^^
-spec/requests/contact_form_spec.rb:12:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+spec/requests/contact_form_spec.rb:13:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
 		it "returns http found in response to a valid message" do
 ^^
-spec/requests/contact_form_spec.rb:12:2: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+spec/requests/contact_form_spec.rb:13:2: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
 		it "returns http found in response to a valid message" do
  ^
-spec/requests/contact_form_spec.rb:12:6: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+spec/requests/contact_form_spec.rb:13:6: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
 		it "returns http found in response to a valid message" do
      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/requests/contact_form_spec.rb:13:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+spec/requests/contact_form_spec.rb:14:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
 			post "/contact_forms", params: {contact_form: {message: "test"}}
 ^^^
-spec/requests/contact_form_spec.rb:13:3: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+spec/requests/contact_form_spec.rb:14:3: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
 			post "/contact_forms", params: {contact_form: {message: "test"}}
   ^
-spec/requests/contact_form_spec.rb:13:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+spec/requests/contact_form_spec.rb:14:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
 			post "/contact_forms", params: {contact_form: {message: "test"}}
         ^^^^^^^^^^^^^^^^
-spec/requests/contact_form_spec.rb:13:35: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside { missing.
+spec/requests/contact_form_spec.rb:14:35: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside { missing.
 			post "/contact_forms", params: {contact_form: {message: "test"}}
                                   ^
-spec/requests/contact_form_spec.rb:13:50: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside { missing.
+spec/requests/contact_form_spec.rb:14:50: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside { missing.
 			post "/contact_forms", params: {contact_form: {message: "test"}}
                                                  ^
-spec/requests/contact_form_spec.rb:13:60: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+spec/requests/contact_form_spec.rb:14:60: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
 			post "/contact_forms", params: {contact_form: {message: "test"}}
                                                            ^^^^^^
-spec/requests/contact_form_spec.rb:13:66: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
+spec/requests/contact_form_spec.rb:14:66: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
 			post "/contact_forms", params: {contact_form: {message: "test"}}
                                                                  ^
-spec/requests/contact_form_spec.rb:13:67: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
+spec/requests/contact_form_spec.rb:14:67: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
 			post "/contact_forms", params: {contact_form: {message: "test"}}
                                                                   ^
-spec/requests/contact_form_spec.rb:14:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+spec/requests/contact_form_spec.rb:15:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
 			expect(response).to have_http_status(:found)
 ^^^
-spec/requests/contact_form_spec.rb:15:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+spec/requests/contact_form_spec.rb:16:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
 		end
 ^^
-spec/requests/contact_form_spec.rb:17:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+spec/requests/contact_form_spec.rb:18:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
 		it "saves a valid submitted form to the database" do
 ^^
-spec/requests/contact_form_spec.rb:17:6: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+spec/requests/contact_form_spec.rb:18:6: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
 		it "saves a valid submitted form to the database" do
      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/requests/contact_form_spec.rb:18:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+spec/requests/contact_form_spec.rb:19:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
 			post contact_forms_path, params: {contact_form: {message: "this is a test message"}}
 ^^^
-spec/requests/contact_form_spec.rb:18:3: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+spec/requests/contact_form_spec.rb:19:3: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
 			post contact_forms_path, params: {contact_form: {message: "this is a test message"}}
   ^
-spec/requests/contact_form_spec.rb:18:37: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside { missing.
+spec/requests/contact_form_spec.rb:19:37: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside { missing.
 			post contact_forms_path, params: {contact_form: {message: "this is a test message"}}
                                     ^
-spec/requests/contact_form_spec.rb:18:52: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside { missing.
+spec/requests/contact_form_spec.rb:19:52: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside { missing.
 			post contact_forms_path, params: {contact_form: {message: "this is a test message"}}
                                                    ^
-spec/requests/contact_form_spec.rb:18:62: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+spec/requests/contact_form_spec.rb:19:62: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
 			post contact_forms_path, params: {contact_form: {message: "this is a test message"}}
                                                              ^^^^^^^^^^^^^^^^^^^^^^^^
-spec/requests/contact_form_spec.rb:18:86: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
+spec/requests/contact_form_spec.rb:19:86: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
 			post contact_forms_path, params: {contact_form: {message: "this is a test message"}}
                                                                                      ^
-spec/requests/contact_form_spec.rb:18:87: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
+spec/requests/contact_form_spec.rb:19:87: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
 			post contact_forms_path, params: {contact_form: {message: "this is a test message"}}
                                                                                       ^
-spec/requests/contact_form_spec.rb:20:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+spec/requests/contact_form_spec.rb:21:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
 			expect(ContactForm.all.size).to eq(1)
 ^^^
-spec/requests/contact_form_spec.rb:21:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+spec/requests/contact_form_spec.rb:22:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
 		end
 ^^
-spec/requests/contact_form_spec.rb:23:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+spec/requests/contact_form_spec.rb:24:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
 		it "gives feedback upon saving a valid submitted form" do
 ^^
-spec/requests/contact_form_spec.rb:23:6: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+spec/requests/contact_form_spec.rb:24:6: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
 		it "gives feedback upon saving a valid submitted form" do
      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/requests/contact_form_spec.rb:24:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
-			HomePage.create!(id: 1, heading: "test page", summary: "test page")
-^^^
-spec/requests/contact_form_spec.rb:24:3: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
-			HomePage.create!(id: 1, heading: "test page", summary: "test page")
-  ^
-spec/requests/contact_form_spec.rb:24:37: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-			HomePage.create!(id: 1, heading: "test page", summary: "test page")
-                                    ^^^^^^^^^^^
-spec/requests/contact_form_spec.rb:24:59: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-			HomePage.create!(id: 1, heading: "test page", summary: "test page")
-                                                          ^^^^^^^^^^^
 spec/requests/contact_form_spec.rb:25:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+			if HomePage.all.empty?
+^^^
+spec/requests/contact_form_spec.rb:25:3: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+			if HomePage.all.empty?
+  ^
+spec/requests/contact_form_spec.rb:25:4: C: [Correctable] Style/IfUnlessModifier: Favor modifier if usage when having a single-line body. Another good alternative is the usage of control flow &&/||.
+			if HomePage.all.empty?
+   ^^
+spec/requests/contact_form_spec.rb:26:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+				HomePage.create(id: 1, heading: "test page", summary: "test page")
+^^^^
+spec/requests/contact_form_spec.rb:26:4: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+				HomePage.create(id: 1, heading: "test page", summary: "test page")
+   ^
+spec/requests/contact_form_spec.rb:26:37: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+				HomePage.create(id: 1, heading: "test page", summary: "test page")
+                                    ^^^^^^^^^^^
+spec/requests/contact_form_spec.rb:26:59: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+				HomePage.create(id: 1, heading: "test page", summary: "test page")
+                                                          ^^^^^^^^^^^
+spec/requests/contact_form_spec.rb:27:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+			end
+^^^
+spec/requests/contact_form_spec.rb:28:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
 			post "/contact_forms", params: {contact_form: {message: "test"}}
 ^^^
-spec/requests/contact_form_spec.rb:25:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+spec/requests/contact_form_spec.rb:28:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
 			post "/contact_forms", params: {contact_form: {message: "test"}}
         ^^^^^^^^^^^^^^^^
-spec/requests/contact_form_spec.rb:25:35: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside { missing.
+spec/requests/contact_form_spec.rb:28:35: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside { missing.
 			post "/contact_forms", params: {contact_form: {message: "test"}}
                                   ^
-spec/requests/contact_form_spec.rb:25:50: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside { missing.
+spec/requests/contact_form_spec.rb:28:50: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside { missing.
 			post "/contact_forms", params: {contact_form: {message: "test"}}
                                                  ^
-spec/requests/contact_form_spec.rb:25:60: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+spec/requests/contact_form_spec.rb:28:60: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
 			post "/contact_forms", params: {contact_form: {message: "test"}}
                                                            ^^^^^^
-spec/requests/contact_form_spec.rb:25:66: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
+spec/requests/contact_form_spec.rb:28:66: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
 			post "/contact_forms", params: {contact_form: {message: "test"}}
                                                                  ^
-spec/requests/contact_form_spec.rb:25:67: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
+spec/requests/contact_form_spec.rb:28:67: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
 			post "/contact_forms", params: {contact_form: {message: "test"}}
                                                                   ^
-spec/requests/contact_form_spec.rb:26:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+spec/requests/contact_form_spec.rb:29:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
 			follow_redirect!
 ^^^
-spec/requests/contact_form_spec.rb:27:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
-spec/requests/contact_form_spec.rb:27:1: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
-spec/requests/contact_form_spec.rb:28:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+spec/requests/contact_form_spec.rb:30:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+spec/requests/contact_form_spec.rb:30:1: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+spec/requests/contact_form_spec.rb:31:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
 			expect(response.body).to include("Message has been sent.")
 ^^^
-spec/requests/contact_form_spec.rb:28:37: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+spec/requests/contact_form_spec.rb:31:37: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
 			expect(response.body).to include("Message has been sent.")
                                     ^^^^^^^^^^^^^^^^^^^^^^^^
-spec/requests/contact_form_spec.rb:29:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+spec/requests/contact_form_spec.rb:32:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
 		end
 ^^
-spec/requests/contact_form_spec.rb:31:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+spec/requests/contact_form_spec.rb:34:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
 		it "returns users to the home page after a valid submission" do
 ^^
-spec/requests/contact_form_spec.rb:31:6: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+spec/requests/contact_form_spec.rb:34:6: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
 		it "returns users to the home page after a valid submission" do
      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/requests/contact_form_spec.rb:32:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
-			HomePage.create!(id: 1, heading: "test page", summary: "test page")
+spec/requests/contact_form_spec.rb:35:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+			if HomePage.all.empty?
 ^^^
-spec/requests/contact_form_spec.rb:32:3: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
-			HomePage.create!(id: 1, heading: "test page", summary: "test page")
+spec/requests/contact_form_spec.rb:35:3: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+			if HomePage.all.empty?
   ^
-spec/requests/contact_form_spec.rb:32:37: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-			HomePage.create!(id: 1, heading: "test page", summary: "test page")
+spec/requests/contact_form_spec.rb:35:4: C: [Correctable] Style/IfUnlessModifier: Favor modifier if usage when having a single-line body. Another good alternative is the usage of control flow &&/||.
+			if HomePage.all.empty?
+   ^^
+spec/requests/contact_form_spec.rb:36:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+				HomePage.create(id: 1, heading: "test page", summary: "test page")
+^^^^
+spec/requests/contact_form_spec.rb:36:4: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+				HomePage.create(id: 1, heading: "test page", summary: "test page")
+   ^
+spec/requests/contact_form_spec.rb:36:37: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+				HomePage.create(id: 1, heading: "test page", summary: "test page")
                                     ^^^^^^^^^^^
-spec/requests/contact_form_spec.rb:32:59: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-			HomePage.create!(id: 1, heading: "test page", summary: "test page")
+spec/requests/contact_form_spec.rb:36:59: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+				HomePage.create(id: 1, heading: "test page", summary: "test page")
                                                           ^^^^^^^^^^^
-spec/requests/contact_form_spec.rb:33:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+spec/requests/contact_form_spec.rb:37:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+			end
+^^^
+spec/requests/contact_form_spec.rb:38:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
 			post contact_forms_path, params: {contact_form: {message: "test"}}
 ^^^
-spec/requests/contact_form_spec.rb:33:37: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside { missing.
+spec/requests/contact_form_spec.rb:38:37: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside { missing.
 			post contact_forms_path, params: {contact_form: {message: "test"}}
                                     ^
-spec/requests/contact_form_spec.rb:33:52: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside { missing.
+spec/requests/contact_form_spec.rb:38:52: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside { missing.
 			post contact_forms_path, params: {contact_form: {message: "test"}}
                                                    ^
-spec/requests/contact_form_spec.rb:33:62: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+spec/requests/contact_form_spec.rb:38:62: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
 			post contact_forms_path, params: {contact_form: {message: "test"}}
                                                              ^^^^^^
-spec/requests/contact_form_spec.rb:33:68: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
+spec/requests/contact_form_spec.rb:38:68: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
 			post contact_forms_path, params: {contact_form: {message: "test"}}
                                                                    ^
-spec/requests/contact_form_spec.rb:33:69: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
+spec/requests/contact_form_spec.rb:38:69: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
 			post contact_forms_path, params: {contact_form: {message: "test"}}
                                                                     ^
-spec/requests/contact_form_spec.rb:35:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+spec/requests/contact_form_spec.rb:40:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
 			expect(response).to redirect_to(root_path)
 ^^^
-spec/requests/contact_form_spec.rb:36:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+spec/requests/contact_form_spec.rb:41:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
 		end
 ^^
-spec/requests/contact_form_spec.rb:38:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+spec/requests/contact_form_spec.rb:43:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
 		it "returns http unprocessable entity in response to an invalid message" do
 ^^
-spec/requests/contact_form_spec.rb:38:6: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+spec/requests/contact_form_spec.rb:43:6: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
 		it "returns http unprocessable entity in response to an invalid message" do
      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/requests/contact_form_spec.rb:39:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+spec/requests/contact_form_spec.rb:44:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
 			post contact_forms_path, params: {contact_form: {message: ""}}
 ^^^
-spec/requests/contact_form_spec.rb:39:3: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+spec/requests/contact_form_spec.rb:44:3: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
 			post contact_forms_path, params: {contact_form: {message: ""}}
   ^
-spec/requests/contact_form_spec.rb:39:37: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside { missing.
+spec/requests/contact_form_spec.rb:44:37: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside { missing.
 			post contact_forms_path, params: {contact_form: {message: ""}}
                                     ^
-spec/requests/contact_form_spec.rb:39:52: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside { missing.
+spec/requests/contact_form_spec.rb:44:52: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside { missing.
 			post contact_forms_path, params: {contact_form: {message: ""}}
                                                    ^
-spec/requests/contact_form_spec.rb:39:62: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+spec/requests/contact_form_spec.rb:44:62: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
 			post contact_forms_path, params: {contact_form: {message: ""}}
                                                              ^^
-spec/requests/contact_form_spec.rb:39:64: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
+spec/requests/contact_form_spec.rb:44:64: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
 			post contact_forms_path, params: {contact_form: {message: ""}}
                                                                ^
-spec/requests/contact_form_spec.rb:39:65: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
+spec/requests/contact_form_spec.rb:44:65: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
 			post contact_forms_path, params: {contact_form: {message: ""}}
                                                                 ^
-spec/requests/contact_form_spec.rb:41:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+spec/requests/contact_form_spec.rb:46:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
 			expect(response).to have_http_status(:unprocessable_entity)
 ^^^
-spec/requests/contact_form_spec.rb:42:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+spec/requests/contact_form_spec.rb:47:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
 		end
 ^^
-spec/requests/contact_form_spec.rb:44:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+spec/requests/contact_form_spec.rb:49:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
 		it "does not modify the database in response to an unprocessable entity" do
 ^^
-spec/requests/contact_form_spec.rb:44:6: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+spec/requests/contact_form_spec.rb:49:6: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
 		it "does not modify the database in response to an unprocessable entity" do
      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/requests/contact_form_spec.rb:45:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+spec/requests/contact_form_spec.rb:50:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
 			initial_records = ContactForm.all
 ^^^
-spec/requests/contact_form_spec.rb:45:3: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+spec/requests/contact_form_spec.rb:50:3: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
 			initial_records = ContactForm.all
   ^
-spec/requests/contact_form_spec.rb:46:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+spec/requests/contact_form_spec.rb:51:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
 			post contact_forms_path, params: {contact_form: {message: ""}}
 ^^^
-spec/requests/contact_form_spec.rb:46:37: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside { missing.
+spec/requests/contact_form_spec.rb:51:37: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside { missing.
 			post contact_forms_path, params: {contact_form: {message: ""}}
                                     ^
-spec/requests/contact_form_spec.rb:46:52: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside { missing.
+spec/requests/contact_form_spec.rb:51:52: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside { missing.
 			post contact_forms_path, params: {contact_form: {message: ""}}
                                                    ^
-spec/requests/contact_form_spec.rb:46:62: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+spec/requests/contact_form_spec.rb:51:62: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
 			post contact_forms_path, params: {contact_form: {message: ""}}
                                                              ^^
-spec/requests/contact_form_spec.rb:46:64: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
+spec/requests/contact_form_spec.rb:51:64: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
 			post contact_forms_path, params: {contact_form: {message: ""}}
                                                                ^
-spec/requests/contact_form_spec.rb:46:65: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
+spec/requests/contact_form_spec.rb:51:65: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
 			post contact_forms_path, params: {contact_form: {message: ""}}
                                                                 ^
-spec/requests/contact_form_spec.rb:48:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+spec/requests/contact_form_spec.rb:53:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
 			expect(ContactForm.all).to eq(initial_records)
 ^^^
-spec/requests/contact_form_spec.rb:49:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
-		end
-^^
-spec/requests/contact_form_spec.rb:51:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
-		it "gives feedback about problems with invalid submitted messages" do
-^^
-spec/requests/contact_form_spec.rb:51:6: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-		it "gives feedback about problems with invalid submitted messages" do
-     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/requests/contact_form_spec.rb:52:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
-			post contact_forms_path, params: {contact_form: {message: ""}}
-^^^
-spec/requests/contact_form_spec.rb:52:3: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
-			post contact_forms_path, params: {contact_form: {message: ""}}
-  ^
-spec/requests/contact_form_spec.rb:52:37: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside { missing.
-			post contact_forms_path, params: {contact_form: {message: ""}}
-                                    ^
-spec/requests/contact_form_spec.rb:52:52: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside { missing.
-			post contact_forms_path, params: {contact_form: {message: ""}}
-                                                   ^
-spec/requests/contact_form_spec.rb:52:62: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-			post contact_forms_path, params: {contact_form: {message: ""}}
-                                                             ^^
-spec/requests/contact_form_spec.rb:52:64: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
-			post contact_forms_path, params: {contact_form: {message: ""}}
-                                                               ^
-spec/requests/contact_form_spec.rb:52:65: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
-			post contact_forms_path, params: {contact_form: {message: ""}}
-                                                                ^
 spec/requests/contact_form_spec.rb:54:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
-			expect(response.body).to include("prevented this message from being sent")
-^^^
-spec/requests/contact_form_spec.rb:54:37: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-			expect(response.body).to include("prevented this message from being sent")
-                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/requests/contact_form_spec.rb:55:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
 		end
 ^^
 spec/requests/contact_form_spec.rb:56:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
-	end
-^
-spec/requests/contact_form_spec.rb:58:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
-	describe "GET /index" do
-^
-spec/requests/contact_form_spec.rb:58:11: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-	describe "GET /index" do
-          ^^^^^^^^^^^^
+		it "gives feedback about problems with invalid submitted messages" do
+^^
+spec/requests/contact_form_spec.rb:56:6: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+		it "gives feedback about problems with invalid submitted messages" do
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/requests/contact_form_spec.rb:57:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+			post contact_forms_path, params: {contact_form: {message: ""}}
+^^^
+spec/requests/contact_form_spec.rb:57:3: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+			post contact_forms_path, params: {contact_form: {message: ""}}
+  ^
+spec/requests/contact_form_spec.rb:57:37: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside { missing.
+			post contact_forms_path, params: {contact_form: {message: ""}}
+                                    ^
+spec/requests/contact_form_spec.rb:57:52: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside { missing.
+			post contact_forms_path, params: {contact_form: {message: ""}}
+                                                   ^
+spec/requests/contact_form_spec.rb:57:62: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+			post contact_forms_path, params: {contact_form: {message: ""}}
+                                                             ^^
+spec/requests/contact_form_spec.rb:57:64: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
+			post contact_forms_path, params: {contact_form: {message: ""}}
+                                                               ^
+spec/requests/contact_form_spec.rb:57:65: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
+			post contact_forms_path, params: {contact_form: {message: ""}}
+                                                                ^
 spec/requests/contact_form_spec.rb:59:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
-		it "returns http success" do
-^^
-spec/requests/contact_form_spec.rb:59:2: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
-		it "returns http success" do
- ^
-spec/requests/contact_form_spec.rb:59:6: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-		it "returns http success" do
-     ^^^^^^^^^^^^^^^^^^^^^^
+			expect(response.body).to include("prevented this message from being sent")
+^^^
+spec/requests/contact_form_spec.rb:59:37: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+			expect(response.body).to include("prevented this message from being sent")
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 spec/requests/contact_form_spec.rb:60:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
-			get "/contact_forms/index"
-^^^
-spec/requests/contact_form_spec.rb:60:3: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
-			get "/contact_forms/index"
-  ^
-spec/requests/contact_form_spec.rb:60:8: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-			get "/contact_forms/index"
-       ^^^^^^^^^^^^^^^^^^^^^^
-spec/requests/contact_form_spec.rb:61:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
-			expect(response).to have_http_status(:success)
-^^^
-spec/requests/contact_form_spec.rb:62:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
 		end
 ^^
-spec/requests/contact_form_spec.rb:63:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+spec/requests/contact_form_spec.rb:61:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
 	end
 ^
-spec/requests/contact_form_spec.rb:65:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
-	describe "GET /show" do
+spec/requests/contact_form_spec.rb:63:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	describe "GET /contact_forms/" do
 ^
-spec/requests/contact_form_spec.rb:65:11: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-	describe "GET /show" do
-          ^^^^^^^^^^^
-spec/requests/contact_form_spec.rb:66:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+spec/requests/contact_form_spec.rb:63:11: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+	describe "GET /contact_forms/" do
+          ^^^^^^^^^^^^^^^^^^^^^
+spec/requests/contact_form_spec.rb:64:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
 		it "returns http success" do
 ^^
-spec/requests/contact_form_spec.rb:66:2: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+spec/requests/contact_form_spec.rb:64:2: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
 		it "returns http success" do
  ^
-spec/requests/contact_form_spec.rb:66:6: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+spec/requests/contact_form_spec.rb:64:6: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
 		it "returns http success" do
      ^^^^^^^^^^^^^^^^^^^^^^
-spec/requests/contact_form_spec.rb:67:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
-			get "/contact_forms/show"
+spec/requests/contact_form_spec.rb:65:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+			user = User.create(id: 1)
 ^^^
-spec/requests/contact_form_spec.rb:67:3: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
-			get "/contact_forms/show"
+spec/requests/contact_form_spec.rb:65:3: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+			user = User.create(id: 1)
   ^
-spec/requests/contact_form_spec.rb:67:8: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-			get "/contact_forms/show"
-       ^^^^^^^^^^^^^^^^^^^^^
+spec/requests/contact_form_spec.rb:66:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+			login_as(user, scope: :user)
+^^^
+spec/requests/contact_form_spec.rb:67:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+spec/requests/contact_form_spec.rb:67:1: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
 spec/requests/contact_form_spec.rb:68:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+			get "/contact_forms/"
+^^^
+spec/requests/contact_form_spec.rb:68:8: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+			get "/contact_forms/"
+       ^^^^^^^^^^^^^^^^^
+spec/requests/contact_form_spec.rb:69:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
 			expect(response).to have_http_status(:success)
 ^^^
-spec/requests/contact_form_spec.rb:69:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+spec/requests/contact_form_spec.rb:70:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
 		end
 ^^
-spec/requests/contact_form_spec.rb:70:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+spec/requests/contact_form_spec.rb:71:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
 	end
 ^
-spec/requests/contact_form_spec.rb:71:1: C: [Correctable] Layout/EmptyLinesAroundBlockBody: Extra empty line detected at block body end.
+spec/requests/contact_form_spec.rb:73:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	describe "GET /contact_forms/:id" do
+^
+spec/requests/contact_form_spec.rb:73:11: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+	describe "GET /contact_forms/:id" do
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+spec/requests/contact_form_spec.rb:74:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+		it "returns http success" do
+^^
+spec/requests/contact_form_spec.rb:74:2: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+		it "returns http success" do
+ ^
+spec/requests/contact_form_spec.rb:74:6: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+		it "returns http success" do
+     ^^^^^^^^^^^^^^^^^^^^^^
+spec/requests/contact_form_spec.rb:75:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+			post contact_forms_path, params: {contact_form: {message: "this is a test message"}}
+^^^
+spec/requests/contact_form_spec.rb:75:3: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+			post contact_forms_path, params: {contact_form: {message: "this is a test message"}}
+  ^
+spec/requests/contact_form_spec.rb:75:37: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside { missing.
+			post contact_forms_path, params: {contact_form: {message: "this is a test message"}}
+                                    ^
+spec/requests/contact_form_spec.rb:75:52: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside { missing.
+			post contact_forms_path, params: {contact_form: {message: "this is a test message"}}
+                                                   ^
+spec/requests/contact_form_spec.rb:75:62: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+			post contact_forms_path, params: {contact_form: {message: "this is a test message"}}
+                                                             ^^^^^^^^^^^^^^^^^^^^^^^^
+spec/requests/contact_form_spec.rb:75:86: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
+			post contact_forms_path, params: {contact_form: {message: "this is a test message"}}
+                                                                                     ^
+spec/requests/contact_form_spec.rb:75:87: C: [Correctable] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
+			post contact_forms_path, params: {contact_form: {message: "this is a test message"}}
+                                                                                      ^
+spec/requests/contact_form_spec.rb:76:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+			get "/contact_forms/"+ContactForm.last.id.to_s
+^^^
+spec/requests/contact_form_spec.rb:76:8: C: [Correctable] Style/StringConcatenation: Prefer string interpolation to string concatenation.
+			get "/contact_forms/"+ContactForm.last.id.to_s
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/requests/contact_form_spec.rb:76:8: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+			get "/contact_forms/"+ContactForm.last.id.to_s
+       ^^^^^^^^^^^^^^^^^
+spec/requests/contact_form_spec.rb:76:25: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator +.
+			get "/contact_forms/"+ContactForm.last.id.to_s
+                        ^
+spec/requests/contact_form_spec.rb:78:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+			expect(response).to have_http_status(:success)
+^^^
+spec/requests/contact_form_spec.rb:79:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+		end
+^^
+spec/requests/contact_form_spec.rb:80:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	end
+^
+spec/requests/contact_form_spec.rb:81:1: C: [Correctable] Layout/EmptyLinesAroundBlockBody: Extra empty line detected at block body end.
 spec/requests/payment_accounts_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 require 'rails_helper'
 ^
-spec/requests/payment_accounts_spec.rb:3:16: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+spec/requests/payment_accounts_spec.rb:2:1: C: Style/MixinUsage: include is used at the top level. Use inside class or module.
+include Warden::Test::Helpers
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/requests/payment_accounts_spec.rb:4:1: C: Metrics/BlockLength: Block has too many lines. [33/25]
+RSpec.describe "PaymentAccounts", type: :request do ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/requests/payment_accounts_spec.rb:4:16: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
 RSpec.describe "PaymentAccounts", type: :request do
                ^^^^^^^^^^^^^^^^^
-spec/requests/payment_accounts_spec.rb:4:12: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  describe "GET /new" do
-           ^^^^^^^^^^
-spec/requests/payment_accounts_spec.rb:5:8: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+spec/requests/payment_accounts_spec.rb:5:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	before(:each) do
+^
+spec/requests/payment_accounts_spec.rb:5:1: C: [Correctable] Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+	before(:each) do
+^
+spec/requests/payment_accounts_spec.rb:6:5: C: [Correctable] Style/IfUnlessModifier: Favor modifier if usage when having a single-line body. Another good alternative is the usage of control flow &&/||.
+    if PaymentAccount.all.empty?
+    ^^
+spec/requests/payment_accounts_spec.rb:9:3: C: [Correctable] Layout/BlockAlignment: end at 9, 2 is not aligned with before(:each) do at 5, 1.
+  end
+  ^^^
+spec/requests/payment_accounts_spec.rb:11:3: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+  before(:example) do ...
+  ^^^^^^^^^^^^^^^^^^^
+spec/requests/payment_accounts_spec.rb:12:12: C: [Correctable] Style/RedundantParentheses: Don't use parentheses around a method call.
+    user = (User.all.empty?)?User.create(id: 1):User.first
+           ^^^^^^^^^^^^^^^^^
+spec/requests/payment_accounts_spec.rb:12:12: C: [Correctable] Style/TernaryParentheses: Omit parentheses for ternary conditions.
+    user = (User.all.empty?)?User.create(id: 1):User.first
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/requests/payment_accounts_spec.rb:12:29: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator ?.
+    user = (User.all.empty?)?User.create(id: 1):User.first
+                            ^
+spec/requests/payment_accounts_spec.rb:12:48: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator :.
+    user = (User.all.empty?)?User.create(id: 1):User.first
+                                               ^
+spec/requests/payment_accounts_spec.rb:16:1: C: [Correctable] Layout/IndentationStyle: Tab detected in indentation.
+	describe "GET /new" do
+^
+spec/requests/payment_accounts_spec.rb:16:11: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+	describe "GET /new" do
+          ^^^^^^^^^^
+spec/requests/payment_accounts_spec.rb:17:8: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
     it "returns http success" do
        ^^^^^^^^^^^^^^^^^^^^^^
-spec/requests/payment_accounts_spec.rb:6:11: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+spec/requests/payment_accounts_spec.rb:18:11: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
       get "/payment_accounts/new"
           ^^^^^^^^^^^^^^^^^^^^^^^
-spec/requests/payment_accounts_spec.rb:11:12: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  describe "GET /index" do
-           ^^^^^^^^^^^^
-spec/requests/payment_accounts_spec.rb:12:8: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+spec/requests/payment_accounts_spec.rb:21:3: C: [Correctable] Layout/BlockAlignment: end at 21, 2 is not aligned with describe "GET /new" do at 16, 1.
+  end
+  ^^^
+spec/requests/payment_accounts_spec.rb:23:3: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+  describe "GET /payment_accounts/" do ...
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/requests/payment_accounts_spec.rb:23:12: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  describe "GET /payment_accounts/" do
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+spec/requests/payment_accounts_spec.rb:24:8: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
     it "returns http success" do
        ^^^^^^^^^^^^^^^^^^^^^^
-spec/requests/payment_accounts_spec.rb:13:11: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      get "/payment_accounts/index"
-          ^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/requests/payment_accounts_spec.rb:18:12: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  describe "GET /show" do
-           ^^^^^^^^^^^
-spec/requests/payment_accounts_spec.rb:19:8: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+spec/requests/payment_accounts_spec.rb:25:11: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      get "/payment_accounts/"
+          ^^^^^^^^^^^^^^^^^^^^
+spec/requests/payment_accounts_spec.rb:30:3: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+  describe "GET /payment_accounts/:id" do ...
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/requests/payment_accounts_spec.rb:30:12: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  describe "GET /payment_accounts/:id" do
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/requests/payment_accounts_spec.rb:31:8: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
     it "returns http success" do
        ^^^^^^^^^^^^^^^^^^^^^^
-spec/requests/payment_accounts_spec.rb:20:11: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      get "/payment_accounts/show"
-          ^^^^^^^^^^^^^^^^^^^^^^^^
-spec/requests/payment_accounts_spec.rb:25:12: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  describe "GET /edit" do
-           ^^^^^^^^^^^
-spec/requests/payment_accounts_spec.rb:26:8: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+spec/requests/payment_accounts_spec.rb:32:11: C: [Correctable] Style/StringConcatenation: Prefer string interpolation to string concatenation.
+      get "/payment_accounts/"+PaymentAccount.first.id.to_s
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/requests/payment_accounts_spec.rb:32:11: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      get "/payment_accounts/"+PaymentAccount.first.id.to_s
+          ^^^^^^^^^^^^^^^^^^^^
+spec/requests/payment_accounts_spec.rb:32:31: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator +.
+      get "/payment_accounts/"+PaymentAccount.first.id.to_s
+                              ^
+spec/requests/payment_accounts_spec.rb:37:3: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+  describe "GET /payment_accounts/:id/edit" do ...
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/requests/payment_accounts_spec.rb:37:12: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  describe "GET /payment_accounts/:id/edit" do
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/requests/payment_accounts_spec.rb:38:8: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
     it "returns http success" do
        ^^^^^^^^^^^^^^^^^^^^^^
-spec/requests/payment_accounts_spec.rb:27:11: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      get "/payment_accounts/edit"
-          ^^^^^^^^^^^^^^^^^^^^^^^^
-spec/requests/payment_accounts_spec.rb:31:1: C: [Correctable] Layout/EmptyLinesAroundBlockBody: Extra empty line detected at block body end.
+spec/requests/payment_accounts_spec.rb:39:11: C: [Correctable] Style/StringConcatenation: Prefer string interpolation to string concatenation.
+      get "/payment_accounts/"+PaymentAccount.first.id.to_s+"edit"
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/requests/payment_accounts_spec.rb:39:11: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      get "/payment_accounts/"+PaymentAccount.first.id.to_s+"edit"
+          ^^^^^^^^^^^^^^^^^^^^
+spec/requests/payment_accounts_spec.rb:39:31: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator +.
+      get "/payment_accounts/"+PaymentAccount.first.id.to_s+"edit"
+                              ^
+spec/requests/payment_accounts_spec.rb:39:60: C: [Correctable] Layout/SpaceAroundOperators: Surrounding space missing for operator +.
+      get "/payment_accounts/"+PaymentAccount.first.id.to_s+"edit"
+                                                           ^
+spec/requests/payment_accounts_spec.rb:39:61: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      get "/payment_accounts/"+PaymentAccount.first.id.to_s+"edit"
+                                                            ^^^^^^
+spec/requests/payment_accounts_spec.rb:43:1: C: [Correctable] Layout/EmptyLinesAroundBlockBody: Extra empty line detected at block body end.
 spec/requests/semesters_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 require 'rails_helper'
 ^
@@ -5753,4 +5918,4 @@ class ActiveSupport::TestCase
       ^^^^^^^^^^^^^^^^^^^^^^^
 test/test_helper.rb:11:1: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
 
-132 files inspected, 1947 offenses detected, 1828 offenses auto-correctable
+132 files inspected, 2008 offenses detected, 1886 offenses auto-correctable
