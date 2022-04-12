@@ -1,0 +1,38 @@
+<div class="container mt-5 mb-5">
+    <h1>View Meetings for <%= @user.full_name %></h1>
+    <div class="mt-5">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Meeting</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @events.each do |event| %>
+                    <% didUserAttend = @event_users.where(event_id: event.id, user_id: @user.id) %>
+                    <% status = "" %>
+
+                    <% if didUserAttend.empty? %>
+                        <% status = "Did not attend" %>
+                    <% else %>
+                        <% status = "Attended" %>
+                    <% end %>
+                    <tr>
+                        <td><%= event.name %></td>
+                        <td><%= event.time %></td>
+                        <td><%= status %></td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+
+
+        <%= link_to 'Back', user_root_path(current_user.id), {class: "mt-5"} %>
+    </div>
+</div>
+
+
+
+

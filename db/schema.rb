@@ -10,10 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_04_214738) do
+ActiveRecord::Schema.define(version: 2022_04_12_035923) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "about_us_page_officer_bios", id: false, force: :cascade do |t|
+    t.bigint "about_us_page_id", null: false
+    t.bigint "officer_bio_id", null: false
+  end
 
   create_table "about_us_pages", force: :cascade do |t|
     t.string "heading_image"
@@ -24,11 +29,8 @@ ActiveRecord::Schema.define(version: 2022_04_04_214738) do
     t.string "club_image_2"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "about_us_pages_officer_bios", id: false, force: :cascade do |t|
-    t.bigint "about_us_page_id", null: false
-    t.bigint "officer_bio_id", null: false
+    t.string "contents"
+    t.string "email"
   end
 
   create_table "active_storage_attachments", force: :cascade do |t|
@@ -114,6 +116,7 @@ ActiveRecord::Schema.define(version: 2022_04_04_214738) do
     t.boolean "visible"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "full_name"
     t.index ["user_id"], name: "index_officer_bios_on_user_id"
   end
 

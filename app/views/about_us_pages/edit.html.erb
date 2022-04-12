@@ -1,0 +1,8 @@
+<div class="container mt-5 mb-5">
+    <h1>Editing About Us Page</h1>
+
+    <%= render 'form', about_us_page: @about_us_page %>
+    <div class="mt-5">
+    <%= link_to 'Back', user_path(current_user.id), {class: "mt-5"} %>
+    </div>
+</div>

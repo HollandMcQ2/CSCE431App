@@ -1,0 +1,78 @@
+<%= content_tag(:div, class: "container align-items-center mt-5 custom-colors") do %>
+    <%= content_tag(:div, class: "row align-items-center justify-content-center") do %>
+        <%= content_tag(:div, class: "col-12 col-md-10") do %>
+            <h1>Events</h1>
+            <table class="table orange-text">
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col" colspan="2">Time</th>
+                        <th scope="col" colspan="2">End Time</th>
+                        <th scope="col">Location</th>
+                        <th scope="col">Mandatory?</th>
+                        <th scope="col">Link</th>
+                        <% if user_signed_in? && (current_user.role == 'admin' || current_user.role == 'president' || current_user.role == 'treasurer') %>
+                            <th scope="col">Status</th>
+                        <% end %>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                <!-- for loop this table row and dynamically fill in the content -->
+                    <% @events.each do |event| %>
+                        <tr>
+                            <td class="align-middle"><%= event.name %></td>
+                            <td class="align-middle" colspan="2"><%= event.time.strftime("%m/%d/%Y %I:%M") %></td>
+                            <td class="align-middle" colspan="2"><%= event.end_time.strftime("%m/%d/%Y %I:%M") %></td>
+                            <td class="align-middle"><%= event.location %></td>
+                            <td class="align-middle"><%= event.is_mandatory %></td>
+                            <td class="align-middle"><%= event.link %></td>
+
+                            <%# check status of meeting (ie is it opened or closed) %>
+                            <% if user_signed_in? && (current_user.role == 'admin' || current_user.role == 'president' || current_user.role == 'treasurer') %>
+                                <% message = "I am a placeHolder" %>
+                                <% currTime = Time.now %>
+                                <% if event.open %>
+                                    <% message = "Open" %>
+                                <% elsif currTime < event.end_time && curr_Time > event.time %>
+                                    <% message = "Open" %>
+                                <% else %>
+                                    <% message = "Closed" %>
+                                <% end %>
+                                <td class="align-middle"><%= message %></td>
+                            <% end %>
+                            <td class="align-middle" colspan="2"><%= link_to 'Details', event_path(event), {class: "btn btn-primary w-100"} %></td>
+                            <%# show edit and delete if user is an admin %>
+                            <% if user_signed_in? &&  (current_user.role == 'admin' || current_user.role == 'president' || current_user.role == 'treasurer') %>
+                                <td class="align-middle"><%= link_to 'Edit', edit_event_path(event), {class: "btn btn-primary w-100"} %></td>
+								<td class="align-middle"><%= link_to 'Notify', notify_event_path(event), {class: "btn btn-primary w-100"} %>
+                                <td class="align-middle"><%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger w-100" %></td>
+                            <% end %>
+                        </tr>
+                    <% end %>
+                    <%# display no data if events is empty %>
+                    <% if @events.empty? %>
+                        <tr>
+                            <td colspan="10" class="text-center">No events found</td>
+                        </tr>
+                    <% end %>
+                </tbody>
+                </table>
+
+                <% if user_signed_in? && (current_user.role == 'admin' || current_user.role == 'president' || current_user.role == 'treasurer') %>
+                    <%= link_to "Add Event", new_event_path %>
+                <% end %>
+                <br>
+                <% if user_signed_in? %>
+                    <%= link_to 'Back', user_path(current_user.id), {class: "mt-5"} %>
+                <% else %>
+                    <%= link_to 'Back', root_path, {class: "mt-5"} %>
+                <% end %>
+        <% end %>
+    <% end %>
+<% end %>

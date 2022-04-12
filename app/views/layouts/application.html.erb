@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSCE431app</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "TSAT" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "TSAT" %>">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <% if content_for? :for_head %>
+      <%= yield :for_head %>
+    <% end %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <style>
+        .flash__alert   { color: red; }
+        .flash__notice  { color: blue; }
+        .flash__success { color: green; }
+    </style>
+  </head>
+
+  <body class="custom-colors orange-text"
+  <% if content_for?(:body_attributes) %>
+    <%= yield(:body_attributes) %> 
+  <% end %>>
+  
+     
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- social media links -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+    <header>
+      <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="<%= root_path %>">
+          <%= image_tag image_url('logo.png'), {alt:"img", style:"max-width: 30px; max-height: 30px"} %>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="<%= root_path %>">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<%= about_us_pages_path %>">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<%= events_path %>">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href=<%= new_contact_form_path %>>Contact Us</a>
+                    </li>
+                    <% if user_signed_in? &&  current_user.role == 'admin' %>
+                    <li class="nav-item">
+                      <%= link_to "Members", user_root_path(current_user.id), {class: "nav-link"} %>
+                    </li>
+                    <% end %>
+                </ul>
+                <% if user_signed_in? %>
+                    <a class="mr-3" href="<%= user_path(current_user.id) %>">Dashboard</a>
+                    <%= link_to "Sign Out", destroy_user_session_path %>
+                <% else %>
+                    <%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path, {class:"btn btn-primary"} %>
+                <% end %>
+            </div>
+        </nav>
+    </header>
+    <% if flash.any? %>
+      <% flash.each do |key, value| -%>
+        <section class="flash flash__<%= key %>"><%= value.html_safe %></section>
+      <% end -%>
+    <% end %>
+
+    <%= yield %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <footer>
+      <div class="social-media-links">
+        <a href="https://www.facebook.com/tamuthespians/" class="fa fa-facebook"></a>
+        <a href="https://twitter.com/tamuthespians" class="fa fa-twitter"></a>
+        <a href="https://www.youtube.com/channel/UC8oWz5GfqpMX7C8jd1f77UA" class="fa fa-youtube"></a>
+        <a href="https://www.instagram.com/tamuthespians/" class="fa fa-instagram"></a>
+        <a href="https://www.snapchat.com/add/tamuthespians" class="fa fa-snapchat-ghost"></a>
+      </div>
+    </footer>
+  </body>
+</html>

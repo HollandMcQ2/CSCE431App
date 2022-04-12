@@ -1,0 +1,8 @@
+<div class="container mt-5 mb-5">
+    <h1>Editing Bio for <%= @officer_bio.full_name %></h1>
+
+    <%= render 'form', officer_bio: @officer_bio %>
+    <div class="mt-5">
+    <%= link_to 'Back', officer_bios_path, {class: "mt-5"} %>
+    </div>
+</div>

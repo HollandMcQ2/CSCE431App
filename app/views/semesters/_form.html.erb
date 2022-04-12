@@ -1,0 +1,35 @@
+<div class="container">
+	<%= form_with(model: semester) do |form| %>
+		<% if semester.errors.any? %>
+			<div id="error_explanation">
+				<h2><%= pluralize(semester.errors.count, "error") %> prohibited this semester from being saved:</h2>
+
+				<ul>
+					<% semester.errors.each do |error| %>
+						<li><%= error.full_message %></li>
+					<% end %>
+				</ul>
+			</div>
+		<% end %>
+
+		<div class = "field mb-3">
+			<%= form.label :name, {class: "form-label name-label"} %>
+			<%= form.text_field :name, {class: "form-control"} %>
+		</div>
+		<div class = "field mb-3">
+			<%= form.label :start, {class: "form-label start-label"} %>
+			<%= datetime_local_field("semester","start", {class: "form-control datepicker"}) %>
+		</div>
+		<div class = "field mb-3">
+			<%= form.label :end, {class: "form-label end-label"} %>
+			<%= datetime_local_field("semester","end", {class: "form-control datepicker"}) %>
+		</div>
+		<div class = "field mb-3">
+			<%= form.label :duescost, {class: "form-label duescost-label"} %>
+			<%= form.text_field :duescost, {class: "form-control"} %>
+		</div>
+		<div class = "actions">
+			<%= form.submit "Submit", {class: "btn btn-primary"} %>
+		</div>
+	<% end %>
+</div>

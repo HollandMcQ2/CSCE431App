@@ -1,0 +1,35 @@
+<div class="container">
+<%= form_with(model: officer_bio) do |form| %>
+    <% if officer_bio.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(officer_bio.errors.count, "error") %> prohibited this officer_bio from being saved:</h2>
+  
+        <ul>
+          <% officer_bio.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+   
+    <div class = "field mb-3">
+        <%= form.label :full_name, {class: "form-label user_id-label"}%>
+        <%= form.text_field :user_id, {class: "form-control"}%>
+    </div>
+
+    <div class = "field mb-3">
+        <%= form.label :portrait_label, {class: "form-label name-label"}%>
+        <%= form.file_field :portrait_label, {class: "form-control"}%>
+    </div>
+    
+    <div class = "field mb-3">
+        <%= form.label :bio_text, {class: "form-label description-label"}%>
+        <%= form.text_area :bio_text, {class: "form-control"}%>
+    </div>
+
+    
+    <div class="actions">
+      <%= form.submit "Submit", {class: "btn btn-primary"} %>
+    </div>
+  <% end %>
+</div>

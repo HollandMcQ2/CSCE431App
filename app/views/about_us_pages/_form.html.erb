@@ -1,0 +1,29 @@
+<div class="container">
+<%= form_with(model: about_us_page) do |form| %>
+    <% if about_us_page.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(about_us_page.errors.count, "error") %> prohibited this home page from being saved:</h2>
+  
+        <ul>
+          <% about_us_page.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class = "field mb-3">
+        <%= form.label :contents, {class: "form-label name-label"}%>
+        <%= form.text_field :contents, {class: "form-control"}%>
+    </div>
+
+    <div class = "field mb-3">
+        <%= form.label :email, {class: "form-label name-label"}%>
+        <%= form.text_field :email, {class: "form-control"}%>
+    </div>
+
+    <div class="actions">
+      <%= form.submit "Submit", {class: "btn btn-primary"} %>
+    </div>
+  <% end %>
+</div>

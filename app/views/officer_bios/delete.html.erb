@@ -1,0 +1,21 @@
+<%= content_tag(:div, class: "container align-items-center mt-5") do %>
+    <%= content_tag(:div, class: "row align-items-center justify-content-center") do %>
+        <%= content_tag(:div, class: "col-10 col-sm-8 col-md-6") do %>
+            <div class = "mb-3">
+                <h1><%= @officer_bio.full_name %></h1>
+            </div>
+            <div class="mb-3">
+            <% if @officer_bio.portrait_image.attached? %>
+                <img class="d-block" src="<%=(url_for(@officer_bio.portrait_image))%>">
+            <% else %>
+                <img class="d-block w-100" src="https://placeimg.com/1080/500/animals" alt="First slide">
+            <% end %>
+            </div>
+            <div class = "mb-3">
+                <p>Bio: <%= @officer_bio.bio_text %> </p>
+            </div>
+            <%= link_to 'Delete', officer_bio_path(params[:id]), method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= link_to 'Back', officer_bios_path, {class: "mt-5"} %>
+        <% end %>
+    <% end %>
+<% end %>

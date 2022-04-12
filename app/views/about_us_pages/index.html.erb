@@ -1,0 +1,45 @@
+<div class = "container">
+    <h1 class = "text-center">About Us</h1>
+    <p class="text-center justify-content-center">
+    <div style="text-align:center">
+        <p><%= @about_us_page.contents%></p>
+    </div>
+    <br>
+    <br>
+    <br>
+    <table>
+        <thead>
+            <tr>
+            <th>TSAT Officers</th>
+            <th colspan="3"></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% @officer_bios.each do |officer_bio| %>
+                <tr>
+                    <div class="row">
+                        <div class="col-sm">
+                            <img class="d-block" src="<%=(url_for(@officer_bio.portrait_image))%>">
+                        </div>
+                        <div class="col-sm">
+                            <div class="row">
+                                <td><%= officer_bio.user_id %></td>
+                                <td><%= link_to 'Edit', edit_officer_bio_path(officer_bio) %></td>
+                                <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                            </div>
+                            <td><%= officer_bio.bio_text %></td>
+                        </div>
+                    </div>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+    <br>
+    <%= link_to 'New Officer Bio', new_officer_bio_path %>
+    <br>
+    <br>
+    <br>
+    If you are interested in learning more about TSAT, view our contact page to see our social media platforms.  Feel free to e-mail us at <%= @about_us_page.email%> to learn more about how to be involved in TSAT.
+    </p>
+</div>
