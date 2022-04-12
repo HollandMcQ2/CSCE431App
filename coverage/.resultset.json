@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/csce431/TSAT_Tracker/spec/feature/integration_spec.rb": {
+      "/csce431/spec/feature/integration_spec.rb": {
         "lines": [
           1,
           1,
@@ -35,7 +35,7 @@
           null
         ]
       },
-      "/csce431/TSAT_Tracker/spec/rails_helper.rb": {
+      "/csce431/spec/rails_helper.rb": {
         "lines": [
           null,
           1,
@@ -106,7 +106,7 @@
           null
         ]
       },
-      "/csce431/TSAT_Tracker/spec/helpers/contact_form_helper_spec.rb": {
+      "/csce431/spec/helpers/contact_form_helper_spec.rb": {
         "lines": [
           1,
           null,
@@ -125,7 +125,7 @@
           null
         ]
       },
-      "/csce431/TSAT_Tracker/spec/helpers/payment_accounts_helper_spec.rb": {
+      "/csce431/spec/helpers/payment_accounts_helper_spec.rb": {
         "lines": [
           1,
           null,
@@ -144,7 +144,7 @@
           null
         ]
       },
-      "/csce431/TSAT_Tracker/spec/helpers/semesters_helper_spec.rb": {
+      "/csce431/spec/helpers/semesters_helper_spec.rb": {
         "lines": [
           1,
           null,
@@ -163,7 +163,7 @@
           null
         ]
       },
-      "/csce431/TSAT_Tracker/spec/mailers/event_spec.rb": {
+      "/csce431/spec/mailers/event_spec.rb": {
         "lines": [
           1,
           null,
@@ -243,7 +243,7 @@
           null
         ]
       },
-      "/csce431/TSAT_Tracker/app/mailers/event_mailer.rb": {
+      "/csce431/app/mailers/event_mailer.rb": {
         "lines": [
           1,
           null,
@@ -259,7 +259,7 @@
           null
         ]
       },
-      "/csce431/TSAT_Tracker/app/mailers/application_mailer.rb": {
+      "/csce431/app/mailers/application_mailer.rb": {
         "lines": [
           1,
           1,
@@ -267,112 +267,93 @@
           null
         ]
       },
-      "/csce431/TSAT_Tracker/spec/models/about_us_page_spec.rb": {
+      "/csce431/spec/models/about_us_page_spec.rb": {
+        "lines": [
+          1,
+          null,
+          null
+        ]
+      },
+      "/csce431/spec/models/contact_form_spec.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/csce431/spec/models/event_user_spec.rb": {
+        "lines": [
+          1,
+          null,
+          null
+        ]
+      },
+      "/csce431/spec/models/home_page_spec.rb": {
         "lines": [
           1,
           null,
           1,
           1,
-          null
-        ]
-      },
-      "/csce431/TSAT_Tracker/app/models/about_us_page.rb": {
-        "lines": [
           1,
-          1,
-          null
-        ]
-      },
-      "/csce431/TSAT_Tracker/spec/models/contact_form_spec.rb": {
-        "lines": [
-          1,
+          null,
           null,
           1,
           1,
-          null
-        ]
-      },
-      "/csce431/TSAT_Tracker/app/models/contact_form.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
-      },
-      "/csce431/TSAT_Tracker/spec/models/event_user_spec.rb": {
-        "lines": [
-          1,
+          null,
           null,
           1,
           1,
-          null
-        ]
-      },
-      "/csce431/TSAT_Tracker/app/models/event_user.rb": {
-        "lines": [
           1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/csce431/TSAT_Tracker/spec/models/home_page_spec.rb": {
-        "lines": [
-          1,
+          null,
           null,
           1,
           1,
-          null
-        ]
-      },
-      "/csce431/TSAT_Tracker/app/models/home_page.rb": {
-        "lines": [
           1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/csce431/TSAT_Tracker/spec/models/officer_bio_spec.rb": {
-        "lines": [
-          1,
+          null,
           null,
           1,
           1,
-          null
-        ]
-      },
-      "/csce431/TSAT_Tracker/app/models/officer_bio.rb": {
-        "lines": [
           1,
           1,
-          1,
-          null
-        ]
-      },
-      "/csce431/TSAT_Tracker/spec/models/payment_account_spec.rb": {
-        "lines": [
-          1,
+          null,
           null,
           1,
           1,
+          1,
+          1,
+          null,
+          null,
           null
         ]
       },
-      "/csce431/TSAT_Tracker/app/models/payment_account.rb": {
+      "/csce431/app/models/home_page.rb": {
         "lines": [
           1,
           1,
           1,
+          1,
+          1,
+          1,
+          1,
+          1,
           null
         ]
       },
-      "/csce431/TSAT_Tracker/spec/models/semester_spec.rb": {
+      "/csce431/spec/models/officer_bio_spec.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/csce431/spec/models/payment_account_spec.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/csce431/spec/models/semester_spec.rb": {
         "lines": [
           1,
           1,
@@ -429,7 +410,7 @@
           null
         ]
       },
-      "/csce431/TSAT_Tracker/app/models/semester.rb": {
+      "/csce431/app/models/semester.rb": {
         "lines": [
           1,
           1,
@@ -439,27 +420,16 @@
           null
         ]
       },
-      "/csce431/TSAT_Tracker/spec/models/semester_user_spec.rb": {
+      "/csce431/spec/models/semester_user_spec.rb": {
         "lines": [
           1,
           null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/csce431/TSAT_Tracker/app/models/semester_user.rb": {
-        "lines": [
-          1,
-          1,
-          1,
           null,
-          1,
-          1,
+          null,
           null
         ]
       },
-      "/csce431/TSAT_Tracker/spec/requests/contact_form_spec.rb": {
+      "/csce431/spec/requests/contact_form_spec.rb": {
         "lines": [
           1,
           1,
@@ -545,7 +515,7 @@
           null
         ]
       },
-      "/csce431/TSAT_Tracker/spec/requests/payment_accounts_spec.rb": {
+      "/csce431/spec/requests/payment_accounts_spec.rb": {
         "lines": [
           1,
           1,
@@ -593,7 +563,7 @@
           null
         ]
       },
-      "/csce431/TSAT_Tracker/spec/requests/semesters_spec.rb": {
+      "/csce431/spec/requests/semesters_spec.rb": {
         "lines": [
           1,
           null,
@@ -601,6 +571,14 @@
           1,
           1,
           1,
+          0,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          0,
           null,
           null,
           null,
@@ -614,35 +592,21 @@
           1,
           1,
           1,
-          1,
+          0,
           null,
           null,
           null,
           1,
           1,
           1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
+          0,
           null,
           null,
           null,
           null
         ]
       },
-      "/csce431/TSAT_Tracker/spec/unit/unit_spec.rb": {
+      "/csce431/spec/unit/unit_spec.rb": {
         "lines": [
           1,
           null,
@@ -711,7 +675,7 @@
           null
         ]
       },
-      "/csce431/TSAT_Tracker/app/models/event.rb": {
+      "/csce431/app/models/event.rb": {
         "lines": [
           1,
           1,
@@ -720,7 +684,7 @@
           null
         ]
       },
-      "/csce431/TSAT_Tracker/spec/views/contact_forms/index.html.erb_spec.rb": {
+      "/csce431/spec/views/contact_forms/index.html.erb_spec.rb": {
         "lines": [
           1,
           null,
@@ -729,7 +693,7 @@
           null
         ]
       },
-      "/csce431/TSAT_Tracker/spec/views/contact_forms/new.html.erb_spec.rb": {
+      "/csce431/spec/views/contact_forms/new.html.erb_spec.rb": {
         "lines": [
           1,
           null,
@@ -738,7 +702,7 @@
           null
         ]
       },
-      "/csce431/TSAT_Tracker/spec/views/contact_forms/show.html.erb_spec.rb": {
+      "/csce431/spec/views/contact_forms/show.html.erb_spec.rb": {
         "lines": [
           1,
           null,
@@ -747,7 +711,7 @@
           null
         ]
       },
-      "/csce431/TSAT_Tracker/spec/views/payment_accounts/edit.html.erb_spec.rb": {
+      "/csce431/spec/views/payment_accounts/edit.html.erb_spec.rb": {
         "lines": [
           1,
           null,
@@ -756,7 +720,7 @@
           null
         ]
       },
-      "/csce431/TSAT_Tracker/spec/views/payment_accounts/index.html.erb_spec.rb": {
+      "/csce431/spec/views/payment_accounts/index.html.erb_spec.rb": {
         "lines": [
           1,
           null,
@@ -765,7 +729,7 @@
           null
         ]
       },
-      "/csce431/TSAT_Tracker/spec/views/payment_accounts/new.html.erb_spec.rb": {
+      "/csce431/spec/views/payment_accounts/new.html.erb_spec.rb": {
         "lines": [
           1,
           null,
@@ -774,7 +738,7 @@
           null
         ]
       },
-      "/csce431/TSAT_Tracker/spec/views/payment_accounts/show.html.erb_spec.rb": {
+      "/csce431/spec/views/payment_accounts/show.html.erb_spec.rb": {
         "lines": [
           1,
           null,
@@ -783,7 +747,7 @@
           null
         ]
       },
-      "/csce431/TSAT_Tracker/spec/views/semesters/delete.html.erb_spec.rb": {
+      "/csce431/spec/views/semesters/delete.html.erb_spec.rb": {
         "lines": [
           1,
           null,
@@ -792,7 +756,7 @@
           null
         ]
       },
-      "/csce431/TSAT_Tracker/spec/views/semesters/edit.html.erb_spec.rb": {
+      "/csce431/spec/views/semesters/edit.html.erb_spec.rb": {
         "lines": [
           1,
           null,
@@ -801,7 +765,7 @@
           null
         ]
       },
-      "/csce431/TSAT_Tracker/spec/views/semesters/index.html.erb_spec.rb": {
+      "/csce431/spec/views/semesters/index.html.erb_spec.rb": {
         "lines": [
           1,
           null,
@@ -841,7 +805,7 @@
           null
         ]
       },
-      "/csce431/TSAT_Tracker/spec/views/semesters/new.html.erb_spec.rb": {
+      "/csce431/spec/views/semesters/new.html.erb_spec.rb": {
         "lines": [
           1,
           null,
@@ -850,7 +814,7 @@
           null
         ]
       },
-      "/csce431/TSAT_Tracker/spec/views/semesters/show.html.erb_spec.rb": {
+      "/csce431/spec/views/semesters/show.html.erb_spec.rb": {
         "lines": [
           1,
           null,
@@ -893,7 +857,7 @@
           null
         ]
       },
-      "/csce431/TSAT_Tracker/app/controllers/home_pages_controller.rb": {
+      "/csce431/app/controllers/home_pages_controller.rb": {
         "lines": [
           1,
           1,
@@ -926,7 +890,7 @@
           null
         ]
       },
-      "/csce431/TSAT_Tracker/app/controllers/application_controller.rb": {
+      "/csce431/app/controllers/application_controller.rb": {
         "lines": [
           1,
           1,
@@ -936,12 +900,9 @@
           null
         ]
       },
-      "/csce431/TSAT_Tracker/app/controllers/events_controller.rb": {
+      "/csce431/app/controllers/events_controller.rb": {
         "lines": [
           1,
-          null,
-          1,
-          1,
           0,
           null,
           1,
@@ -956,6 +917,14 @@
           0,
           0,
           0,
+          null,
+          1,
+          0,
+          null,
+          1,
+          0,
+          0,
+          0,
           0,
           0,
           0,
@@ -963,7 +932,15 @@
           0,
           0,
           null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
           null,
+          0,
+          0,
           null,
           1,
           0,
@@ -978,7 +955,13 @@
           0,
           0,
           null,
+          1,
+          0,
+          0,
           null,
+          0,
+          0,
+          0,
           null,
           1,
           0,
@@ -991,10 +974,17 @@
           0,
           0,
           null,
+          1,
+          3,
+          3,
+          3,
+          2,
           null,
           1,
           0,
           null,
+          3,
+          2,
           null,
           1,
           3,
@@ -1016,15 +1006,6 @@
           1,
           0,
           0,
-          0,
-          null,
-          null,
-          null,
-          1,
-          1,
-          0,
-          null,
-          1,
           0,
           null,
           null,
@@ -1032,6 +1013,25 @@
         ]
       },
       "/csce431/TSAT_Tracker/app/controllers/contact_forms_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          0,
+          null,
+          1,
+          0,
+          null,
+          6,
+          3,
+          null,
+          null
+        ]
+      },
+      "/csce431/app/controllers/contact_forms_controller.rb": {
         "lines": [
           1,
           1,
@@ -1049,11 +1049,16 @@
           3,
           null,
           null,
+          1,
+          1,
           null,
           null,
           1,
           1,
           null,
+          0,
+          0,
+          0,
           null,
           1,
           1,
@@ -1067,6 +1072,14 @@
           0,
           0,
           null,
+          null
+        ]
+      },
+      "/csce431/TSAT_Tracker/app/controllers/payment_accounts_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
           null,
           null,
           1,
@@ -1077,7 +1090,32 @@
           null
         ]
       },
-      "/csce431/TSAT_Tracker/app/controllers/payment_accounts_controller.rb": {
+      "/csce431/app/models/contact_form.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/csce431/app/models/payment_account.rb": {
+        "lines": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          1,
+          0,
+          null,
+          null
+        ]
+      },
+      "/csce431/app/controllers/payment_accounts_controller.rb": {
         "lines": [
           1,
           1,
@@ -1108,24 +1146,23 @@
           null,
           null,
           1,
-          0,
-          null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
           null,
           null,
           null,
           1,
           0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          1,
           0,
           0,
           0,
@@ -1149,32 +1186,16 @@
           null
         ]
       },
-      "/csce431/TSAT_Tracker/app/controllers/semesters_controller.rb": {
+      "/csce431/app/controllers/semesters_controller.rb": {
         "lines": [
           1,
           1,
           1,
           null,
           null,
-          1,
-          1,
-          null,
           null,
           1,
-          1,
-          null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          null,
+          4,
           null,
           null,
           1,
@@ -1188,6 +1209,9 @@
           0,
           0,
           null,
+          null,
+          null,
+          1,
           0,
           0,
           null,
@@ -1195,7 +1219,30 @@
           null,
           null,
           1,
+          0,
+          null,
+          null,
           1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
           null,
           null,
           1,
@@ -1270,6 +1317,6 @@
         ]
       }
     },
-    "timestamp": 1649726173
+    "timestamp": 1649732322
   }
 }
