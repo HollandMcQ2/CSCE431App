@@ -19,12 +19,20 @@ RSpec.describe 'Home Page', type: :feature do
 end
 
 
-# RSpec.describe 'User', type: :feature do
-#   include Devise::Test::IntegrationHelpers
-#   fixtures :all
-#   scenario 'shows logged out view' 
-#     sign_in users(:owner)
-#     expect(page).to have_content("Attendance")
+RSpec.describe('Authentication', type: :feature) do
+  before do
+    Rails.application.env_config['devise.mapping'] = Devise.mappings[:user]
+    Rails.application.env_config['omniauth.auth'] = OmniAuth.config.mock_auth[:google_user]
+    unless User.where(email: 'userdoe@example.com').first.nil? == false
+      User.create(:full_name => 'User Doe', :email => "userdoe@example.com");
+    end
+  end
 
-#   end
-# end
+  it 'Sign in with valid credentials' do
+    visit root_path
+
+    # sign in and verify sign in
+    click_on 'Sign in with Google'
+    expect(page).to(have_content('Successfully authenticated from Google account.'))
+  end
+end
