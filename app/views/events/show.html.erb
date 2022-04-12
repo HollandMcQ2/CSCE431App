@@ -25,7 +25,7 @@
             <div class = "mb-3">
                 <p>Mandatory: <%= @event.is_mandatory %> </p>
             </div>
-            <% if user_signed_in? &&  current_user.role == 'admin' %>
+            <% if user_signed_in? &&  ['admin','treasurer','president'].include?(current_user.role) %>
                 <div class = "mb-3">
                     <p>Password: <%= @event.password %> </p>
                 </div>
