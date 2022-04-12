@@ -1,3 +1,5 @@
 class AboutUsPage < ApplicationRecord
-	has_and_belongs_to_many :officer_bio
+	validates :contents, presence: true
+	validates :email, presence: true
+	has_many :about_us_page_officer_bio # join table
 end
