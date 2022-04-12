@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-require 'rails_helper'
-
-RSpec.describe HomePage, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
-end
-=======
 require 'rails_helper'
 
 RSpec.describe HomePage, type: :model do
@@ -39,4 +32,3 @@ RSpec.describe HomePage, type: :model do
   end
   
 end
->>>>>>> origin/test

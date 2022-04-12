@@ -1,37 +1,3 @@
-<<<<<<< HEAD
-require 'rails_helper'
-
-RSpec.describe "PaymentAccounts", type: :request do
-  describe "GET /new" do
-    it "returns http success" do
-      get "/payment_accounts/new"
-      expect(response).to have_http_status(:success)
-    end
-  end
-
-  describe "GET /index" do
-    it "returns http success" do
-      get "/payment_accounts/index"
-      expect(response).to have_http_status(:success)
-    end
-  end
-
-  describe "GET /show" do
-    it "returns http success" do
-      get "/payment_accounts/show"
-      expect(response).to have_http_status(:success)
-    end
-  end
-
-  describe "GET /edit" do
-    it "returns http success" do
-      get "/payment_accounts/edit"
-      expect(response).to have_http_status(:success)
-    end
-  end
-
-end
-=======
 require 'rails_helper'
 include Warden::Test::Helpers
 
@@ -76,4 +42,3 @@ RSpec.describe "PaymentAccounts", type: :request do
   end
 
 end
->>>>>>> origin/test
