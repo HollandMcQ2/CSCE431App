@@ -39,7 +39,7 @@
                                 <% currTime = Time.now %>
                                 <% if event.open %>
                                     <% message = "Open" %>
-                                <% elsif currTime < event.end_time && curr_Time > event.time %>
+                                <% elsif currTime < event.end_time && currTime > event.time %>
                                     <% message = "Open" %>
                                 <% else %>
                                     <% message = "Closed" %>
