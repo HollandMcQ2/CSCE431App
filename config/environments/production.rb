@@ -128,4 +128,16 @@ Rails.application.configure do
   ENV['PRIVATE_KEY'] = '285f453f319c9622ea78305100d24436'
   ENV['PAYPAL_CLIENT_ID'] = 'AZ7cvFNlXaeTjUVqghWxEaqvBuJEHCz3BKwX7fksAdrleR1tqTQksTwO9oI6NgB3_k7Pb9XstqeIBuIW'
   ENV['PAYPAL_PRODUCTION_ID'] = 'AVIm79GenDCRKLseYe4vbl6cjyGkVuIWuA2CF4YztZejCKGIRFX3q4OzY_A3sGP-X69Q6Fbw_RnQnqcG'
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.gmail.com',
+    port:                 587,
+    #domain:               'example.com',
+    user_name:            ENV['EMAIL_ADDRESS'],
+    password:             ENV['EMAIL_PASSWORD'],
+    authentication:       'plain',
+    enable_starttls_auto: true,
+    open_timeout:         5,
+    read_timeout:         5 }
+
 end
