@@ -1,4 +1,5 @@
 require 'rails_helper'
+include Warden::Test::Helpers
 
 RSpec.describe "ContactForms", type: :request do
 	describe "GET /new" do
@@ -21,7 +22,9 @@ RSpec.describe "ContactForms", type: :request do
 		end
 
 		it "gives feedback upon saving a valid submitted form" do
-			HomePage.create!(id: 1, heading: "test page", summary: "test page")
+			if HomePage.all.empty?
+				HomePage.create(id: 1, heading: "test page", summary: "test page")
+			end
 			post "/contact_forms", params: {contact_form: {message: "test"}}
 			follow_redirect!
 			
@@ -29,7 +32,9 @@ RSpec.describe "ContactForms", type: :request do
 		end
 
 		it "returns users to the home page after a valid submission" do
-			HomePage.create!(id: 1, heading: "test page", summary: "test page")
+			if HomePage.all.empty?
+				HomePage.create(id: 1, heading: "test page", summary: "test page")
+			end
 			post contact_forms_path, params: {contact_form: {message: "test"}}
 
 			expect(response).to redirect_to(root_path)
@@ -55,16 +60,21 @@ RSpec.describe "ContactForms", type: :request do
 		end
 	end
 
-	describe "GET /index" do
+	describe "GET /contact_forms/" do
 		it "returns http success" do
-			get "/contact_forms/index"
+			user = User.create(id: 1)
+			login_as(user, scope: :user)
+			
+			get "/contact_forms/"
 			expect(response).to have_http_status(:success)
 		end
 	end
 
-	describe "GET /show" do
+	describe "GET /contact_forms/:id" do
 		it "returns http success" do
-			get "/contact_forms/show"
+			post contact_forms_path, params: {contact_form: {message: "this is a test message"}}
+			get "/contact_forms/"+ContactForm.last.id.to_s
+
 			expect(response).to have_http_status(:success)
 		end
 	end
