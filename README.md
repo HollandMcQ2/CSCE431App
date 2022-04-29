@@ -39,18 +39,18 @@ An RSpec test suite is available and can be ran using:
 
 Run the following code in Powershell if using windows or the terminal using Linux/Mac
 
-  `cd your_github_here`
+  `cd CSCE431App`
 
-  `docker run --rm -it --volume "$(pwd):/rails_app" -e DATABASE_USER=test_app -e DATABASE_PASSWORD=test_password -p 3000:3000 dmartinez05/ruby_rails_postgresql:latest`
+  `docker run --rm -it --volume "$(pwd):/TSAT_Tracker" -e DATABASE_USER=test_app -e DATABASE_PASSWORD=test_password -p 3000:3000 dmartinez05/ruby_rails_postgresql:latest`
 
-  `cd rails_app`
+  `cd TSAT_Tracker`
 
 Install the app
 
   `bundle install && rails webpacker:install && rails db:create && db:migrate`
 
 Run the app
-  `rails server --binding:0.0.0.0`
+  `rails server --binding=0.0.0.0`
 
 The application can be seen using a browser and navigating to http://localhost:3000/
 
