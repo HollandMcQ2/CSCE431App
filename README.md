@@ -2,7 +2,7 @@
 
 ## Introduction ##
 
-Application Description
+TSAT Thespian Tracker is an application designed for TAMU Society of Amateur Thespians. It provides member tracking, event tracking, and dues tracking functionalities.
 
 ## Requirements ##
 
@@ -26,7 +26,7 @@ This code has been run and tested on:
 
 Download this code repository by using git:
 
- `git clone https://github.com/your_github_here.git`
+ `git clone https://github.com/HollandMcQ2/CSCE431App.git`
 
 
 ## Tests ##
