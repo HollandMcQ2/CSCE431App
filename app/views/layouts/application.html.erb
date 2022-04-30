@@ -59,7 +59,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href=<%= new_contact_form_path %>>Contact Us</a>
                     </li>
-                    <% if user_signed_in? &&  current_user.role == 'admin' %>
+                    <% if user_signed_in? &&  ['admin','treasurer','president'].include?(current_user.role) %>
                     <li class="nav-item">
                       <%= link_to "Members", user_root_path(current_user.id), {class: "nav-link"} %>
                     </li>

@@ -26,7 +26,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     protected
 
     def stored_location_for(resource)
-        if resource.is_a?(User) && resource.role == 'admin'
+        if resource.is_a?(User) && ['admin','treasurer','president'].include?(resource.role)
             return user_path(resource)
         elsif resource.is_a?(User) && resource.role == 'member'
             return user_path(resource)
