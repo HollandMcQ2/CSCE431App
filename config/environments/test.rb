@@ -66,4 +66,6 @@ Rails.application.configure do
   ENV['MERCHANT_ID'] = '5z6r9hv6bc9cmmjx'
   ENV['PUBLIC_KEY'] = 'h64bmpjqmn652rj8'
   ENV['PRIVATE_KEY'] = '285f453f319c9622ea78305100d24436'
+  ENV['POSTGRES_USER'] = 'postgres'
+  ENV['POSTGRES_PASSWORD'] = 'password'
 end
