@@ -60,12 +60,21 @@ The application can be seen using a browser and navigating to http://localhost:3
 
 ## Deployment ##
 
-** Add instructions about how to deploy to Heroku
+
+    1. Fork the project repository (https://github.com/HollandMcQ2/CSCE431App) into your own GitHub account.
+        - Any changes you have made to the source code when you downloaded the code can now be pushed to your repo.
+    2. In Heroku, connect your GitHub Account to the Heroku Account (https://dashboard.heroku.com/account/applications).
+    3. From the Heroku Dashboard Click the New button in the top right of your app list and select Create new pipeline.
+        - Search for and connect to the Github repository that your forked to your account.
+    4. Create a new app under production to deploy from the main branch.
+    5. Configure the environment variables listed above.
+    6. Once the application is built and released, it can be accessed via the Heroku Link.
+
 
 
 ## CI/CD ##
 
-TBD
+CI/CD has been implemented in the GitHub Actions in the repo here -> https://github.com/HollandMcQ2/CSCE431App/actions
 
 ## Support ##
 
