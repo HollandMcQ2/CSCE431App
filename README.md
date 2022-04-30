@@ -58,6 +58,15 @@ The application can be seen using a browser and navigating to http://localhost:3
 
 ** Add instructions/description if your application requires it.
 
+In order for the authentication feature to work, the following environment variables must be set:
+
+In order for the payment feature to work, the following environment variables must be set:
+
+In order for the notification feature to work, the following environement variables must be set:
+
+* **EMAIL_ADDRESS** - Name of the email address to use to send the messages
+* **EMAIL_PASSWORD** - The password for the email address, or an alternative authentication key as provided by the email's host.
+
 ## Deployment ##
 
 ** Add instructions about how to deploy to Heroku
