@@ -1,6 +1,8 @@
 
 # CSCE431
 
+## Introduction
+
 Steps to start the docker image and the app
 
 1. start the docker image with this command (depends on if you are on windows or if you are julia):
