@@ -75,13 +75,6 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
-  ENV['GOOGLE_OAUTH_CLIENT_ID'] = '166427199608-3qfvp2tf0bqt1rjkpmvslevaeeduml21.apps.googleusercontent.com'
-  ENV['GOOGLE_OAUTH_CLIENT_SECRET'] = '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'
-
-  ENV['PAYMENT_AUTH'] = 'sandbox_s9fzgm2g_5z6r9hv6bc9cmmjx'
-  ENV['MERCHANT_ID'] = '5z6r9hv6bc9cmmjx'
-  ENV['PUBLIC_KEY'] = 'h64bmpjqmn652rj8'
-  ENV['PRIVATE_KEY'] = '285f453f319c9622ea78305100d24436'
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
@@ -94,5 +87,4 @@ Rails.application.configure do
     enable_starttls_auto: true,
     open_timeout:         5,
     read_timeout:         5 }
-  ENV['PAYPAL_CLIENT_ID'] = 'AZ7cvFNlXaeTjUVqghWxEaqvBuJEHCz3BKwX7fksAdrleR1tqTQksTwO9oI6NgB3_k7Pb9XstqeIBuIW'
 end
