@@ -65,6 +65,7 @@ In order for the authentication feature to work, the following environment varia
 In order for the payment feature to work, the following environment variables must be set:
 * PAYMENT_AUTH
 * MERCHANT_ID
+* PAYPAL_PRODUCTION_ID
 * PUBLIC_KEY
 * PRIVATE_KEY
 
