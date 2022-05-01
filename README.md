@@ -63,7 +63,10 @@ In order for the authentication feature to work, the following environment varia
 * GOOGLE_OAUTH_CLIENT_SECRET
 
 In order for the payment feature to work, the following environment variables must be set:
+* PAYMENT_AUTH
 * MERCHANT_ID
+* PUBLIC_KEY
+* PRIVATE_KEY
 
 In order for the notification feature to work, the following environement variables must be set:
 
