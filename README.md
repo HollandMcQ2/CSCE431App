@@ -56,7 +56,7 @@ The application can be seen using a browser and navigating to http://localhost:3
 
 ## Environmental Variables/Files ##
 
-There are currently 5 environment variables that need to be configured. For production environment, the variables should be confired in Heroku.
+There are a bit of environment variables that need to be configured. For production environment, the variables should be confired in Heroku.
 
 In order for the authentication feature to work, the following environment variables must be set:
 * GOOGLE_OAUTH_CLIENT_ID
